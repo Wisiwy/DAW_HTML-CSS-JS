@@ -1,0 +1,69 @@
+header {
+    height: 20%;
+    background-color: rgb(109, 37, 37);
+    border-radius: 20px;
+    border: 2px solid black;
+
+}
+
+nav {
+    background-color: rgb(241, 236, 141);
+    border: 2px solid black;
+    height: 5%;
+    margin: 0;
+}
+
+/* li {
+    display: inline-block;
+} */
+
+body {
+    margin: 0;
+}
+
+main {
+    border: 2px solid black;
+    height: 60%;
+
+}
+
+footer {
+    background-color: rgb(163, 107, 216);
+    border: 2px solid black;
+    height: 20%;
+}
+aside {
+    background-color: rgba(219, 255, 164, 0.66);
+    border: 10px solid black;
+    float: right;
+    width: 20%;
+    height: 100%;
+
+}
+
+section {
+    float: left;
+    width: 80%;
+
+}
+
+
+article {
+
+    background-color: rgb(45, 124, 189);
+    border: 5px dashed black;
+
+}
+
+#art1 {
+    border-radius: 20px;
+    height: 50%;
+
+}
+
+#art2 {
+    border-radius: 40px;
+    border-style: dotted;
+    height: 50%;
+
+}

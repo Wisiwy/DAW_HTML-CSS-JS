@@ -1,0 +1,87 @@
+html {
+    font-size: 62.5%;
+}
+
+h1,
+h2,
+h3 {
+    color: #071B8C;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p,
+a,
+td,
+li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+}
+li{
+    padding:10px 20px 10px 20px;
+    border:1px solid black; 
+    display:inline-block" 
+}
+a:hover{
+    cursor:pointer;
+    font-size: 1.6rem;
+}
+
+/* BLOQUES */
+body {
+    /* background: linear-gradient(to bottom, rgb(166, 99, 99, 125), rgb(253, 191, 191, 125), rgb(166, 99, 99, 125)); */
+    /* background-color: rgb(2, 6, 89,125); */
+    background-image: url(../img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg)
+
+}
+
+header {
+    background-color: #9FADBF;
+    border-radius: 20px;
+    border: 3px solid #023373;
+    padding: 2rem;
+}
+
+
+table,th,td {
+    border: 2px solid black;
+}
+
+div {
+    padding: 2em;
+    margin: 1em;
+    border: 2px dashed #023373;
+    border-radius: 20px;
+    background: radial-gradient(#5D7CA6, #b8d7ff);
+}
+
+.blog__img {
+    background: radial-gradient(#b8d7ff, #5D7CA6);
+}
+
+img:hover {
+
+    box-shadow: 10px 5px 5px #020659;
+}
+
+
+#tabla {
+    width: 80%;
+    border: 3px groove #020659;
+    border-radius: 5px;
+    background-color: #5D7CA6;
+    color: antiquewhite;
+    box-shadow: 3px 3px red, -1em 0 .4em olive;
+}

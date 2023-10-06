@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meter CSS en linea en cada elemento.">
+    <meta name="author" content="RaúlG">
+    <meta name="keywords" content="notacion, bem, css, html, front end">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title> Inline CSS</title>
+</head>
+
+<body style="background-color: rgb(33, 143, 247);">
+
+    <header style="border:10px dotted purple;  ">
+        <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 3em; text-align: center; ">BEM- Intro a la notacion de clases en CSS</h1>
+
+    </header>
+    <nav>
+        <ul style="display: flex; justify-content: space-evenly; width: 80%;">
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="#bloques">Bloques</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="#elementos">Elementos</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="#elementos-modificados">Elementos-modificados</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="#footer">Footer</a></li>
+            
+        </ul>
+        <ul style="display: flex; justify-content: space-evenly; width: 80%;">
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="./inline.html">INLINE</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="./cabecera.html">CABECERA</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="./externa1.html">EXTERNAL 1</a></li>
+            <li style="padding:10px 20px 10px 20px;border:1px solid black; display:inline-block"><a href="./externa2.html">EXTERNAL 2</a></li>
+            
+        </ul>
+    </nav>
+    <section style=" background-color: rgb(140, 193, 243); padding: 5%; margin: 3%; ">
+        <!-- BLOQUES DIV CON INFORMACIÓN-->
+        <h2
+            style="color:aliceblue; text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 50px;">
+            Bloques, Elementos y Modificadores (BEM)</h2>
+        <a style="cursor: help; text-align: center;"
+            href="https://fixu.cl/que-es-la-metodologia-bem-y-como-se-aplica-al-front-end/">¿Qué es
+            la metodología
+            BEM?</a>
+        <div class="bloque" id="bloques">
+            <h3>Bloques</h3>
+            <p style="color:rgb(0, 0, 0);">
+                <span style="font-style: italic ;">Es un contenedor donde se encontrarán los diferentes elementos</span>
+                (header, main,
+                footer).
+                El bloque de elementos corresponde a la raíz de la clase y deberá ir primero. Cuando ya está
+                definido es posible nombrar los elementos que compondrán la estructura final y su contenido
+            </p>
+            <img style="text-align: center;" bloque__text" src="./img/bloques.png" alt="">
+            <br>
+        </div>
+
+        <div class="bloque" >
+            <h3>Bloque modificado</h3>
+            <p class="bloque__text">
+                Para agregar una variación del mismo bloque se utiliza los dos guiones medios para generar esta
+                diferencia, en el siguiente ejemplo se muestra una variación del header en modo oscuro.
+            </p>
+            <img style="text-align: center;" class="bloque__img" src="./img/bloque--modi.png" alt="bloque modificado">
+            <hr style="border: 5px  dotted rgb(165, 139, 150)">
+        </div class="bloque">
+        <div class="bloque" id="elementos">
+            <h3>Elementos</h3>
+            <p class="bloque__text">Es una porción mas pequeña interna a unbloque.<br>
+                El elemento son diversas partes que compondrán a un bloque y jamás existirán sin la previa definición de
+                este.
+
+                El método BEM nos indica que cada elemento nace a partir de la clase del bloque que conforma seguida de
+                dos guiones bajos y el nombre clave del elemento.
+            </p>
+            <img style="text-align: center;" bloque__img" src="./img/elementos.png" alt="">
+            <hr>
+        </div>
+
+        <div class="bloque" id="elementos-modificados">
+            <h3>Elemento modificado</h3>
+            <p class="bloque__text">Modifica un bloque o elemento. Tal como mencionamos anteriormente en el bloque
+                modificado, también se
+                pueden generar variaciones en los elementos aplicando los dos guiones medios al mismo nivel de dicho
+                elemento.
+            </p>
+            <img class="bloque__img" src="./img/elemento--modi.png" alt="elemto modificad">
+            <hr>
+        </div class="bloque">
+
+    </section>
+    <!-- TABLA-->
+    <section class="tabla" style="align-content: center;">
+        <table
+            style="border: 15px blue groove;align-items: center; padding: auto; margin: auto; background-color: rgb(252, 144, 104);">
+
+            <tr>
+                <th colspan="3">
+                    <h3>Notacion BEM</h3>
+                </th>
+            </tr>
+            <tr>
+                <th>BEM</th>
+                <th>NOTACIÓN</th>
+
+            </tr>
+            <tr>
+                <th>Bloque</th>
+                <th>"seccion"</th>
+            </tr>
+            <tr>
+                <th>Elementos </th>
+                <th>"seccion__foto"</th>
+            </tr>
+            <tr>
+                <th>Modificador</th>
+                <th>"seccion__foto--dark"</th>
+            </tr>
+        </table>
+    </section>
+
+    <footer id="footer" style="align-content: center;">
+        <hr>
+        <!--LISTA-->
+            <ol style="font-size: 18px;list-style-type: upper-roman; padding:3%;align-items: center; margin: left 10px; margin: auto; padding: auto; ">
+                <li>Contacta con nosotros</li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li>C/Falsa 123</li>
+                <li>Tlfn 555-32-42-112</li>
+            </ol>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+}
+/* 10b */
+h1 {
+    font-family: fantasy;
+    font-size: 20px;
+    text-shadow: 30px 10px yellow;
+    text-align: center;
+}
+
+/* 10c */
+header div img {
+    height: 200px;
+}
+
+/* 10 dparrafos azules */
+main article p {
+    color: blue;
+    font-family: sans-serif;
+}
+
+/* 10 e */
+.lista ul {
+    list-style: square;
+}
+
+.lista ol {
+    list-style: upper-roman;
+}
+.tabla table{
+    border: 2px solid green;
+}
+.tabla table td,th{
+    border: 2px solid rgb(0, 180, 0);
+}
+.impar{
+background-color: rgba(42, 134, 42, 0.555) ;
+}
+
+body{
+    background-color: #66ffff;
+}
+header{
+    border-style: dashed;
+    border-radius: 10px;
+    background-color: #00cc00;
+    margin: 5px;
+
+}
+main{
+    border: 10px solid;
+    border-style: outset;
+    
+    background-color: #33ff33 ;
+    /* La duda que tengo es si hay que jugar con el alpha del background o simplemente con esta opcity es suficiente */
+    opacity: 50%;
+    margin: 5px;
+    padding: 10px;
+
+}
+main iframe{
+    width: 100%;
+}
+nav{
+    background-color: #000000;
+    margin: 5px;
+
+}
+nav a{
+    color:#ffffff;
+    text-decoration: none;
+}
+nav a:hover{
+    
+    color:#ffffff;
+    text-decoration: none;
+    background-color: #33cc33;
+}
+
+/* --------------------------MAQUETACION---------------- */
+
+main article{
+    /* Me hubiera gustado cntrar este contenido no tiempo.  */
+justify-items: center;
+}
+
+article{
+    margin: 5px;
+    padding: 5px;
+}
+.contenedor{
+    margin: 10px;
+    padding: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.titulo{
+    width: 80%;
+    align-self: center;
+}
+
+#icono{
+    align-items: center;
+    width: 20%;
+}
+nav{
+    padding: 3px;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    text-align: center;
+    padding: 1px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ----------------------------RESPONSIVE------------------------ */
+
+@media screen and (max-width:800px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    } 
+    h1 h2,p{
+        font-size: smaller;
+    } 
+
+
+
+
+}

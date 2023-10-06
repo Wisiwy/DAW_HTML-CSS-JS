@@ -1,0 +1,293 @@
+/* ------------VARIABLES----------------- */
+:root {
+    --color1: #9ABCB9;
+    --colorFondo: #f4f4f4;
+}
+
+/* ------------TODA PAGINA----------------- */
+html {
+    /*1 rem == 10px*/
+    font-size: 62.5%;
+    /* Asegurar que las medidas de las cajas vayan borde a borde 
+    box-sizing: content-box;*/
+    /*Caja se ajusta al contenido*/
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: font1;
+    src: url(../fonts/AbrilFatface-Regular.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../fonts/abadi-mt-std-light.otf);
+}
+
+p {
+    font-family: LexendDeca;
+    font-size: 1.2rem;
+}
+
+
+/* ------------HEADER-------------------- */
+
+header {
+    background-color: var(--colorFondo);
+    width: 100%;
+    height: 30rem;
+    /* z-index: 100; */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.header__nombresitio {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+header img {
+    margin-left: 10rem;
+    height: 100%;
+}
+
+header h1 {
+    font-family: font1;
+    font-size: 5em;
+    color: var(--color1);
+}
+
+header nav {
+    height: 100%;
+    padding: 2rem 0;
+
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 2em;
+    list-style: none;
+    overflow: hidden;
+}
+
+header nav ul li {
+    /* display */
+    /* font */
+    font-family: font2;
+    font-size: 4rem;
+    font: bold;
+    /* contenedor */
+    background-color: var(--color1);
+    border-radius: 50px;
+    margin: 1em;
+
+}
+
+header nav ul li:hover {
+    /* display */
+    /* font */
+    font-family: font2;
+    font-size: 4rem;
+    font: bold;
+    /* contenedor */
+    background-color: var(--color1);
+    border-radius: 50px;
+    margin: 1em;
+    background-color: #9abcb976;
+
+}
+
+header nav ul li a {
+    /* contenedor */
+    display: block;
+    padding: 0.5em;
+    /* font */
+    color: black;
+    text-decoration: none;
+
+}
+
+/* ------------ @mediaqury HEADER-------------------- */
+@media screen and (max-width:780px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .header__nombresitio {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-family: font1;
+        color: rgba(190, 2, 2, 0.63);
+    }
+
+    header nav ul li {
+        background-color: rgba(190, 2, 2, 0.63);
+    }
+}
+
+
+
+
+/* ------------HERO-------------------- */
+h2 {
+    font-family: font1;
+    font-size: 25Rem;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+h2 span {
+    font-size: 10Rem;
+
+}
+
+h3 {
+    font-family: font2;
+    font-size: 5Rem;
+}
+
+.hero {
+    /* border:black solid 3px; */
+    display: flex;
+    width: 100%;
+    height: 100rem;
+}
+
+.hero article {
+    margin: 0 auto;
+    width: 50%;
+    /* border:black solid 3px ; */
+
+
+}
+
+.hero__letras {
+    /* bacground */
+    background-image: url(../img/Asset\ 481Acuarela.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-self: center;
+    padding: 2rem;
+
+}
+
+.hero__foto {
+    display: flex;
+    justify-content: center;
+}
+
+.hero__foto img {
+
+    width: 100%;
+    border-radius: 100%;
+    background-image: url(../img/MicoBox2.jpg);
+    object-fit: cover;
+    /* sombra imagen */
+    box-shadow: 20px 5px 5px 5px #9ABCB9;
+    box-shadow: -20px -5px 5px 5px #9ABCB9;
+
+
+}
+
+.hero__btn {
+    font-family: font1;
+    font-size: 20px;
+    color: aliceblue;
+    font: bold;
+    /* contenedor */
+    background-color: #9ABCB9;
+    border-radius: 50px;
+    margin: 0.5em;
+}
+
+@media screen and (max-width:780px) {
+
+    .hero {
+        flex-direction: column;
+        background-color: #9ABCB9;
+    }
+
+}
+
+/* ..................FOOTER................... */
+footer {
+    background-color: rgba(0, 0, 0, 0.535);
+    display: flex;
+    flex-direction: row;
+}
+
+footer div {
+    margin-left: 4rem;
+    width: 50%;
+    align-self: flex-start;
+}
+
+footer h3,
+p,
+hr {
+    color: var(--colorFondo);
+    font-size: 4rem;
+
+}
+
+footer nav {
+    align-self: flex-end;
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+footer nav ul li {
+
+    margin: 3rem;
+
+}
+
+footer nav ul li:hover {
+    background-color: #9ABCB9;
+}
+
+button {
+    font-size: 3rem;
+    margin: 1rem;
+    font-family: font2;
+    font-weight: bold;
+    color: var(--colorFondo);
+    background: #9ABCB9;
+    border: 5px black;
+    text-align: center;
+    width: 40rem;
+    height: 5rem;
+}
+
+button:hover {
+    background-color: #9abcb976;
+    color: black;
+}
+
+/* ..................MEDIA QUEARIES:responsive................... */
+
+
+
+/* -----------------------MAPA WEB */
+.mapaweb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mapaweb img {}

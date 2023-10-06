@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 5;
+}
+
+body {
+    margin: 5%;
+}
+
+header {
+    background-color: red;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: rgb(195, 255, 0);
+    border: 3px solid black;
+}
+
+main {
+    display:flex
+}
+
+section {
+    width: 50%;
+    height: fit-content;
+    background-color: rgb(0, 17, 255);
+    border: 3px dotted black;
+    border-radius: 10px;
+}
+
+article {
+    width: 50%;
+    background-color: rgb(0, 225, 255);
+    border: 3px dotted black;
+    border-radius: 10px;
+}
+
+.article--radio {
+    border-radius: 20px;
+
+}
+
+aside {
+    float: right;
+    width: 50%;
+    background-color: rgb(0, 255, 30);
+    border: 15px solid black;
+}
+
+footer {
+    background-color: rgb(208, 0, 255);
+    border: 3px solid black;
+    border-radius: 10px;
+}

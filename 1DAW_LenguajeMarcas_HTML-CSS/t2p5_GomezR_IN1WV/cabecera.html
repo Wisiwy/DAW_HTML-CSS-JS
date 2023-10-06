@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meter CSS en linea en cada elemento.">
+    <meta name="author" content="RaúlG">
+    <meta name="keywords" content="notacion, bem, css, html, front end">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title> Cabecera CSS</title>
+    <style>
+        /* FUENTES */
+        html {
+            font-size: 62.5%;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #071B8C;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            font-style: italic;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p,
+        a,
+        td,
+        li {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.4rem;
+        }
+        li{
+            padding:10px 20px 10px 20px;
+            border:1px solid black; 
+            display:inline-block" 
+        }
+        a:hover{
+            cursor:pointer;
+            font-size: 1.6rem;
+        }
+
+        /* BLOQUES */
+        body {
+            background: linear-gradient(to bottom, #A68863, #fde1bf, #A68863);
+        }
+
+        header {
+            background-color: #9FADBF;
+            border-radius: 20px;
+            border: 3px solid #023373;
+            padding: 2rem;
+        }
+        
+
+        table,th,td {
+            border: 2px solid black;
+        }
+
+        div {
+            padding: 2em;
+            margin: 1em;
+            border: 2px dashed #023373;
+            border-radius: 20px;
+            background: radial-gradient(#5D7CA6, #b8d7ff);
+        }
+
+        .blog__img {
+            background: radial-gradient(#b8d7ff, #5D7CA6);
+        }
+
+        img:hover {
+
+            box-shadow: 10px 5px 5px #020659;
+        }
+        
+
+        #tabla {
+            width: 80%;
+            border: 3px groove #020659;
+            border-radius: 5px;
+            background-color: #5D7CA6;
+            color: antiquewhite;
+            box-shadow: 3px 3px red, -1em 0 .4em olive;
+        }
+
+        /* ..... */
+    </style>
+</head>
+
+<body>
+
+    <!-- Header y menu navegador -->
+    <header>
+        <!-- Encabezados -->
+        <h1>BEM- Intro a la notacion de clases en CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="#bloques">Bloques</a></li>
+                <li><a href="#bloques-modificados">Bloques modificados</a></li>
+                <li><a href="#elementos">Elementos</a></li>
+                <li><a href="#elementos-modificados">Elementos-modificados</a></li>
+                <li><a href="#footer">Footer</a></li>
+            </ul>
+            <ul style="display: flex; justify-content: space-evenly; width: 80%;">
+                <li><a href="./inline.html">INLINE</a></li>
+                <li><a href="./cabecera.html">CABECERA</a></li>
+                <li><a href="./externa1.html">EXTERNAL 1</a></li>
+                <li><a href="./externa2.html">EXTERNAL 2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="blog">
+        <!-- BLOQUES DIV CON INFORMACIÓN-->
+        <h2>Bloques, Elementos y Modificadores (BEM)</h2>
+        <!-- Enlaces -->
+        <a href="https://fixu.cl/que-es-la-metodologia-bem-y-como-se-aplica-al-front-end/">¿Qué es
+            la metodología
+            BEM?</a>
+
+
+        <div id="bloques">
+            <h3>Bloques</h3>
+            <!-- Parrafos -->
+            <p>
+                <span class="p--important">Es un contenedor donde se encontrarán los diferentes elementos</span>
+                (header, main,
+                footer).
+                El bloque de elementos corresponde a la raíz de la clase y deberá ir primero. Cuando ya está
+                definido es posible nombrar los elementos que compondrán la estructura final y su contenido
+            </p>
+            <div class="blog__img">
+                <img src="./img/bloques.png" alt="captura bloques">
+            </div>
+            <!-- Linea separadora -->
+            <hr>
+        </div>
+
+        <div id="bloques-modificados">
+            <h3>Bloque modificado</h3>
+            <p class="blog__text" id="red">
+                Para agregar una variación del mismo bloque se utiliza los dos guiones medios para generar esta
+                diferencia, en el siguiente ejemplo se muestra una variación del header en modo oscuro.
+            </p>
+            <div class="blog__img">
+                <img src="./img/bloque--modi.png" alt="bloque modificado">
+            </div>
+            <hr>
+        </div>
+
+
+        <div id="elementos">
+            <h3>Elementos</h3>
+            <p class="blog__text">Es una porción mas pequeña interna a unbloque.<br>
+                El elemento son diversas partes que compondrán a un bloque y jamás existirán sin la previa
+                definición de
+                este.
+
+                El método BEM nos indica que cada elemento nace a partir de la clase del bloque que conforma seguida
+                de
+                dos guiones bajos y el nombre clave del elemento.
+            </p>
+            <div class="blog__img">
+                <img src="./img/elementos.png" alt="">
+            </div>
+            <hr>
+        </div>
+
+
+        <div id="elementos-modificados">
+            <h3>Elemento modificado</h3>
+            <p class="bloque__text">Modifica un bloque o elemento. Tal como mencionamos anteriormente en el bloque
+                modificado, también se
+                pueden generar variaciones en los elementos aplicando los dos guiones medios al mismo nivel de dicho
+                elemento.
+            </p>
+
+            <img class="bloque__img" src="./img/elemento--modi.png" alt="elemto modificad">
+
+            <hr>
+        </div>
+
+    </section>
+    <!-- TABLA-->
+    <section class="resumen">
+        <table id="tabla">
+            <tr>
+                <th colspan="2">
+                    <h3>Notacion BEM</h3>
+                </th>
+            </tr>
+            <tr>
+                <td>BEM</td>
+                <td>NOTACIÓN</td>
+            </tr>
+            <tr>
+                <td>Bloque</td>
+                <td>"seccion"</td>
+            </tr>
+            <tr>
+                <td>Elementos </td>
+                <td>"seccion__foto"</td>
+            </tr>
+            <tr>
+                <td>Modificador</td>
+                <td>"seccion__foto--dark"</td>
+            </tr>
+        </table>
+    </section>
+
+    <!--LISTA-->
+    <footer id="fo">
+        <hr>
+        <ol>
+            <li>Contacta con nosotros</li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li>C/Falsa 123</li>
+            <li>Tlfn 555-32-42-112</li>
+        </ol>
+    </footer>
+
+</body>
+
+</html>

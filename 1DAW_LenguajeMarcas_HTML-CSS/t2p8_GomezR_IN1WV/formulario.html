@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <!------------------------------------ META ------------------------------------>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="RaulG">
+        <meta name="description"
+            content="Sitio web de la cooperativa de agricultura ecologica micologica AVA- Agricultura Verde Aragonesa" ,
+            venta de productos y asesoriamiento.>
+        <meta name="keywords" content="agricultura ecologia medio ambiente naturaleza setas micologia aragon">
+        <meta name="classification"
+            content="informacion medio ambiente ecologia agricultura micologia tienda asesoramiento">
+        <title>Formulario</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./img/Favicon32px.png">
+    
+        <!------------------------------------- CSS ------------------------------------>
+        <!-- resetCSS -->
+        <link rel="stylesheet" href="./css/reset.css">
+        <!-- estilos generale -->
+        <link rel="stylesheet" href="./css/styleGeneral.css">
+    
+        <!-------------------------------- FONTS --------------------------------------->
+        <link rel="fonts" href="./fonts/AbrilFatface-Regular.ttf">
+    </head>
+
+<body>
+    <header>
+        <div class="header__nombresitio">
+            <h1 ><span style="font-size: 3em;">AVA</span><br>Agricultura Verde Aragonesa</h1>
+            <img src="./img/AvaLogo.png" alt="AvaLogo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./formulario.html">Formulario</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="./sobreNosotros.html">Nosotros</a></li>
+                <li><a href="./mapaWeb.html">Mapa Web</a></li>
+            </ul>
+        </nav>
+        <!-- ..... -->
+    </header>
+    <section class="formulario">
+        <h3 style="text-align:center;" id="titulo">¿Qué sabes sobre las ONGs Medioambientales en España?</h3>
+
+        <form action="datos.php" method="post" enctype="text/plain" name="Test ONGs medioambiente">
+
+            <!-- APARTADO 4: Fieldset y legend -->
+            <fieldset name="formulario">
+                <legend>¿Qué sabes de estasa ONGs?</legend>
+    
+                <!-- APARTADO 5: Pregunta palabra. -->
+                <ol>
+                    <li>
+                        <label for="p1"> ¿Cual es la ONG con más activistas en España?</label>
+                        <input type="text" size="9" name="p1">
+                        <hr>
+                    </li>
+    
+                    <!-- APARTADO 6: Checkbox -->
+                    <li>
+                        <label for="p2"> ¿Cual de estas ONGs tiene un oso panda como logo? </label>
+                        <ul style="list-style-type:none;">
+                            <li> <input type="checkbox" name="p2" value="WWF" id="p2"> <label for=p2">WWF</label></li>
+                            <li> <input type="checkbox" name="p2" value="SeaBirds" id="p2"> <label for=p2">Seabirds</label>
+                            </li>
+                            <li> <input type="checkbox" name="p2" value="greenpeace" id="p2"> <label
+                                    for=p2">Greenpeace</label></li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <!-- APARTADO 7: Radiobuttons -->
+                    <li>
+                        <label for="p3"> ¿En cual de estas acciones estas más interesado? </label>
+                        <ul style="list-style-type:none;">
+                            <li> <input type="radio" name="p3" value="ballenas" id="p3"> <label for=p2">Salvar
+                                    ballenas</label></li>
+                            <li> <input type="radio" name="p3" value="deforestacion" id="p3"> <label
+                                    for=p2">Deforestación</label></li>
+                            <li> <input type="radio" name="p3" value="plasticos" id="p3"> <label for=p2">Limpeza de
+                                    plasticos del mar.</label></li>
+                        </ul>
+                    </li>
+                    <hr>
+                    <!-- APARTADO 8: Valor numérico -->
+                    <li>
+                        <label for="p4">¿En qué año se fundo Greenpeace?</label><br>
+                        <input type="number" value="1950">
+                    </li>
+                    <hr>
+                    <!-- APARTADO 9: Desplegable -->
+                    <li>
+                        <label for="p5">¿En cual de estas ciudades tiene la sede WWF? </label><br>
+                        <select name="sedeWWF" id="p5">
+                            <option value="ecuador">Gland </option>
+                            <option value="suiza">Suiza</option>
+                            <option value="utah">Utah</option>
+                            <option value="napoles">Napoles</option>
+                        </select>
+    
+                    </li>
+                    <hr>
+                    <!-- APARTADO 10: Elegir color -->
+                    <li>
+                        <label for="p6">¿Qué dos colores predomina en la cola del lemur africano? </label><br>
+    
+                        <input type="color" id="p6"> <input type="color" id="p6">
+                    </li>
+                    <hr>
+                    <!-- APARTADO 11: Seleccionar fecha -->
+                    <li>
+                        <label for="p7">Introduce tu fecha de nacimiento. </label>
+                        <input type="date" name="nacimiento" id="p7">
+                    </li>
+                    <hr>
+    
+                    <!-- APARTADO 12: Insert imagen de archivo -->
+                    <li>
+                        <label for="p8">Sube imagen de tu animal o planta favorita. </label><br>
+                        <input type="file" name="animal" id="p8">
+                    </li>
+                    <hr>
+                    <!-- APARTADO 13: Barra móvil -->
+                    <li>
+                        <label for="p9">Indica cuanto te gusta la <i>"rata topo"</i> </label><br>
+                        <img src="img/rata-topo.jpg" alt="rata-topo" height="200px" style="position:center ;"><br>
+                        <label>Debería desaparecer </label>
+                        <input type="range" name="rata" id="p9" min="0" max="5">
+                        <label>Es monísimo </label>
+                    </li>
+                    <hr>
+                    <!-- APARTADO 14: Patrón -->
+                    <li>
+                        <label for="p10">Estamos realizando el seguimiento de coches contaminantes. Por favor introduce la
+                            <b>matrícula</b> de tu coche. </label>
+                        <input type="text" id="p10" placeholder="Ej. 1234 KOL" pattern="[1-9]{4} [A-Za-z]{3}"
+                            title="4 num y 3 letras 1234 KOL">
+                    </li>
+                    <hr>
+    
+                    <!-- APARTADO 15: Insertar iFrame -->
+                    <li>
+                        <h2>WWF</h2>
+                        <iframe src="https://www.wwf.es/ " name="greenpeace " frameborder="2" width="80%"
+                            height="400px"></iframe>
+                    </li>
+                    <hr>
+                    <!-- APARTADO 16: Insertar comentarios -->
+    
+                </ol>
+                <br>
+                <!-- APARTADO 2 y 3 : Botones "enviar" "borrar" -->
+                <div style="text-align:center ;">
+    
+                    <input type="reset" name="limpiar" value="Limpiar formulario">
+                    <input type="submit" name="enviar" value="Enviar">
+    
+                </div>
+            </fieldset>
+            
+        </form>    </section>
+    <footer>
+        <div>
+            <h3>CONTACTO</h3>
+            <hr>
+            <p>Tlfn 555-123-4123<br>C/Falsa 123 <br>avacoop.gmail.com</p>
+            <button><a href="./mapaWeb.html"></a>Mapa web</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html"><img src="./img/ico_casa.png" alt="BotonCasaSeta"></a></li>
+                <li><a href="https://www.facebook.com/avacooperativa"><img src="./img/ico_fb.png"
+                            alt="Icono_facebook"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC2KF9jZ6PVpzhcAVSc32Iew"><img src="./img/ico_twiter.png"
+                            alt="ico_youtube"></a></li>
+                <li><a href=https://www.instagram.com/avacooperativa/"><img src="./img/ig.png" alt="ico:instagram"></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- ...... -->
+
+    </footer>
+
+</body>
+
+</html>

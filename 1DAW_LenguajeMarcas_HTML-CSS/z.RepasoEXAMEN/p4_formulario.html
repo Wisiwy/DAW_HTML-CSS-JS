@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>¿qué sabes de <b>ecología</b></h1>
+    <form action="datos.php" metoshot>
+        <fieldset>
+            <!--Escribir la leyenda en el formulario -->
+            <legend>Formulario</legend>
+            <label for="p1"> pregunta 1</label>
+            <input type="text" name="Pregunta 1" id="p1">
+            <input type="submit" name="Enviar" value="Enviar">
+            <input type="reset" value="Limpiar">
+            <br>
+            <label for="observa">Observaciones</label><br>
+            <textarea name="observaciones" id="observa" cols="30" rows="10"></textarea>
+            <br>
+            <label for="usu">Usuario:</label>
+            <input type="text" name="" id="usu">
+            <br>
+            <label for="pass">Pass:</label>
+            <input type="password" name="" id="pass">
+            <br><input type="checkbox" name="check" id="p3"> <label for="p3">checkbox</label>
+            <ul>
+                <li><label for="p4">Pregunta1</label><input type="text"></li>
+                <li><label for="p5">Color: </label><input type="color"></li>
+                <li><label for="p6">Pregunta3</label><input type="range" name="" min="10" max="20"></li>
+                <li><label for="p7">Pregunta4</label><input type="number"></li>
+                <li><label for="p8">lista de respuesta </label>
+                    <ol>
+                        <li><input type="radio" name="p8" id="p8"><label for="">r1</label></li>
+                        <li><input type="radio" name="p8" id="p8"><label for="">r2</label></li>
+                        <li><input type="radio" name="p8" id="p8"><label for="">r3</label></li>
+                    </ol>
+                </li>
+                <li><label for="">fecha</label><input type="date"></li>
+                <li><select name="" id="">
+                        <option value="holas">Hola</option>
+                        <option value="">adios</option>
+                        <option value="">hasta lus</option>
+                    </select></li>
+                <li><label for="img">subir imagen</label>
+                <input type="file" name="img" id="img">
+                </li>
+                <li><label for="img">patron determinado</label>
+                    <input type="text" name="DNI" pattern="[0-9]{8}[a-z]" placeholder="dni aqui" id="img" title="9 numeros y una letra">
+                    </li>
+            </ul>
+
+
+
+
+
+
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>

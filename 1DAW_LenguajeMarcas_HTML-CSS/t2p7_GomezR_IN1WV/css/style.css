@@ -1,0 +1,8 @@
+html {
+    /*1 rem == 10px*/
+    font-size: 62.5%;
+    /* Asegurar que las medidas de las cajas vayan borde a borde */
+    box-sizing: content-box;
+    /*Caja se ajusta al contenido*/
+    box-sizing: border-box;
+}

@@ -1,0 +1,66 @@
+h2{
+    text-align: center;
+    font-size: 9rem;
+}
+h3{
+    font-weight: bolder;
+    font-size: 6rem;
+}
+
+/* tabla con fotografias */
+table{
+    margin: 2rem;
+    padding: 2rem;
+    border: 2px  solid black;
+    border-radius: 30px;
+    width: 90%;
+}
+table td{
+    width: 200px;
+    padding: 3px;
+}
+table img{
+    object-fit:cover;
+    width: 100%;
+
+}
+/* -----------iframes */
+h4{
+    font-size: 10rem;
+    text-align: center;
+}
+.videosYT{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.videosYT article iframe{
+    width: 80rem;
+    height: 60rem;
+}
+.container {
+    margin: 5rem;
+    align-self: center;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.videosYT p{
+    color: black;
+    font-size: 5rem;
+}
+
+
+/* -------boton foooter "voplver arriba */
+footer nav p{
+
+    color: yellow;
+}
+footer nav p:hover{
+
+    color: blue;
+    font-size: 10rem;
+}
+/* ---------seccion sonidos */
