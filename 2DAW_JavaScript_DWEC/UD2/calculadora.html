@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Primer número</p>
+    <input type="number" id="primerNumero">
+    <p>Segundo número</p>
+    <input type="number" id="segundoNumero">
+    <button onclick="mostrarResultado()">Calcular</button>
+    <p>Primer número</p>
+    <h2 id= "textoResultado">   </h2>
+<script>
+    let textoResultado
+    //de 1 a 255 parametros
+    //funcion que coge la etiqueta y lo escribe
+    function sumar(num1,num2){
+        //resultado = 2+3
+        //`+ jace eñ castomg de txt a mi,kerp
+        // resultado = numer(num1) + numer (num2)
+        resultado = +num1 + +num2;
+        return resultado;
+    }
+    function mostrarResultado(){
+        let elementoNumero1 = document.getElementById("primerNumero");
+        let elementoNumero2 = document.getElementById("segundoNumero");
+        let elementoResultado = document.getElementById("textoResultado");
+        let elementoSuma = sumar(elementoNumero1.value, elementoNumero2.value);
+        elementoResultado.textContent = elementoSuma;
+
+
+    }
+</script>
+</body>
+</html>
