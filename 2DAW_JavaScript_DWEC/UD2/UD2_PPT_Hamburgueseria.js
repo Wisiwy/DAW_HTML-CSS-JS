@@ -7,9 +7,9 @@
     Calcular precio. */
 
     
-class Pedido {}
+class Pedido {
 
-
+}
 
 class Hamburguesa {
     constructor(nombre){
@@ -20,6 +20,5 @@ class Hamburguesa {
 class Bebida {
 
 }
-class
 
 // 2. Interacción con el usuario. Como hace el usuario. 

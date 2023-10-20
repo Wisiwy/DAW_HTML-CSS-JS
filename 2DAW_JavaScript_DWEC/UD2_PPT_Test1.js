@@ -1,1 +1,0 @@
-var txt = "Hola mundo"
