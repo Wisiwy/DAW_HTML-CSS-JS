@@ -13,78 +13,130 @@
 </head>
 
 <body>
-    <!-- Header con el logo y la navegación entre las principales paginas -->
+    <!-- Header con el logo y la navegación entre las principales paginas 
+    Formateada con tabla dos filas.-->
     <header>
-        <div class="header__logo">
-            <img src="img/logo_cine.png" alt="Raul Cine Logo" style="height: 30px; width: 30px;">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./vistas.html">Vistas</a></li>
-                <li><a href="./vistas.html">Proximas</a></li>
-                <li><a href="./vistas.html">Sobre mí</a></li>
-                <li><a href="./vistas.html">Recomienda</a></li>
-            </ul>
-        </nav>
-        <hr>
+        <table border="2">
+            <tr>
+                <td colspan="2" align="center">
+                    <div class="header__logo">
+                        <img src="img/logo_cine.png" alt="Raul Cine Logo" style="height: 30px; width: 30px;">
+                    </div>
+                </td>
+                <td colspan="2" align="center">
+                    <h2>Cine de Guetto</h2>
+                </td>
+            </tr>
+            <tr>
+                <nav>
+                    <td><a href="./vistas.html">Vistas</a></td>
+                    <td><a href="./vistas.html">Proximas</a></td>
+                    <td><a href="./vistas.html">Sobre mí</a></td>
+                    <td><a href="./vistas.html">Recomienda</a></td>
+                </nav>
+            </tr>
+        </table>
+        
     </header>
     <main>
-        <!-- Hero donde se presenta la pagina web. Imagen y titulo página. -->
-        <section id="hero">
-            <hgroup>
-                <h1>Cine de Chabolo, con Raúl.</h1>
-                <h3>Un lugar donde ver como otro disfruta del cine.</h3>
-            </hgroup>
-            <hr>
-        </section>
-        <!-- Seccion con dos articulos diferenciados: vistas y proximas pelis -->
-        <section id="pelis">
-            <article id="ultimasPelis">
-                <h2>Mis últimas pelis</h2>
-                <img src="logo_ojo" alt="logoOjo">
-                <!-- QUITAR Y COPIAR A LA PAGINA "VISTAS.HTML <ul>
-                    <li>Midori</li>
-                    <li>El padre</li>
-                    <li>The Creator</li>
-                </ul> -->
-            </article>
-            <article id="proximasPelis">
-                <h2>Proximas visualizaciones</h2>
-                <ol>
-                    <li><i>A Ghost Story</i></li>
-                    <li><i>Babylon</i></li>
-                    <li><i>One Cut of the Dead</i></li>
-                </ol>
-            </article>
+        <!-- Organizo el grid con table col and rowspan (+inf index_ef). -->
+        <table border="0"> <!-- Modifica border para ver distri -->
+            <tr>
+                <td colspan="3" align="center">
+                    <!-- Hero donde se presenta la pagina web. Imagen y titulo página. -->
+                    <section id="hero">
+                        <hgroup>
+                            <h1>Disfruto del cine con Raúl.</h1>
+                            <h3>Un lugar donde ver como otro disfruta del cine.</h3>
+                        </hgroup>
+                        <hr>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <!-- Seccion con dos articulos diferenciados: vistas y proximas pelis -->
+                <section id="pelis">
+                    <td align="center">
+                        <article id="ultimasPelis">
+                            <h2>Mis últimas pelis</h2>
+                            <img src="logo_ojo" alt="logoOjo">
+                            <!-- QUITAR Y COPIAR A LA PAGINA "VISTAS.HTML <ul>
+                        <li>Midori</li>
+                        <li>El padre</li>
+                        <li>The Creator</li>
+                    </ul> -->
+                        </article>
+                    </td>
+                    <td >
+                        <article id="proximasPelis">
+                            <h2>Proximas visualizaciones</h2>
+                            <ol>
+                                <li><i>A Ghost Story</i></li>
+                                <li><i>Babylon</i></li>
+                                <li><i>One Cut of the Dead</i></li>
+                            </ol>
+                        </article>
+                    </td>
+                    <hr>
+                </section>
 
-            <hr>
-        </section>
-        <!-- Aside con un formulario para Recomendaciones -->
-        <aside>
-            <h2>Recomiendame una peli.</h2>
-            <button>Haz click aquí.</button>
-        </aside>
-        <!-- Seccion sobre mi. Cambiar: resumir y poner el tocho en otra pagina.  -->
-        <section id="sobreMi">
-            <h2>¿Quién es Raúl?</h2>
-            <p> Bienvenido a mi rincón en la web. Mi nombre es Raul Gómez y soy un apasionado del séptimo arte. Como
-                estudiante de desarrollo de aplicaciones web, mi vida gira en torno a la tecnología y la creatividad,
-                pero mi corazón pertenece al cine.
-            </p>
-            <p>Aunque mi amor por el cine es innegable, debo confesar un pequeño secreto: odio que la peña coma en el
-                cine (yo puedo hacerlo). Prefiero sumergirme en la experiencia audiovisual sin distracciones,
-                disfrutando del
-                silencio y la intensidad que solo una sala oscura puede proporcionar. Para mí, el verdadero lujo es
-                disfrutar de una película desde la comodidad de mi propio sofá, sin duda alguna, el mejor lugar para
-                apreciar el arte cinematográfico en su máxima expresión, la mantinta esta sobrevalorada.</p>
-            <p>Este espacio es mi refugio, donde compartiré mis reflexiones, reseñas y análisis sobre películas que me
-                han dejado una profunda impresión. A través de mis publicaciones, espero inspirar a otros amantes del
-                cine a descubrir nuevas joyas cinematográficas y a apreciar este medio artístico en toda su grandeza.
-            </p>
-            <p>Gracias por visitar mi rincón dedicado al séptimo arte. ¡Espero que disfrutes de esta travesía cinéfila
-                junto a mí!</p>
-            <hr>
-        </section>
+                <td rowspan="2" align="center">
+                    <!-- Aside con un formulario para Recomendaciones -->
+                    <aside>
+                        <h2>Recomiendame una peli.</h2>
+                        <button>Haz click aquí.</button>
+                    </aside>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" >
+                    <!-- Seccion sobre mi. Cambiar: resumir y poner el tocho en otra pagina.  -->
+                    <section id="sobreMi">
+                        <h2>¿Quién es Raúl?</h2>
+                        <p> Bienvenido a mi rincón en la web. Mi nombre es Raul Gómez y soy un apasionado del séptimo
+                            arte. Como
+                            estudiante de desarrollo de aplicaciones web, mi vida gira en torno a la tecnología y la
+                            creatividad,
+                            pero mi corazón pertenece al cine.
+                        </p>
+                        <p>Aunque mi amor por el cine es innegable, debo confesar un pequeño secreto: odio que la peña
+                            coma en el
+                            cine (yo puedo hacerlo). Prefiero sumergirme en la experiencia audiovisual sin
+                            distracciones,
+                            disfrutando del
+                            silencio y la intensidad que solo una sala oscura puede proporcionar. Para mí, el verdadero
+                            lujo es
+                            disfrutar de una película desde la comodidad de mi propio sofá, sin duda alguna, el mejor
+                            lugar para
+                            apreciar el arte cinematográfico en su máxima expresión, la mantinta esta sobrevalorada.</p>
+                        <p>Este espacio es mi refugio, donde compartiré mis reflexiones, reseñas y análisis sobre
+                            películas que me
+                            han dejado una profunda impresión. A través de mis publicaciones, espero inspirar a otros
+                            amantes del
+                            cine a descubrir nuevas joyas cinematográficas y a apreciar este medio artístico en toda su
+                            grandeza.
+                        </p>
+                        <p>Gracias por visitar mi rincón dedicado al séptimo arte. ¡Espero que disfrutes de esta
+                            travesía cinéfila
+                            junto a mí!</p>
+                        <hr>
+                    </section>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <!-- Pie con contacto, politica de privacidad... -->
