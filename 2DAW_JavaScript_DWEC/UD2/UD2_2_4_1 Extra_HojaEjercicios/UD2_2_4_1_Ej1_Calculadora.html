@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,13 +9,37 @@
 
 <body>
     <h1>CALCULADORA</h1>
+    <p>Primer numero: </p>
+    <input type="number" id="num1">
+    <p>Segundo numero: </p>
+    <input type="number" id="num2">
+    <h2 id="resultado"></h2>
     <script>
-        //------------------EJERCICIO 1-----------------------
-    
+        var opera = prompt("Que operación quieres hacer. <br> 1. Suma <br> 2. Multi");
+        var num1 = document.getElementById(num1), num2 = document.getElementById(num2);
+        var res;
+
+        if (opera = 1)
+            res = suma(num1, num2);
+        else
+            res = multi(num1, num2);
+
+        function suma(num1, num2) {
+            return resultado = +num1 + +num2;
+        }
+        function multi(num1, num2) {
+            return resultado = num1 * num2;
+        }
+        let elementoResultado = document.getElementById("resultado");
+        elementoResultado = res;
+        
+
+
+        
 
     </script>
 
 
 </body>
 
-</html>
+</html> -->
