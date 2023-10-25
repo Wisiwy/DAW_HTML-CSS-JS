@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja ejercicios UD2.4</title>
+</head>
+
+<body>
+    <h1>HOJA DE EJERCICIOS 2.11 - Ejercicio 4</h1>
+    <hr>
+    <script>
+
+        /* TEST CLASE SCREEN */
+        let height = screen.height;
+        let avaelh = screen.availHeight;
+        let width = screen.width;
+        let avaelw = screen.availWidth;
+        let color = screen.colorDepth;
+        let pixelDepth = screen.pixelDepth;
+        let orientacion = screen.orientation;
+        //var pantalla = new Screen(); //¿Se puede crear el objeto Screenm? me da error
+
+        document.write("<br> altura pantalla " + height);
+        document.write("<br> altura avail pantalla " + avaelh);
+        document.write("<br> anchura pantalla " + width);
+        document.write("<br> anchura avail pantalla " + avaelw);
+        document.write("<br> color depth  " + color);
+        document.write("<br> pixel depth " + pixelDepth);
+        //document.write("<br> orientacion " + orientacion); //no funciona
+        /* -------------------------- */
+        /* Ejercicio con MATH  */
+
+        let cuadradoh = Math.pow(height, 2); //pow-> eleva al numero que le indicamos  
+        let cuadradow = Math.pow(width, 2); //pow-> eleva al numero que le indicamos  
+        let diagonal = Math.sqrt(cuadradoh + cuadradow);
+        document.write("<br> Diagonal de la pantalla:  " + diagonal.toFixed(1)); //no funciona
+
+        /* -------------------------- */
+        /* TESTEO y ejercico con DOCUMENT  */
+
+        var testDocu = new Document(); //Como se usan los objetos documents para que sea el que se ve
+        //mostrar fondo gris y color blanco
+        document.body.style.backgroundColor = "gray";
+        document.body.style.color = "white";
+        document.write("<h1>Varios objetos predefinidos de JS</h1>")
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
