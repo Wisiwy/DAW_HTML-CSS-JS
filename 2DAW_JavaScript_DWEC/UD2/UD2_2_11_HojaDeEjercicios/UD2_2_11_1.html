@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja ejercicios UD2.4</title>
+</head>
+
+<body>
+    <h1>HOJA DE EJERCICIOS 2.11 - Ejercicio 1</h1>
+    <h2></h2>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            aux = new String(i); //casteo de i a str para poder coger el charAt en posicion 1
+            if (i % 7 == 0 || aux.charAt(1) == "7")
+                document.write("PUM <br>");
+            else
+                document.write(i + ", ");
+        }
+    </script>
+
+
+</body>
+
+</html>

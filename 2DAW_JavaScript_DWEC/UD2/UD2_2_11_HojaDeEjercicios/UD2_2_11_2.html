@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja ejercicios UD2.4</title>
+</head>
+
+<body>
+    <h1>HOJA DE EJERCICIOS 2.11 - Ejercicio 2</h1>
+    <script>
+        let fecha = new Date;
+        let hoy = fecha.toLocaleDateString();
+
+        var msj = "Hoy es " + convertDiaNombre(fecha.getDay());
+        document.write(msj);
+
+       
+    /*
+        funcion que convierte el numero de getDay a nombre de la semana.
+    */
+        function convertDiaNombre(num) {
+            let nomDia = "";
+            switch (num) {
+                case 1:
+                    return nomDia = "Lunes";
+                    break;
+                case 2:
+                    return nomDia = "Martes";
+                    break;
+                case 3:
+                    return nomDia = "Miercoles";
+                    break;
+                case 4:
+                    return nomDia = "Jueves";
+                    break;
+                case 5:
+                    return nomDia = "Viernes";
+                    break;
+                case 6:
+                    return nomDia = "Sabado";
+                    break;
+                case 7:
+                    return nomDia = "Domingo";
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HOJA 2.3 - Ejercicios</title>
+</head>
+
+<body>
+        <h1>HOJA 2.3 - Ejercicio 7</h1>
+        <script>
+                ///////////////
+                //Ejercicio 7
+                ///////////////
+                var num ;
+                do {
+                        //js devil tipado 
+                        aux = prompt("Num: "); //aux lo considera string variable sin definir
+                        //
+                        num = Number(aux); //casteo a tipo numero
+
+                        if (aux != "" || aux == null) { 
+                        /* usamos aux para checkear cadena vacia si usamos numero el 0 (tipo numero) 
+                        lo considera cadena vacia.   */
+                                let mensaje = (num % 2 === 0) ? (num + " es par. ") : (num + " es impar. ");
+                                alert(mensaje);
+                        }else{
+                                alert(otro );
+                        }
+
+                } while (aux == "" || aux == null); //num distinto de 0
+
+        </script>
+</body>
+
+</html>
