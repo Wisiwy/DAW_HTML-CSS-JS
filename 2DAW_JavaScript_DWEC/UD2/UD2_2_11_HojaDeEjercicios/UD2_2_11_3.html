@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja ejercicios UD2.4</title>
+</head>
+
+<body>
+    <h1>HOJA DE EJERCICIOS 2.11 - Ejercicio 3</h1>
+    <script>
+        //**Intro de DATOS. Ideal sería checkearlos String de 9 llength con una letras. Un regex.
+        // let dni = prompt("Intro DNI:" );
+        var dni = "77133284r";
+        let strLetras = "TRWAGMYFPDXBNJZSQVHLCKET";
+        document.write(verificarDni(dni));
+
+        // ***Manera en una sola linea****
+
+        /*
+        if (dni.substring(dni.length - 1) == strLetras.charAt(dni.substring(0, 8) % 23))
+            document.write("DNI VERIFICADO")
+        else
+            document.write("DNI FALSO")
+        */
+
+        //***Practicar funciones. Paso a paso***
+        function verificarDni(dni) {
+            let strLetras = "TRWAGMYFPDXBNJZSQVHLCKET";
+            //Separamos el numero y la letra
+            let dniNum = dni.substring(0, 8);
+            document.write(dniNum);
+            //cogemos el ultimo caracter. 
+            let dniLetra = dni.charAt(dni.length - 1);
+            document.write(dniLetra);
+            //comprobar si la letra coincide con la posicion del srtLetras que marca la posicion del resto de num/23 
+            let msn = (dniLetra == strLetras.charAt(dniNum % 23)) ? "Dni verdadero" : "Dni Falso";
+            // devolvemos el mensaje de falso o verdadero
+            return msn;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

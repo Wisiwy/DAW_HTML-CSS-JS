@@ -10,17 +10,46 @@
 <body>
     <h1>HOJA DE EJERCICIOS 2.11 - Ejercicio 2</h1>
     <script>
-        let fecha = new Date;
-        let hoy = fecha.toLocaleDateString();
 
-        var msj = "Hoy es " + convertDiaNombre(fecha.getDay());
-        document.write(msj);
+        /* Añadimos una funcion a la clase date convierte el numero dado por this.getMonth() a su nombre en españos.  
+        PROBLEMAS: Poner la funcion antes de declarar el obj date. 
+        Vista en w3school*/
 
-       
-    /*
-        funcion que convierte el numero de getDay a nombre de la semana.
-    */
-        function convertDiaNombre(num) {
+        Date.prototype.convertMonthName = function () {
+
+            if (this.getMonth() == 0) { return "Enero" };
+            if (this.getMonth() == 1) { return "Febrero" };
+            if (this.getMonth() == 2) { return "Marzo" };
+            if (this.getMonth() == 3) { return "April" };
+            if (this.getMonth() == 4) { return "Mayo" };
+            if (this.getMonth() == 5) { return "Junio" };
+            if (this.getMonth() == 6) { return "Julio" };
+            if (this.getMonth() == 7) { return "Agosto" };
+            if (this.getMonth() == 8) { return "Septiembre" };
+            if (this.getMonth() == 9) { return "Octubre" };
+            if (this.getMonth() == 10) { return "Noviembre" };
+            if (this.getMonth() == 11) { return "Diciembre" };
+
+        }
+
+
+        /* Sacar fecha con DATE */
+        var fecha = new Date;
+        /* Test */
+        document.write("toLocaleDateString -> " + fecha.toLocaleDateString() + "<br>");
+        
+        /* Crea mensaje parte fecha */
+        var msj = "Hoy es " + convertDayName(fecha.getDay()) + ", " + fecha.getDate() + " de "
+            + fecha.convertMonthName() + " de " + fecha.getFullYear();
+
+        /* Crea mensaje Hora con date */
+        var msjHora = " y son las " + fecha.getHours() + ":" + fecha.getMinutes() + " horas."
+        
+        document.write(msj + msjHora);        
+        /*
+            convierte el numero de getDay a nombre de la semana.
+        */
+        function convertDayName(num) {
             let nomDia = "";
             switch (num) {
                 case 1:
