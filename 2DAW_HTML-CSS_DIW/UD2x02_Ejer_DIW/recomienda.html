@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -15,20 +15,30 @@
 <body>
     <!-- Header con el logo y la navegación entre las principales paginas -->
     <header>
-        <div class="header__logo">
-            <img src="img/logo_cine.png" alt="Raul Cine Logo" style="height: 30px; width: 30px;">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./vistas.html">Vistas</a></li>
-                <li><a href="./vistas.html">Proximas</a></li>
-                <li><a href="./vistas.html">Sobre mí</a></li>
-                <li><a href="./vistas.html">Recomienda</a></li>
-            </ul>
-        </nav>
-        <hr>
+        <table border="2">
+            <tr>
+                <td colspan="2" align="center">
+                    <div class="header__logo">
+                        <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo" style="height: 30px; width: 30px;"></a>
+                    </div>
+                </td>
+                <td colspan="2" align="center">
+                    <h2>Cine de Guetto</h2>
+                </td>
+            </tr>
+            <tr>
+                <nav>
+                    <td><a href="./vistas.html">Vistas</a></td>
+                    <td><a href="./proximas.html">Proximas</a></td>
+                    <td><a href="./sobremi.html">Sobre mí</a></td>
+                    <td><a href="./recomienda.html">Recomienda</a></td>
+                </nav>
+            </tr>
+        </table>
+
     </header>
     <main>
+        <h2>RECOMIENDA UNA PELI</h2>
         <section id="pelisVistas">
             <h2>Recientemente vistas</h2>
             <article class="peli" >
