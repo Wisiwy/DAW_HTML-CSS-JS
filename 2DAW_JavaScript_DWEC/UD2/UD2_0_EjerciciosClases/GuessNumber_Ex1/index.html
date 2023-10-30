@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <script src="miScript.js" defer></script>
+</head>
+
+<body onload="cargaPag()">  <!-- Mirar que es. onload <body onload="cargaPag()"> -->
+    <header>
+        <h1>
+            <section id="lbl_info">
+                <p>Info texto</p>
+            </section>
+        </h1>
+    </header>
+    <hr>
+    <main>
+        <section id="introduccion">
+            <label id="lbl_tb" for="txt_box">Intro número</label>
+            <input type="text" name="lbl_txt_box" id="txt_box" 
+            required minlength="0" maxlength="100" size="10"> <!-- Contendor gráfico. Tamaño del input -->
+        </section>
+        <br>
+        <section id="accionador">
+            <button onclick="btn_Boton_Click()" id="btn_Boton">Pulsar</button>
+            <br>
+            <h3 id="lbl_intentos">Intentos: </h3>
+        </section>
+    </main>
+    <hr>
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>
