@@ -16,6 +16,31 @@
         debugger
         console.log("After Debbuger RAul");
 
+
+        var persona = {
+            nombre: 'Raul',
+            edad: 30,
+            saludar: function () {
+
+                alert('HOla' + this.nombre);
+            }
+        };
+        persona.saludar();
+
+        /* Ej1 : Jugador */
+        var jugador = {
+            fuerza: 1,
+            incrementarFuerza: function () {
+                this.fuerza += 1;
+            },
+            consultarFuerza: function () {
+                console.log(this.fuerza)
+            }
+        }
+
+        jugador.consultarFuerza();
+        jugador.incrementarFuerza();
+        jugador.consultarFuerza();
     </script>
 </body>
 
