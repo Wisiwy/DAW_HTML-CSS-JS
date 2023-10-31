@@ -19,7 +19,8 @@
             <tr>
                 <td colspan="2" align="center">
                     <div class="header__logo">
-                        <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo" style="height: 30px; width: 30px;"></a>
+                        <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo"
+                                style="height: 30px; width: 30px;"></a>
                     </div>
                 </td>
                 <td colspan="2" align="center">
@@ -38,46 +39,62 @@
 
     </header>
     <main>
-        <h2>RECOMIENDA UNA PELI</h2>
-        <section id="pelisVistas">
-            <h2>Recientemente vistas</h2>
-            <article class="peli" >
-                <hr>
-                <h3>Minari</h3>
-                <!-- portada -->
-                <img src="" alt="">
-                <!-- info -->
-                <a href="https://www.imdb.com/title/tt10633456/?ref_=nv_sr_srsg_1_tt_2_nm_5_q_minari">imbd</a>
-                <!-- Embeed video -->
-                <hr>
-            </article>
-        </section>
-        <section id="tablaValoracion">
-            <h3>TABLA VALORACIONES</h3>
-            <table border="1">
-                <tr>
-                    <td colspan="4" align="center"><h4>¿Una opinión más? La mía.</h4></td>
-                </tr>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Reparto</th>
-                    <th>Genero</th>
-                    <th>Valoracion</th>
-                </tr>
-                <tr>
-                    <td>Minari</td>
-                    <td>Actores asiáticos</td>
-                    <td>Drama</td>
-                    <td>&#9733;	
-                        &#9733;	
-                        &#9733;	
-                        &#9733;	
-                        &#9733;</td>
-                </tr>
-                <tr>
-                    <td colspan="4"><p>Pd:Todos se merecen un 5 porque habra alguien que le haya gustado. </p></td>
-                </tr>
-            </table>
+        <!-- Formulario recomendacion peli 
+        -->
+        <section>
+            <form action="recomendaciones" method="post">
+                <fieldset>
+                    <legend>Recomienda una peli </legend>
+                    <h3>¿Quién eres?</h3>
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="">
+                    </p>
+                    <p>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="">
+                    </p>
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="">
+                    </p>
+                    <!-- Se analiza si a Raúl le interesa tu opinión -->
+                    <hr>
+                    <h3>Sera tu opinión de mierda. </h3>
+                    <hr>
+                    <h3>Recomienda tu peli</h3>
+                    <p>
+                        <label for="pelicula">Película</label>
+                        <input type="text" name="peli" />
+                    </p>
+                    <!-- Select genero -->
+                    <p>
+                        <label for="genero">Género</label>
+                        <select name="genero" id="">
+                            <option value="terror">Terror</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="drama">Drama</option>
+                            <option value="suspense">Suspense</option>
+                            <option value="accion">Accion</option>
+                            <option value="bizarra">Bizarra</option>
+                            <option value="espanyolada">Españolada</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="colorSugiere">¿Qué color te sugiere la peli?</label>
+                        <input type="color" name="colorSugiere">    
+                    </p>
+                    <p>
+                        <input type="submit" value="Enviar" name="submit">
+                        <input type="reset" value="Limpiar formulario" name="reset">
+                    </p>
+
+                    <!-- Añadir para meter comentarios de la  peli -->
+
+                </fieldset>
+            </form>
         </section>
 
     </main>
@@ -92,8 +109,6 @@
                 <li>Contacto</li>
                 <li>Politica de cookies</li>
             </ul>
-
-
         </nav>
     </footer>
 
