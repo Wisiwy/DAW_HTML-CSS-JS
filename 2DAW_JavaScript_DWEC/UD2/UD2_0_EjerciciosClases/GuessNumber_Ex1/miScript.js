@@ -4,10 +4,10 @@
 let lbl_info = document.getElementById("lbl_info");
 let txt_box = document.getElementById("txt_box");
 let lbl_intentos = document.getElementById("lbl_intentos");
-//let lbl_random = document. getElementById ("lbl_random");
+let lbl_random = document.getElementById("lbl_random");
 let lbl_tb = document.getElementById("lbl_tb");
 let btn_Boton = document.getElementById("btn_Boton");
-//let btn_Shh = document. getElementById ("btn_Shh");
+let btn_Shh = document.getElementById("btn_Shh");
 
 
 //Declaración de variable e inicialización 
@@ -43,7 +43,7 @@ function cargaPag() {
     lbl_intentos.textContent = "Intentos " + tries;
     randomNum = rndom_calc(min, max);
     lbl_random.textContent = randomNum;
-    //lbl_random.style.display = "none";
+    lbl_random.style.display = "none";
     //lbl_rnd_mes.textContent = "¡Ánimo!";
 }
 
@@ -85,12 +85,12 @@ function btn_Boton_Click() {
                 //GameButton.interactable = false;
                 txt_box.value = ""; //reseteamos la caja de respuesta
                 tries--;
-                 lbl_intentos.innerText = "Intentos: " + tries;
+                lbl_intentos.innerText = "Intentos: " + tries;
+            }
+        } else {
+            lbl_info.Text = "Intro un numero.";
         }
-    } else {
-        lbl_info.Text = "Intro un numero.";
     }
-}
 
 
 }
@@ -115,4 +115,30 @@ function ResetGame() {
         lbl_random.textContent = randomNum;
 
     }
+}
+
+//Funcion para mostrar chivato. btnShh...
+function btn_Shh_Click() {
+
+    //Maneras de hacero
+    //1. Un mensaje on click
+    /*     alert("El Numero que buscas es el ..." + randomNum);
+     */
+
+    //2.Ocultar elemento on click
+    /*  if (lbl_random.style.display === "none") {
+         lbl_random.style.display = "block";
+     } else {
+         lbl_random.style.display = "none";
+     } */
+
+    //3.Cambiar el valor del letraro del boton. 
+    if (!isRandomShow) {
+        btn_Shh.innerText = "Introduce: " + randomNum;
+        isRandomShow = true;
+    } else {
+        btn_Shh.innerText = "Shh.."; 
+        isRandomShow = false;
+    }
+
 }
