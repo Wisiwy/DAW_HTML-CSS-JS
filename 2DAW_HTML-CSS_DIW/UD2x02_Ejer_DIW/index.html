@@ -34,11 +34,11 @@
                 </td>
                 <!-- titulo -->
                 <td colspan="2" align="center">
-                    <h2>Cine de Guetto</h2>
+                    <h2>Cine de Gueto</h2>
                 </td>
             </tr>
             <tr>
-                <!-- barra de navegacion principal -->
+                <!-- NAVEGACIÓN PRINCIPAL -->
                 <nav>
                     <td><a href="./vistas.html">Vistas</a></td>
                     <td><a href="./proximas.html">Proximas</a></td>
@@ -51,120 +51,114 @@
 
     <!-- MAIN: Organizo el grid con table col and rowspan (+inf index_ef)-->
     <main>
-        <table border="0">
+        <table border="3">
             <!-- HERO: con titulo y llamada de atención al usuario.-->
-            <section>
-                <tr>
-                    <td colspan="3" align="center">
-                        <!-- Hero donde se presenta la pagina web. Imagen y titulo página. -->
-                        <section>
-                            <hgroup>
-                                <h1>Disfruto del cine con Raúl.</h1>
-                                <h3>Un lugar donde ver como otro disfruta del cine.</h3>
-                            </hgroup>
-                            <hr>
-                        </section>
-                    </td>
-                </tr>
-            </section>
+            <tr>
+                <td colspan="3" align="center">
+                    <!-- Hero donde se presenta la pagina web. Imagen y titulo página. -->
+                    <section>
+                        <hgroup>
+                            <h1>Disfruto del cine con Raúl.</h1>
+                            <h3>Un lugar donde ver como otro disfruta del cine.</h3>
+                        </hgroup>
+                        <hr>
+                    </section>
+                </td>
+            </tr>
             <tr>
                 <!-- Seccion con dos articulos diferenciados: vistas y proximas pelis -->
                 <section>
                     <td align="center">
                         <!-- VISTAS: Title con logo. -->
-                        <article>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h2>Mis últimas pelis</h2>
-                                        </td>
-                                        <td>&#128064;</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <!-- Visualización cartelas de las pelis vistas. -->
-                            <!-- **Mejora: realizar Imagen link a ancla en la pagina de ultimas pelis vistas. (Aunque no se apreciara) -->
+                        <div>
                             <table>
                                 <tr>
                                     <td>
-                                        <div>
-                                            <img src="img/elpadre_cartel.webp" alt="cartel El Padre">
-                                            <h4>El Padre</h4>
-                                            <p>Valoracion</p>
-                                            <!--**Mejora: con Php o Js traer aquí las valoraciones puestas en la ficha de las pelis -->
-                                        </div>
+                                        <h2>Mis últimas pelis</h2>
                                     </td>
-                                    <td>
-                                        <div>
-                                            <img src="img/babylon_cartel.webp" alt="cartel Babylon">
-                                            <h4>Babylon</h4>
-                                            <p>Valoracion</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="img/minari_cartel.webp" alt="cartel minari">
-                                            <h4>Minari</h4>
-                                            <p>Valoracion</p>
-                                        </div>
-                                    </td>
+                                    <td>&#128064;</td>
                                 </tr>
                             </table>
-                        </article>
+                        </div>
+                        <!-- Visualización cartelas de las pelis vistas. -->
+                        <!-- **Mejora: realizar Imagen link a ancla en la pagina de ultimas pelis vistas. (Aunque no se apreciara) -->
+                        <table border="1">
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img src="img/elpadre_cartel.webp" alt="cartel El Padre">
+                                        <h4>El Padre</h4>
+                                        <p>Valoracion</p>
+                                        <!--**Mejora: con Php o Js traer aquí las valoraciones puestas en la ficha de las pelis -->
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/babylon_cartel.webp" alt="cartel Babylon">
+                                        <h4>Babylon</h4>
+                                        <p>Valoracion</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img src="img/minari_cartel.webp" alt="cartel minari">
+                                        <h4>Minari</h4>
+                                        <p>Valoracion</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
-
-                    <td align="center">
-                        <!-- PRÓXIMAS PELIS: Listado de las pelis con un video del trailer para ver. -->
-                        <!-- **Mejora: Js cambiar la url del video para que al dar al boton cambie.  -->
-                        <article>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h2>Proximas pelis </h2>
-                                        </td>
-                                        <td>&#9200;</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <ol>
-                                            <li><i>One Cut of the Dead</i></li>
-                                            <li><i>A Ghost Story</i></li>
-                                            <li><i>Babylon</i></li>
-                                        </ol>
-                                    </td>
-                                    <td>
-                                        <!-- Quitar con CSS los bullets -->
-                                        <ul>
-                                            <li><button>Ver trailer</button></li>
-                                            <li><button>Ver trailer</button></li>
-                                            <li><button>Ver trailer</button></li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <iframe src="https://www.youtube.com/watch?v=c_3NMtxeyfk"
-                                            frameborder="0"></iframe>
-                                    </td>
-                                </tr>
-                            </table>
-                        </article>
-                    </td>
-                    <hr>
+            <tr>
+                <!-- PRÓXIMAS PELIS: Listado de las pelis con un video del trailer para ver. -->
+                <!-- TODO: Js cambiar la url del video para que al dar al boton cambie.  -->
+                <section>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <h2>Proximas pelis </h2>
+                                </td>
+                                <td>&#9200;</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table border="1">
+                        <tr>
+                            <td>
+                                <ol>
+                                    <li><i>One Cut of the Dead</i></li>
+                                    <li><i>A Ghost Story</i></li>
+                                    <li><i>Babylon</i></li>
+                                </ol>
+                            </td>
+                            <td>
+                                <!-- Quitar con CSS los bullets -->
+                                <ul>
+                                    <li><button>Ver trailer</button></li>
+                                    <li><button>Ver trailer</button></li>
+                                    <li><button>Ver trailer</button></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <iframe src="https://www.youtube.com/watch?v=c_3NMtxeyfk" frameborder="0"></iframe>
+                            </td>
+                        </tr>
+                    </table>
                 </section>
+            </tr>
+            <hr>
+            </section>
 
-                <td rowspan="2" align="center">
-                    <!-- ASIDE: con un formulario para Recomendaciones -->
-                    <aside>
-                        <h2>Recomiendame una peli.</h2>
-                        <button>Haz click aquí.</button>
-                    </aside>
-                </td>
+            <td rowspan="2" align="center">
+                <!-- ASIDE: con un formulario para Recomendaciones -->
+                <aside>
+                    <h2>Recomiendame una peli.</h2>
+                    <button>Haz click aquí.</button>
+                </aside>
+            </td>
 
             </tr>
             <tr>
@@ -172,18 +166,21 @@
                     <!-- Seccion sobre mi. Cambiar: resumir y poner el tocho en otra pagina.  -->
                     <section>
                         <h2>¿Quién es Raúl?</h2>
-                        <table>
-                            <tr>
-                                <td>
-                                    <a href="sobremi.html"> <img src="img/Raul_AvatarMaker.png" alt="avatar raul"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p><em>"El cine es como la mortadela, tiene tantas capas como quieras"</em></p>
-                                </td>
-                            </tr>
-                        </table>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="sobremi.html"> <img src="img/Raul_AvatarMaker.png"
+                                                alt="avatar raul"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><em>"El cine es como las cebollas, tiene tantas capas como quieras"</em></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
 
                         <hr>
                     </section>
