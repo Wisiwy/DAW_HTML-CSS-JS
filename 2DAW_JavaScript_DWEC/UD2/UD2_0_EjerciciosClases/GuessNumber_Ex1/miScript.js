@@ -35,16 +35,20 @@ function rndom_calc(min, max) {
 //Formas de cargas página en el momento adecuado
 
 //window addEventListener('load',cargaPag());
-window.onload = cargaPag;
+window.onload = cargaPag();
+
+
 
 //Funcion cargar elementos
 function cargaPag() {
+
     lbl_info.append("Introduce un número entre " + min + " y " + max + "\n");
     lbl_intentos.textContent = "Intentos " + tries;
     randomNum = rndom_calc(min, max);
     lbl_random.textContent = randomNum;
     lbl_random.style.display = "none";
     //lbl_rnd_mes.textContent = "¡Ánimo!";
+    cuentaAtras();
 }
 
 //Función al pulsar botón
@@ -113,6 +117,7 @@ function ResetGame() {
         tries = 3;
         lbl_intentos.innerText = "Intentos " + tries;
         lbl_random.textContent = randomNum;
+        
 
     }
 }
@@ -137,8 +142,40 @@ function btn_Shh_Click() {
         btn_Shh.innerText = "Introduce: " + randomNum;
         isRandomShow = true;
     } else {
-        btn_Shh.innerText = "Shh.."; 
+        btn_Shh.innerText = "Shh..";
         isRandomShow = false;
     }
 
 }
+
+//EXTRA 1: Temporizador
+let temporizador = document.getElementById("tiempo");
+temporizador.innerText = "Cuenta atrás:  ";
+
+function cuentaAtras() {
+    let number = 5;
+    let myCallBack = () => {
+        console.log(number);
+        number--;
+        temporizador.innerText = "Cuenta atrás: " + number;
+        if (number == 0) {
+            clearInterval(timer); //se reinicie el intervalo timer
+            isGameWon = false;
+            ResetGame();
+        }
+    }
+
+    //() funcion anónima definir un parametro com función, 'myCallback
+    //al final la hemos sacado fuera y llamado desde el intervalo.
+    const timer = setInterval(myCallBack, 1000) //El evento lo crea cada 1000 ms un segundo. cada 1000ms restamos uno a number
+}
+/* () => {
+    console.log(number);
+    number--;
+    temporizador.innerText = "Cuenta atrás: " + number;
+    if (number == 0) {
+        clearInterval(timer); //se reinicie el intervalo timer
+        isGameWon = false;
+        ResetGame();
+    }
+} */
