@@ -14,32 +14,26 @@
 
 <body>
 
-    <!-- Header con el logo y la navegación entre las principales paginas -->
+    <!-- HEADER: con el logo y la navegación principal-->
     <header>
-        <table border="0">
-            <tr>
-                <td colspan="2" align="center">
-                    <div class="header__logo">
-                        <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo"
-                                style="height: 30px; width: 30px;"></a>
-                    </div>
-                </td>
-                <td colspan="2" align="center">
-                    <h2>Cine de Guetto</h2>
-                </td>
-            </tr>
-            <tr>
-                <!-- barra de navegacion principal -->
-                <nav>
-                    <td><a href="./vistas.html">Vistas</a></td>
-                    <td><a href="./proximas.html">Proximas</a></td>
-                    <td><a href="./sobremi.html">Sobre mí</a></td>
-                    <td><a href="./recomienda.html">Recomienda</a></td>
-                </nav>
-            </tr>
-        </table>
-
+        <!-- LOGO -->
+        <div>
+            <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo"
+                    style="height: 30px; width: 30px;"></a>
+        </div>
+        <!-- TÍTULO -->
+        <h2>Cine de Gueto</h2>
+        <!-- NAVEGACIÓN PRINCIPAL -->
+        <nav>
+            <ul>
+                <li><a href="./vistas.html">Vistas</a></li>
+                <li><a href="./proximas.html">Proximas</a></li>
+                <li><a href="./sobremi.html">Sobre mí</a></li>
+                <li><a href="./recomienda.html">Recomienda</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <h2>PELIS VISTAS</h2>
         <hr>
@@ -47,102 +41,67 @@
             <!-- PELI 1: The Big Sick -->
             <a href="entrada1_BigSick.html">
                 <article>
-                    <table>
-                        <tr>
-                            <td>
-                                <!--CARTEL-->
-                                <img style="height: 100px;" src="img/Honeyview_TheBigSickCartel.jpg"
-                                    alt="theBigSick_cartel">
-                            </td>
-                            <td>
-                                <!--INFO CENTRAL: cuidado con br a la hora de CSS -->
-                                <h3>The Big Sicks</h3>
-                                <p>Cuenta la historia real de Kumail y Emily, una pareja que se conoce en un espectáculo <br>
-                                    de comedia. Cuando parecía que todo iba a quedarse en un encuentro de una noche, su <br>
-                                    relación empieza a avanzar a pesar de las diferencias culturales, complicando las <br>
-                                    vidas de todos por las expectativas que tenían los padres de Kumail, musulmanes <br>
-                                    estrictos. (FILMAFFINITY)
-                                </p>
-
-                            </td>
-                            <!-- Puntuacion -->
-                            <td>
-                                <h3>Valoracion </h3>
-                                <h3>&#9733;&#9733;&#9733;&#9733;&#9733; </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- DURACIÓN -->
-                            <td>2h</td>
-                            <!--REPARTO: Summary -->
-                            <td>
-                                <details>
-                                    <summary>
-                                        <b>Reparto</b>
-                                    </summary>
-                                    <p>Kumail Nanjiani, Zoe Kazan, Holly Hunter, Ray Romano</p>
-                                </details>
-                            </td>
-                            <!-- IMDB -->
-                            <td>
-                                <a
-                                    href="https://www.imdb.com/title/tt5462602/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_the%2520big%2520sick">IMBD</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <!--CARTEL-->
+                    <img style="height: 100px;" src="img/Honeyview_TheBigSickCartel.jpg" alt="theBigSick_cartel">
+                    <!--INFO CENTRAL: cuidado con br a la hora de CSS -->
+                    <h3>The Big Sicks</h3>
+                    <p>Cuenta la historia real de Kumail y Emily, una pareja que se conoce en un espectáculo <br>
+                        de comedia. Cuando parecía que todo iba a quedarse en un encuentro de una noche, su <br>
+                        relación empieza a avanzar a pesar de las diferencias culturales, complicando las <br>
+                        vidas de todos por las expectativas que tenían los padres de Kumail, musulmanes <br>
+                        estrictos. (FILMAFFINITY)
+                    </p>
+                    <!-- Puntuacion -->
+                    <h3>Valoracion </h3>
+                    <h3>&#9733;&#9733;&#9733;&#9733;&#9733; </h3>
+                    <!-- DURACIÓN -->
+                    <p>2h</p>
+                    <!--REPARTO: Summary -->
+                    <details>
+                        <summary>
+                            <b>Reparto</b>
+                        </summary>
+                        <p>Kumail Nanjiani, Zoe Kazan, Holly Hunter, Ray Romano</p>
+                    </details>
+                    <!-- IMDB -->
+                    <a
+                        href="https://www.imdb.com/title/tt5462602/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_the%2520big%2520sick">IMBD</a>
                 </article>
             </a>
             <hr>
             <!-- PELI 2: MINARI -->
             <a href="entrada2_Minari.html">
                 <article>
-                    <table>
-                        <tr>
-                            <td>
-                                <!--CARTEL-->
-                                <img style="height: 100px;" src="img/minari_cartel.jpg" alt="minari_cartel">
-                            </td>
-                            <td>
-                                <!--INFO CENTRAL -->
-                                <h3>Minari</h3>
-                                <p>David, un niño coreano-americano de 7 años, ve cómo a mediados de los
-                                    <br>
-                                    años 80 su vida cambia, de la noche a la mañana, cuando su padre
-                                    decide<br>
-                                    mudarse junto a toda su familia a una zona rural de Arkansas para
-                                    abrir<br>
-                                    allí una granja, con el propósito de lograr alcanzar el sueño
-                                    americano.<br>
-                                    (FILMAFFINITY)
-                                </p>
+                    <!--CARTEL-->
+                    <img style="height: 100px;" src="img/minari_cartel.jpg" alt="minari_cartel">
+                    <!--INFO CENTRAL -->
+                    <h3>Minari</h3>
+                    <p>David, un niño coreano-americano de 7 años, ve cómo a mediados de los
+                        <br>
+                        años 80 su vida cambia, de la noche a la mañana, cuando su padre
+                        decide<br>
+                        mudarse junto a toda su familia a una zona rural de Arkansas para
+                        abrir<br>
+                        allí una granja, con el propósito de lograr alcanzar el sueño
+                        americano.<br>
+                        (FILMAFFINITY)
+                    </p>
 
-                            </td>
-                            <!-- Puntuacion -->
-                            <td>
-                                <h3>Valoracion </h3>
-                                <h3>&#9733;&#9733;&#9733;&#9733;&#9733; </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- DURACIÓN -->
-                            <td>1h 55min</td>
-                            <!--REPARTO: Summary -->
-                            <td>
-                                <details>
-                                    <summary>
-                                        <b>Reparto</b>
-                                    </summary>
-                                    <p>Steven Yeun, Han Yeri Youn, Yuh-jung, Will Patton, Alan
-                                        Kim, Noel Kate</p>
-                                </details>
-                            </td>
-                            <!-- IMDB -->
-                            <td>
-                                <a
-                                    href="https://www.imdb.com/title/tt10633456/?ref_=nv_sr_srsg_0_tt_2_nm_6_q_minari">IMBD</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <!-- Puntuacion -->
+                    <h3>Valoracion </h3>
+                    <h3>&#9733;&#9733;&#9733;&#9733;&#9733; </h3>
+                    <!-- DURACIÓN -->
+                    <p>1h 55min</p>
+                    <!--REPARTO: Summary -->
+                    <details>
+                        <summary>
+                            <b>Reparto</b>
+                        </summary>
+                        <p>Steven Yeun, Han Yeri Youn, Yuh-jung, Will Patton, Alan
+                            Kim, Noel Kate</p>
+                    </details>
+                    <!-- IMDB -->
+                    <a href="https://www.imdb.com/title/tt10633456/?ref_=nv_sr_srsg_0_tt_2_nm_6_q_minari">IMBD</a>
                 </article>
             </a>
             <hr>
@@ -150,104 +109,73 @@
             <!-- PELI 3: EL PADRE -->
             <a href="entrada3_ElPadre.html">
                 <article>
-                    <table>
-                        <tr>
-                            <!--CARTEL -->
-                            <td>
-                                <img style="height: 100px;" src="img/elpadre_cartel.jpg" alt="ElPadre_cartel">
-                            </td>
-                            <!--INFO CENTRAL -->
-                            <td>
-                                <h3>El padre</h3>
-                                <p>Anthony (Anthony Hopkins), un hombre de 80 años mordaz, algo travieso y que
-                                    tercamente ha
-                                    <br>
-                                    decidido vivir solo, rechaza todos y cada uno de las cuidadoras que su hija Anne
-                                    (Olivia<br>
-                                    Colman) intenta contratar para que le ayuden en casa. Está desesperada porque ya
-                                    no<br>
-                                    puede visitarle a diario y siente que la mente de su padre empieza a fallar y se<br>
-                                    desconecta cada vez más de la realidad. Anne sufre la paulatina pérdida de su padre
-                                    a<br>
-                                    medida que la mente de éste se deteriora, pero también se aferra al derecho a vivir
-                                    su<br>
-                                    propia vida. (FILMAFFINITY)
-                                </p>
-                            </td>
-                            <!-- PUNTUACIÓN -->
-                            <td>
-                                <h3>Valoracion
-                                </h3>
-                                <h3>&#9733;&#9733;&#9733; </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- DURACIÓN -->
-                            <td>1h 37min</td>
-                            <!--REPARTO: Summary -->
-                            <td>
-                                <details>
-                                    <summary>
-                                        <b>Reparto</b>
-                                    </summary>
-                                    <p>Anthony Hopkins, Olivia Colman, Imogen Poots, Rufus Sewell, Olivia
-                                        Williams, Mark Gatiss</p>
-                                </details>
-                            </td>
-                            <!-- IMDB -->
-                            <td>
-                                <a href="https://www.imdb.com/title/tt10272386/?ref_=fn_al_tt_1">IMBD</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <tr>
+                        <!--CARTEL -->
+                        <img style="height: 100px;" src="img/elpadre_cartel.jpg" alt="ElPadre_cartel">
+                        <!--INFO CENTRAL -->
+                        <h3>El padre</h3>
+                        <p>Anthony (Anthony Hopkins), un hombre de 80 años mordaz, algo travieso y que
+                            tercamente ha
+                            <br>
+                            decidido vivir solo, rechaza todos y cada uno de las cuidadoras que su hija Anne
+                            (Olivia<br>
+                            Colman) intenta contratar para que le ayuden en casa. Está desesperada porque ya
+                            no<br>
+                            puede visitarle a diario y siente que la mente de su padre empieza a fallar y se<br>
+                            desconecta cada vez más de la realidad. Anne sufre la paulatina pérdida de su padre
+                            a<br>
+                            medida que la mente de éste se deteriora, pero también se aferra al derecho a vivir
+                            su<br>
+                            propia vida. (FILMAFFINITY)
+                        </p>
+                        <!-- PUNTUACIÓN -->
+                        <h3>Valoracion
+                        </h3>
+                        <h3>&#9733;&#9733;&#9733; </h3>
+                        <!-- DURACIÓN -->
+                        <p>1h 37min</p>
+                        <!--REPARTO: Summary -->
+                        <details>
+                            <summary>
+                                <b>Reparto</b>
+                            </summary>
+                            <p>Anthony Hopkins, Olivia Colman, Imogen Poots, Rufus Sewell, Olivia
+                                Williams, Mark Gatiss</p>
+                        </details>
+                        <!-- IMDB -->
+                        <a href="https://www.imdb.com/title/tt10272386/?ref_=fn_al_tt_1">IMBD</a>
                 </article>
             </a>
             <hr>
             <!-- PELI 4: BABYLON -->
             <a href="entrada4_Babylon.html">
                 <article>
-                    <table>
-                        <tr>
-                            <!--CARTEL-->
-                            <td>
-                                <img style="height: 100px;" src="img/babylon_cartel.webp" alt="minari_cartel">
-                            </td>
-                            <!--INFO CENTRAL -->
-                            <td>
-                                <h3>Babylon</h3>
-                                <p>Ambientada en Los Ángeles durante los años 20, cuenta una historia de ambición y
-                                    excesos
-                                    <br>
-                                    desmesurados que recorre la ascensión y caída de múltiples personajes durante una
-                                    época
-                                    <br>
-                                    de desenfrenada decadencia y depravación en los albores de Hollywood. <br>
-                                </p>
-                            </td>
-                            <!-- PUNTUACIÓN -->
-                            <td>
-                                <h3>Valoracion; </h3>
-                                <h3>&#9733;&#9733;&#9733;&#9733; </h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <!-- DURACIÓN -->
-                            <td>3h 9min</td>
-                            <!-- REPARTO -->
-                            <td>
-                                <details>
-                                    <summary>
-                                        <b>Reparto</b>
-                                    </summary>
-                                    <p>Margot Robbie, Brad Pitt, Diego Calva, Jean Smart, Li Jun Li, Jovan Adepo </p>
-                                </details>
-                            </td>
-                            <!-- IMDB -->
-                            <td> <a
-                                    href="https://www.imdb.com/title/tt10640346/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Babylon">IMBD</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <!--CARTEL-->
+                    <img style="height: 100px;" src="img/babylon_cartel.webp" alt="minari_cartel">
+                    <!--INFO CENTRAL -->
+                    <h3>Babylon</h3>
+                    <p>Ambientada en Los Ángeles durante los años 20, cuenta una historia de ambición y
+                        excesos
+                        <br>
+                        desmesurados que recorre la ascensión y caída de múltiples personajes durante una
+                        época
+                        <br>
+                        de desenfrenada decadencia y depravación en los albores de Hollywood. <br>
+                    </p>
+                    <!-- PUNTUACIÓN -->
+                    <h3>Valoracion; </h3>
+                    <h3>&#9733;&#9733;&#9733;&#9733; </h3>
+                    <!-- DURACIÓN -->
+                    <p>3h 9min</p>
+                    <!-- REPARTO -->
+                    <details>
+                        <summary>
+                            <b>Reparto</b>
+                        </summary>
+                        <p>Margot Robbie, Brad Pitt, Diego Calva, Jean Smart, Li Jun Li, Jovan Adepo </p>
+                    </details>
+                    <!-- IMDB -->
+                    <a href="https://www.imdb.com/title/tt10640346/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Babylon">IMBD</a>
                 </article>
             </a>
             <hr>
