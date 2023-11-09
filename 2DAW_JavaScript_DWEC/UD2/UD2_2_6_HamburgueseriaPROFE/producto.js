@@ -44,7 +44,6 @@ export class Producto{
         return `Estos son los ingredientes: ${this.ingredientes}`
     }
 }
-
 //Otro procedimiento para exprotar
 //https://es.javascript.info/import-export
 //export{Producto};

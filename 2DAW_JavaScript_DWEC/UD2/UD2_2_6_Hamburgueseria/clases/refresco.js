@@ -1,13 +1,13 @@
-import { Producto } from './producto.js';
+import { Producto } from "./producto";
 
-//Definición de Refresco
 export class Refresco extends Producto {
     constructor(cantidad, ingredientes, nombre, alcohol, azucar, tamanho) {
         super(cantidad, ingredientes, nombre);
-        this.alcohol = alcohol; //bool
-        this.azucar = azucar; //bool
-
+        this.alcohol = alcohol;
+        this.azucar = azucar;
+        this.tamanho = tamanho; //S , M , L
     }
+
     set tamanho(tamanho) {
         return this.tamanho = tamanho; //Str: S,M,L
     }
@@ -19,5 +19,4 @@ export class Refresco extends Producto {
     funcionIngredientes(){
         return `Ingredientes ${this.nombre}: ${this.ingredientes}`
     }
-
 }
