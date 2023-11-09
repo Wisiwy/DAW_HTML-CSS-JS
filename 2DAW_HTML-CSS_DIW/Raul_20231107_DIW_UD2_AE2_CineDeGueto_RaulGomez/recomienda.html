@@ -9,13 +9,13 @@
     <meta name="keywords" content="cine peliculas cultura actores critica cinematográfica">
 
     <link rel="shortcut icon" href="./img/Favicon32px.png">
-    <title>Index</title>
+    <title>Recomienda</title>
 </head>
 
 <body>
     <!-- Header con el logo y la navegación entre las principales paginas -->
     <header>
-        <table border="2">
+        <table border="0">
             <tr>
                 <td colspan="2" align="center">
                     <div class="header__logo">
@@ -39,11 +39,19 @@
 
     </header>
     <main>
+        <details>
+            <summary>
+                <b>Ameniza tu estancia &#127911;</b>
+            </summary>
+            <audio src="audio/Los Punsetes - Opinión de mierda (128 kbps).mp3" controls></audio>
+        </details>
+
+       
         <!-- Formulario recomendacion peli -->
         <section>
             <form action="recomendaciones.html" method="post">
                 <fieldset>
-                    <legend>Recomienda una peli </legend>
+                    <legend><h2>Recomienda una peli </h2></legend>
                     <!-- Peticion datos personales.  -->
                     <h3>¿Quién eres?</h3>
                     <p>
@@ -72,8 +80,8 @@
                         </li>
                         <li>
                             <input type="radio" name="nolan" value="incomprendido" id="nolan">
-                            <label for=nolan">Un incomprendido. <em>"No entiendo nada de lo que hace pero hay."</em>
-                                explosiones. </label>
+                            <label for=nolan">Un incomprendido. <em>"No entiendo nada de lo que hace pero hay.
+                                explosiones." </em></label>
                         </li>
                         <li>
                             <input type="radio" name="nolan" value="sobrevalorada" id="nolan">
@@ -109,9 +117,10 @@
                     </p>
                     <!-- pregunta rango  -->
                     <p>
-                        <label for="cineEspa">Acerca del Cine Español, ¿dondé te encuentras en estas escala? : </label> <br>
+                        <label for="cineEspa">Acerca del Cine Español, ¿dondé te encuentras en estas escala? : </label>
+                        <br>
                         <label>No me pierdo nada de Santiago Segura</label>
-                        <input type="range" name="cineEspa"  min="0" max="5">
+                        <input type="range" name="cineEspa" min="0" max="5">
                         <label>Solo sintonizo La2</label>
 
                     </p>
