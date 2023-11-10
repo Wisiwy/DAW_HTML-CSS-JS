@@ -1,4 +1,4 @@
-import {Producto} from './producto.js';
+ import {Producto} from './producto.js';
 
 //Definición de Refresco
 export class Nuggets extends Producto{

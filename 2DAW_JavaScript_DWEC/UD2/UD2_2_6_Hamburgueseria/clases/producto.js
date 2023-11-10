@@ -1,4 +1,4 @@
-export class Producto {
+ export class Producto {
 
     constructor(cantidad, ingredientes, nombre) {
         this.cantidad = cantidad;

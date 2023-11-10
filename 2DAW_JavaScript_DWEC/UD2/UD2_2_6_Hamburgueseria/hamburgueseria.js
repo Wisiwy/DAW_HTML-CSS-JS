@@ -94,6 +94,7 @@ cuerpo.innerHTML += "<h3>BURGUER PACO</h3>";
 cuerpo.innerHTML += `<p><b>${date.toLocaleDateString()} &nbsp;&nbsp;&nbsp;&nbsp; ${horas}:${minutos}</b></p>`;
 cuerpo.innerHTML += "Atendido por: Raúl <br>";
 cuerpo.innerHTML += "___________________________ <br>"; //TODO - Meter en variable ticket
+cuerpo.innerHTML += "<h4>PEDIDO</h4> <br>"; //TODO - Meter en variable ticket
 
 
 
@@ -255,7 +256,10 @@ do {
             console.log(eleccionTamanho);
             switch (Number(usuarioEleccion)) {
                 case 1:
-                    alert("Manzana");
+                    alert(`Añadida Manzana ${manzana.precio}€`);
+                    cuerpo.innerHTML += `${manzana.nombre} P &nbsp; ${manzana.precio}€ <br>`;
+                    cuerpo.innerHTML += ("Ingredientes: <em>" + manzana.ingredientes + ".</em><br>");
+                    pedido.precioTot += Number(manzana._precio);
                     break;
                 case 2:
                     if (eleccionTamanho == 'p') {

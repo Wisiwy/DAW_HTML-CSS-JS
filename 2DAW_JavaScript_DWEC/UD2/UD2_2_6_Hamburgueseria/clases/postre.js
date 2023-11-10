@@ -1,4 +1,4 @@
-import { Producto } from './producto.js';
+        import { Producto } from './producto.js';
 
 export class Postre extends Producto {
     constructor(cantidad, ingredientes, nombre, celiaco, vegetariano, lactosa) {
