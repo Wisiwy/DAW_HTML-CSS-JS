@@ -5,12 +5,26 @@ export class Producto {
         this.ingredientes = ingredientes;
         this.nombre = nombre;
     }
-    /* Getters y Setters */
+    /* Getters y Setters: Diferenciamos default, pequeño y grande */
     set precio(precio) {
-        this.precio = precio;
+        this._precio = precio;
     }
+    set precioP(precioP) {
+        this._precioP = precioP;
+    }
+
+    set precioG(precioG) {
+        this._precioG = precioG;
+    }
+
     get precio() {
-        return this.precio;
+        return this._precio;
+    }
+    get precioP() {
+        return this._precioP;
+    }
+    get precioG() {
+        return this._precioG;
     }
 
     funcionIngredientes() {

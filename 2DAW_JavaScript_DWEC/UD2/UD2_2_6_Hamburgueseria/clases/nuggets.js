@@ -2,7 +2,7 @@ import {Producto} from './producto.js';
 
 //Definición de Refresco
 export class Nuggets extends Producto{
-    constructor(cantidad, ingredientes, celiaco, vegetariano){
+    constructor(cantidad, ingredientes,nombre, celiaco, vegetariano){
         super(cantidad, ingredientes, nombre);
         this.celiaco=celiaco; //bool
         this.vegetariano=vegetariano; //bool
