@@ -41,7 +41,7 @@ export class Producto{
     }
 
     funcionIngredientes(){
-        return `Estos son los ingredientes: ${this.ingredientes}`
+        return `Estos son los ingredientes: ${this.ingredientes}`;
     }
 }
 //Otro procedimiento para exprotar
