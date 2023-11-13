@@ -1,0 +1,29 @@
+<!-- Desarrolla un programa JavaScript que
+calcule el área y el perímetro de un
+rectángulo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = prompt("Ancho rectangulo (cm): ");
+        h = prompt("Altura rectangulo (cm): ");
+ /*        Con Number(a) construimos objeto number a partir lo intro en prompt
+        A diferencia de parseInt que castea entero. Al castearlo con number si lo 
+        introducico no es numerico devuelve NaN(not a number) que podremos recoger y 
+        controlar con excepciones. 
+  */
+        area = Number(a) * Number(h);
+        perimetro =( 2*Number(a)) + (2*Number(h));
+
+        document.write("<h2>Area rectángulo: " + area + " cm<sup>2</sup>. </h2>");
+        document.write("<h2>Perímetro rectángulo: " + perimetro + " cm. </h2>");
+    </script>
+
+</body>
+</html>

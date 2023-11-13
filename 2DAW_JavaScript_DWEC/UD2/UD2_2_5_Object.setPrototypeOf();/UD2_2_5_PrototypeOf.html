@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf -->
+
+    <script>
+        //Ejemplo de la pagina de mozilla.org
+        const obj = {}; //creacion objeto vacio
+        const parent = { foo: 'bar' }; //Creamos un padre con el atributo foo = 'bar'
+
+        console.log(obj.foo); // Expected output: undefined
+
+        Object.setPrototypeOf(obj, parent); //Asignamos los atributos del padre ('parent') a 'obj' que esta vacio. 
+
+        console.log(obj.foo);  // Expected output: "bar". Ahora obj tiene el atributo foo del padre
+
+        /********PARAMETROS y RETURN****************
+         * obj -> El objeto donde seteamos las propiedades
+         * prototype -> De donde cogemos las propiedadses
+         * 
+         * return -> objeto nuevo con las propiedades del prototipo
+         * 
+         ********EXCEPTIONS
+         *Devuelve la excepcion 'TypeError' en los siguientes casos: 
+         * - 'obj' no esta definido o es nulo */
+
+        const obj2 = null;
+        try {
+            Object.setPrototypeOf(obj2, parent);
+        } catch (error) {
+            console.error(error); //consola devuelve Typeerror
+        };
+
+        // Parametro no es extrensible o es un prototype inmutable
+
+        // El parametro del prototype no es un objeto o es nulo
+        //obj2 no esta definido
+        const parent2 = null;
+        try {
+            Object.setPrototypeOf(obj, parent2);
+        } catch (error) {
+            console.error(error);
+        };
+
+        /*******DESCRIPTION
+         *Object.setProtypeOf() se usa normalmente para setear las propiedades
+         de un objeto padre a un objeto. 
+         Si el 'obj' no es un objeto el método no hace nada. 
+         Si el 'prototype' tiene el mismo valor que 'obj' se devuelve 'obj' si error TypeError 
+
+
+         ********¿Qué es un OBJETO INMUTABLE EXOTICO?
+         *  'Windows' and 'location' son ejemplos. 
+         * Son objetos que por seguridad evitar ataques de proxy, se consideran inmutables. 
+         * Y provocan los errores anteriormente especificados. 
+         */
+
+        /* EJEMPLOS : Herencia sin clases. */
+
+        //TODO - Analizar código. 
+        function Human(name, level) {
+            this.name = name;
+            this.level = level;
+        }
+
+        function SuperHero(name, level) {
+            Human.call(this, name, level);
+        }
+
+        Object.setPrototypeOf(SuperHero.prototype, Human.prototype);
+
+        // Set the `[[Prototype]]` of `SuperHero.prototype`
+        // to `Human.prototype`
+        // To set the prototypal inheritance chain
+
+        Human.prototype.speak = function () {
+            return `${this.name} says hello.`;
+        };
+
+        SuperHero.prototype.fly = function () {
+            return `${this.name} is flying.`;
+        };
+
+        const superMan = new SuperHero("Clark Kent", 1);
+
+        console.log(superMan.fly());
+        console.log(superMan.speak());
+
+
+
+
+    </script>
+
+</body>
+
+</html>

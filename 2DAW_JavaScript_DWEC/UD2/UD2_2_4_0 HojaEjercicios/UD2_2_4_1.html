@@ -13,8 +13,9 @@
     <script>
         //------------------EJERCICIO 1-----------------------
         do {
+            if (nom === null || nom === "")
+                alert('Intro no valido');
             var nom = prompt("Tu nombre?");
-
         } while (nom === null || nom === "");
         document.write("Hola don " + nom);
         //?Mirar como se mete en HTML
