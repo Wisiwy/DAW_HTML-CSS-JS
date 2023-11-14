@@ -10,7 +10,8 @@
 <body>
 
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf -->
-
+    <!-- Referencia2: https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/Object_prototypes
+     -->
     <script>
         //Ejemplo de la pagina de mozilla.org
         const obj = {}; //creacion objeto vacio
@@ -57,7 +58,7 @@
          Si el 'prototype' tiene el mismo valor que 'obj' se devuelve 'obj' si error TypeError 
 
 
-         ********¿Qué es un OBJETO INMUTABLE EXOTICO?
+         ********¿Qué es un OBJETO INMUTABLE EXÓTICO?
          *  'Windows' and 'location' son ejemplos. 
          * Son objetos que por seguridad evitar ataques de proxy, se consideran inmutables. 
          * Y provocan los errores anteriormente especificados. 
@@ -65,37 +66,34 @@
 
         /* EJEMPLOS : Herencia sin clases. */
 
-        //TODO - Analizar código. 
+        //Creamos función "Human": "PADRE"
         function Human(name, level) {
             this.name = name;
             this.level = level;
         }
-
+        //Creamos funcion Superhero: "HIJO". Heredara las fundiones de "Human", llama a los atributos de Human.
         function SuperHero(name, level) {
             Human.call(this, name, level);
         }
 
-        Object.setPrototypeOf(SuperHero.prototype, Human.prototype);
-
-        // Set the `[[Prototype]]` of `SuperHero.prototype`
-        // to `Human.prototype`
+        // Set the `[[Prototype]]` of `SuperHero.prototype` to `Human.prototype`
         // To set the prototypal inheritance chain
+        Object.setPrototypeOf(SuperHero.prototype, Human.prototype); //Asignamoal protoype de SuperHero.prototype las características de Human.prototype;
 
-        Human.prototype.speak = function () {
+        Human.prototype.speak = function () { //añade la funcion speak al prototipo de Human
             return `${this.name} says hello.`;
         };
 
-        SuperHero.prototype.fly = function () {
+        SuperHero.prototype.fly = function () { //añade la funcion speak al prototipo de Human
             return `${this.name} is flying.`;
         };
 
+        //Creamos un objeto SuperHero (superman) con el prototype SuperHero que, ademas de sus propias funciones,
+        //tiene tambien las heredadas de human con setPrototypeOf.
         const superMan = new SuperHero("Clark Kent", 1);
 
         console.log(superMan.fly());
-        console.log(superMan.speak());
-
-
-
+        console.log(superMan.speak()); //SuperHero a heredado la funcion 'speak' de Human.
 
     </script>
 
