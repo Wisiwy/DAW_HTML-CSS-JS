@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="hamburgueseria.js"> </script>
+</head>
+<body>
+    <p>Selecciona los Ítems de tu pedido:</p>
+    <select name="lenguajes" id="select" onchange="mostrarProducto()">
+        <option value="hamburguesa">Hamburguesa</option>
+        <option value="bebida">Bebida</option>
+        <option value="complementos">Complementos</option>
+        <option value="postre">Postre</option>
+      </select>
+      <ul id="opciones"><script>mostrarMenu(hamburguesas);</script></ul>
+      <h2 id="precioTotal"></h2>
+      <button  onclick="generaTicket()">Obtén tu ticket</button>
+</body>
+</html>
