@@ -155,8 +155,8 @@ function mostrarMenu(arrays){
         * ya que la forma de declarar su id es la siguiente: {id="count'+alimento.id+'"}
         */
 
-        Cadena +='<button  onclick="anadirProducto('+alimento.id+')"> + </button> <a id="count'+alimento.id+'" style="color:DodgerBlue;">'+alimento.cantidad+'</a> ';
-        Cadena +='<button  onclick="suprimirProducto('+alimento.id+')"> - </button>';
+       Cadena +='<button  onclick="suprimirProducto('+alimento.id+')"> - </button> <a id="count'+alimento.id+'" style="color:DodgerBlue;">'+alimento.cantidad+'</a>';
+        Cadena +='<button  onclick="anadirProducto('+alimento.id+')"> + </button>  ';
         texto.innerHTML +="<li>"+Cadena+"</li>";
     });
     texto.innerHTML += "</ul>"
