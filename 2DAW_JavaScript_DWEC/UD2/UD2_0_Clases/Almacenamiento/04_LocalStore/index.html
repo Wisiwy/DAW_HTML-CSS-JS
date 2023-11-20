@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* localStorage: almacen al ainfomacion de forma indefinida o hasta que se elimni la info de foma intencionada.
+        sessionStorage: almacena amienta la pestaña del navegador esté abierta */
+        
+        /* Características de Local Storage y Session Storage:
+        -Permiten almacenar entre 5 MB y 10 MB de información; incluyendo texto y multimedia. 
+        - La información est´la almacenada den al amáquina cliente; no es enviada, en cad petición
+         al servidor, está ruta del anvegador del clinete
+        - Utilizan un ´numero mínimo de peticiones al servidor para reducir el tráfico de red. 
+        Previene pérdida de información cuando se desconecta de la red. 
+        -L a información es guardada por dominio web ( incluye todas las páginas del sitio) */
+        
+        
+        //1.comprobar si el navegador soporta el objeto Storage
+        /* if(typeof(Storage)!= 'undefined'){
+            alert('Navegador compatible con Storage.')
+        }else{
+            alert('Navegador NO compatible con Storage.')
+        } */
+        
+        //2.Muestra que es código nativo
+        console.log(Storage);
+        
+        //3.Asignamos unos elementos a storage
+        let listado = ['PHP','Python','Java','C#','JavaScript'];
+        localStorage.setItem("cursos", listado);
+        
+        //4.Mediante sessinStorage crearemos un elemento que se borrara automáticamente
+        sessionStorage.setItem("cursos1",listado);
+        
+        //5. Leerelementos almacenados 
+        //no necesario set item
+        localStorage.canal="Unacadenasinmal"; //==localStorage.setItem("canal,"Unacadenasinmal")
+        let lectura = localStorage.getItem("canal"); //==localStorage.canal;
+        console.log(lectura);
+        //no necesario get item
+        console.log(localStorage.cursos);
+        
+        //6.Para almacenarlo en JSON
+        localStorage.setItem("cursos2",JSON.stringify(listado));
+
+        //7.Recuperar JSON (JavaScript Objecto Notation)
+        let curso2Almacenado = JSON.parse(localStorage.getItem("cursos2"));
+        console.log(curso2Almacenado);
+
+        //8.Eliminar elemento
+        localStorage.removeItem("cursos1");
+
+        //9.Limpiar todo
+        //localStorage.clear();
+   /*      lst = [{
+            name:"Pedro",
+            age: "27"
+        },{
+            name:"Sergio",
+            age:""
+        } */
+    
+    ]        
+
+        //10. Extendiendo el objeto
+        
+        
+        
+        </script>    
+</body>
+</html>
+
+
+<!--  -->
