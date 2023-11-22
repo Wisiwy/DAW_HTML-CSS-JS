@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="espacio"></div>
     <script>
         /* localStorage: almacen al ainfomacion de forma indefinida o hasta que se elimni la info de foma intencionada.
         sessionStorage: almacena amienta la pestaña del navegador esté abierta */
@@ -35,21 +36,26 @@
         localStorage.setItem("cursos", listado);
         
         //4.Mediante sessinStorage crearemos un elemento que se borrara automáticamente
-        sessionStorage.setItem("cursos1",listado);
+        sessionStorage.setItem("cursos1",listado); //mientras este el navegador abierto
         
-        //5. Leerelementos almacenados 
+        //5. Leer elementos almacenados 
         //no necesario set item
-        localStorage.canal="Unacadenasinmal"; //==localStorage.setItem("canal,"Unacadenasinmal")
+        localStorage.canal="Unacadenasinmas"; //==localStorage.setItem("canal,"Unacadenasinmal") //como setItem pero resumido
         let lectura = localStorage.getItem("canal"); //==localStorage.canal;
         console.log(lectura);
         //no necesario get item
-        console.log(localStorage.cursos);
+        console.log(localStorage.cursos); //recuperar el contenido de cursos
         
         //6.Para almacenarlo en JSON
+            //JSON convertir objetos en cadena de texto. JSON.stringify. 
+            //Estos archivos se envian dentro
         localStorage.setItem("cursos2",JSON.stringify(listado));
+        let auxJSON = JSON.stringify(listado);
+        console.log("array en Json " + auxJSON );
 
         //7.Recuperar JSON (JavaScript Objecto Notation)
-        let curso2Almacenado = JSON.parse(localStorage.getItem("cursos2"));
+        //en cursos2Almacenado recuperamos el contenido de "cursos2" // lo transforma(parse) en un objeto par ausar en Js 
+        let curso2Almacenado = JSON.parse(localStorage.getItem("cursos2"));  
         console.log(curso2Almacenado);
 
         //8.Eliminar elemento
@@ -57,20 +63,37 @@
 
         //9.Limpiar todo
         //localStorage.clear();
-   /*      lst = [{
+
+        //10. Extendiendo el ejemplo
+
+              lst = [{
             name:"Pedro",
             age: "27"
         },{
             name:"Sergio",
-            age:""
-        } */
-    
-    ]        
+            age:"35"
+        }]
+        localStorage.setItem("personas",JSON.stringify(lst));
+        let nuevaLista = localStorage.getItem("personas");
+        //con parse comvertimos los objetos en 
+        let nuevaLista1 = JSON.parse(localStorage.getItem("personas"));
 
-        //10. Extendiendo el objeto
+        //vemos que tipo de datos son
+        console.log("nuevaLista es " + typeof(nuevaLista));
+        console.log("nuevaLista1 es " + typeof(nuevaLista1));
         
+        localStorage.clear();
         
-        
+        //11.Llevarlo a nuestro HTML
+        nuevaLista1.forEach(element => {
+            let espacioDiv = document.getElementById("espacio");
+            let div = document.createElement("div");
+            //cada elemento sera de objeto lst
+            div.innerHTML = element.name + " " + element.age;
+            espacioDiv.appendChild(div);
+            
+        });
+
         </script>    
 </body>
 </html>

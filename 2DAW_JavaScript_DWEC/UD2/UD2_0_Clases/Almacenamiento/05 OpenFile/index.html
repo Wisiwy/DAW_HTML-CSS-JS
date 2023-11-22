@@ -1,0 +1,94 @@
+<!-- GUARDAR ARCHIVOS LOCALES-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir archivo</title>
+</head>
+
+<body>
+    <!-- Dos botones que hacen lo mismo -->
+    <input type="file" id="file">
+    <button onclick="myFile()">Elige el achivo (myFile) </button>
+    <hr>
+    <hr>
+    <button onclick="button()">Elige el achivo (button) </button>
+    <br>
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    <!--     <pre id="textarea" contenteditable=""></pre>
+    -->
+    <br>
+    <br>
+    <button onclick="save()">Guardar </button>
+    <br>
+    <br>
+    <button onclick="saveAs()">Guarda en archivo como </button>
+
+
+</body>
+
+<script>
+    //1. Dos maneras de abrir file dialog: input type file; llamada al input type
+    function myFile(){
+        document.getElementById('file').click();
+    }
+
+    //2. Utilización del File System Handle web API
+    //https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle
+    let fileHandle;
+    let textarea = document.getElementById("textarea");
+
+    //función asincrona, porque no tenemos certeza de que se reciba el recurso externo y el programa debe continuar
+    //que aparezca el archivo de txt en el text area
+    async function button(){
+        [fileHandle] = await window.showOpenFilePicker();
+        let fileData = await fileHandle.getFile();
+        let text = await fileData.text();
+        //textarea.innerText= text;
+        textarea.value = text;
+    }
+
+    //3.Guardar información
+    //https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream 
+    //Cuarda los cambios que hemos hecho en el textarea
+    async function save(){
+        try{
+            let stream = await fileHandle.createWritable();
+            let contenido = textarea.value;
+            await stream.write(contenido);
+            await stream.close();
+        }catch(err){
+            console.error(err.name, err.message);
+        }
+    }
+
+    //4.Guardar infomación como...
+    async function saveAs(){
+        fileHandle= await window.showSaveFilePicker();
+        save();
+    }
+
+    //5. Restricciones a la hora de abrir un elemnto 
+    async function button2(){
+        //cambiamos que tipo de archivos aceptara FilePicker
+        [fileHandle] = await window.showOpenFilePicker({
+            types: [
+                {
+                    description: 'Not Javascript',
+                    accept:{
+                        'image/*':['.png','.gif','.jpeg','.jpg']
+                    }
+                }
+            ],
+            excludeAcceptAllOption: true,
+            multiple: false
+        });
+        let fileData = await fileHandle.getFile();
+        let text = await fileData.text();
+        textarea.innerText = text;
+    }
+</script>
+
+</html>
