@@ -1,0 +1,112 @@
+<!-- 1.Comprueba  si  una  cadena  de  texto  introducida
+     por  el  usuario  está  formada  sólo  por mayúsculas, 
+    sólo por minúsculas o por ambas simultáneamente mediante 
+    una función.Puedes ayudarte de la clase String. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_1_1_CompruebaCadena</title>
+
+</head>
+
+<body>
+    <h2>Comprobador de cadenas</h2>
+    <label for="cadena">Intro cadena: </label>
+    <input type="text" onchange="cambio(this.value)" name="cadena" id="cadena">
+    <button onclick="mostrarMensaje1()">Comprobar cadena</button>
+    <hr>
+    <h3 id="mensajeResultado"></h3>
+    <script>
+
+        let cadena = new String;
+        //var tipoCadena = checkCadena();
+        var tipoCadena = "";
+        let cadenaMay;
+        let cadenaMin;
+
+        //llamo desde el boton a esta función que tirara las otras 
+        function mostrarMensaje1() {
+            cadena = document.getElementById("cadena").value; //¡¡¡Recoger value
+
+            //1.Miramos si es mayuscula, minuscula o mixto
+            //con estructura IF...ELSE
+            tipoCadena = checkCadena();
+
+            //con estructura SWITCH....INCASE
+            //cadenaMay=cadena.toUpperCase();
+            //cadenaMin=cadena.toLowerCase();
+            //tipoCadena = checkCadena1();
+
+            //2.mostramos mensaje
+            mostrarMensaje(tipoCadena);
+        }
+
+
+
+        /* **************** */
+
+        /**FUNCION: Comprobamos mayusculas o minusculas*/
+
+        function cambio(value) {
+            cadena = value;
+            //alert(cadena);
+        }
+
+        function checkCadena() {
+            //minusculas
+            if (cadena == "")
+                return "cadena vacía"
+            else if (cadena == cadena.toLowerCase())
+                return "minúscula";
+            else if (cadena == cadena.toUpperCase())
+                return "mayúscula";
+            else
+                return "mixta";
+        }
+s
+        function checkCadena1() {
+
+            switch (cadena) {
+                case "":
+                    return "cadena vacía";
+                    break;
+                case (cadenaMin):
+                    return "minúscula";
+                    break;
+                case (cadenaMay):
+                    return "mayúscula";
+                    break;
+                default:
+                    return "mixta";
+                    break;
+
+            }
+        }
+
+        /**FUNCION: Mostramos el mensaje resultado*/
+        function mostrarMensaje(string) {
+            let msj = document.getElementById("mensajeResultado");
+            switch (string) {
+                case "minúscula":
+                    msj.textContent = "Escrita en minúscula.";
+                    break;
+                case "mayúscula":
+                    msj.textContent = "Escrita en mayúscula.";
+                    break;
+                case "mixta":
+                    msj.textContent = "Escrita en minus y mayusculas. ";
+                    break;
+                default:
+                    msj.textContent = "error";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
