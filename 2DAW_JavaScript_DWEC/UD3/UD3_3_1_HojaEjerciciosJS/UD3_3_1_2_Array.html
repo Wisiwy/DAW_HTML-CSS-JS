@@ -1,0 +1,72 @@
+<!-- Crea una página Web con un vector de seis componentes {true, 5, false, "hola", "adios", 2}. 
+Con el uso de operadores comprobar si:  
+    - El cuarto componente es mayor o no que el tercero. 
+    - Realizar un OR entre el primer y tercer componente. 
+    - Realizar un AND entre el primer y tercer componente. 
+    - Sumar, restar, multiplicar, dividir y calcular el módulo entre el segundo y el sexto 
+    componente. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_1_2_Array</title>
+</head>
+
+<body>
+    <script>
+        var array = new Array(true, 5, false, "hola", "adios", 2);
+        //mostrar elementos
+        document.write("Elementos del array: ")
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            document.write(element);
+            (i != (array.length - 1)) ? document.write(", ") : document.write(". ");
+        }
+        document.write("<hr>");
+
+        //comprobar 4º > 3º
+
+        //OP1
+        //var comparacion = (array[4]>array[3])? "mayor" : "menor";
+        //document.write(array[4] + " es " + comparacion + " que " + array[3] );
+
+        //OP2
+        var comparacion = (array[3] > array[2]) ? true : false;
+        var negacion = (!comparacion) ? " no" : "";
+        document.write(array[3] + negacion + " es mayor que " + array[2] + "<br>");
+        document.write(array[3] + " es mayor que " + array[2] + ": " + comparacion);
+        document.write("<hr>");
+
+        //OR y AND
+        var OR = array[0] || array[2];
+        var AND = array[0] && array[2];
+
+        document.write("OR: " + OR + "<br>");
+        document.write("AND: " + AND);
+        document.write("<hr>");
+
+        //OPERACIONES
+        let suma = array[1] + array[5];
+        let resta = array[1] - array[5];
+        let multiplicacion = array[1] * array[5];
+        let division = array[1] / array[5];
+        let modulo = array[1] % array[5];
+
+        document.write("Suma:", suma);
+        document.write("<br>");
+        document.write("Resta:", resta);
+        document.write("<br>");
+        document.write("Multiplicación:", multiplicacion);
+        document.write("<br>");
+        document.write("División:", division);
+        document.write("<br>");
+        document.write("Módulo:", modulo);
+
+
+    </script>
+
+</body>
+
+</html>

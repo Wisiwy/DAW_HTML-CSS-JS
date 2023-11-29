@@ -1,0 +1,41 @@
+<!-- FACTORIAL
+    Calculael número factorial de un número introducido por pantalla mediante una función.
+    Puedes ayudarte de funciones predefinidas de JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_1_3_Factorial</title>
+</head>
+
+<body>
+    <script>
+        var num = prompt("Escribe un numero para calcular factorial: ");
+        var result = factorial(parseInt(num));
+        //var result = factorialRecursivo(parseInt(num));
+        document.write("Resultado_ " + result);
+        alert("Resultado_ " + result);
+
+        // bucle for
+        function factorial(numero) {
+            let result = 1;
+            for (let i = 1; i <= numero; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        //manera recursiva
+        function factorialRecursivo(numero) {
+            if ((numero == 0))
+                return 1;
+            else
+                return numero * factorialRecursivo(numero - 1);
+        }
+    </script>
+
+</body>
+
+</html>
