@@ -1,0 +1,52 @@
+<!-- Crea un script que defina un objeto llamado ProductosAlimenticios ””. Este objeto debe
+presentar las propiedades código ””, nombre y precio ””, además del método imprimeDatos ””, el
+cual escribe por pantalla los valores de sus p ropiedades. Posteriormente, crea tres in stancias de este
+objeto y guárda las en un array. Con la ayuda del bucle for ””, utiliza el método imprimeDatos para
+mostrar por pantalla los valores de los tres objetos instanciados. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        //creamos la funcion para crear Productos alimenticios
+        function ProductosAlimenticios(codigo, nombre, precio) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
+        }
+
+        //añadimos el metodo al prototypo del objeto
+        ProductosAlimenticios.prototype.imprimeDatos = function () {
+            document.write(this.codigo + "_" + this.nombre + ": " + this.precio);
+            document.write("<br>");
+            // document.write(this.nombre);
+            // document.write(this.precio);
+        };
+
+        //instanciamos los tres productos
+        var producto1 = new ProductosAlimenticios("01", "Leche", 0.87);
+        var producto2 = new ProductosAlimenticios("02", "Pan", 0.90);
+        var producto3 = new ProductosAlimenticios("03", "Galletas", 1.87);
+
+        //metemos en un array
+        var arrayProductos = [producto1,producto2,producto3];
+
+        //leemos el array con el metodo imprime datos
+        for (let i = 0; i < arrayProductos.length; i++) {
+            const element = arrayProductos[i];
+            element.imprimeDatos();
+        }
+
+    </script>
+</body>
+
+</html>

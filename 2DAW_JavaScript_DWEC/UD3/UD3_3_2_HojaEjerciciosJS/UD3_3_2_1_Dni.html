@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_2_1_Dni</title>
+</head>
+
+<body>
+
+
+    <script>
+        //@ts-check
+        // 1.Checkeamos lo intro esta en el formato
+        let regex = /^\d{8}[a-zA-Z]{1}$/;
+
+        do {
+            var dni = prompt("Intro tu DNI: ");
+          
+            //si no cumple regex escribimos mensaje
+            if (!regex.test(dni))
+                alert("Necesario formato'12345678X'");
+            // checkeamos cumple condicion arrayu
+            else if (!checkDni(dni))
+                alert("DNI incorrecto, introduce correcto.");
+        } while (!regex.test || !checkDni(dni));
+
+        alert("El DNI "+ dni + " es correcto.");
+        // var dni = Number(document.getElementById(dni).value);
+
+        function checkDni(dni) {
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+            let numberDni = dni.slice(0, -1);
+            let letraDni = dni.slice(-1);
+            //necesario igualar, no cambia el metodo. 
+            letraDni = letraDni.toUpperCase();
+            let posicionArray =numberDni%23;  
+            let letraCorrecta = letras[posicionArray];
+            
+            return (letraCorrecta == letraDni) ? true : false;
+        }
+
+
+    </script>
+
+    <!--     <label for="dni">Into tu DNI: </label>
+    <input type="text" id="dni">
+    <button onclick="checkDni()">Comprueba DNI</button> -->
+    <!-- <h2 id = msj></h2> -->
+</body>
+
+</html>
