@@ -15,6 +15,7 @@
             var textarea = document.getElementById('introDatos');
             var texto = textarea.value;
             let palabras = texto.split(/\s+/);
+            palabras.pop();
             mostrarPalabras(palabras);
         }
         function mostrarPalabras(palabras) {
