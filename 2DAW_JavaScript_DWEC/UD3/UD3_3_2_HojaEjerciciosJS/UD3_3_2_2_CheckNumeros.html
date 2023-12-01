@@ -3,24 +3,91 @@
     -Comprueba si el segundo es positivo.
     -Comprueba si el primero es negativo o distinto de cero.
     -Comprueba si al sumar 1 al primero lo convertimos en mayor o igual que el segundo. -->
-   
-   
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <script>
-            
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_2_2_CheckNumeros</title>
+</head>
+
+<body>
+    <h1>COMPROBADOR DE NUMEROS</h1>
+    <!-- INTRO DATOS -->
+    <h2>Intro dos numeros:</h2>
+    <label for="num1">Num1</label>
+    <input type="number" name="num1" id="num1">
+    <br>
+    <label for="num2">Num2</label>
+    <input type="number" name="num2" id="num2">
+    <hr>
+    <!-- BOTONES -->
+    <button type="button" onclick="comparacion()">Comprobacion</button>
+    <button type="button" onclick="num2esPositivo()">Es positivo</button>
+    <button type="button" onclick="num1esNegativo()">Es negativo</button>
+    <button type="button" onclick="suma1()">Suma 1</button>
+
+
+
+    <script>
+
+
+        function comparacion() {
+
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            parseInt(num1);
+            parseInt(num2);
+
+            let comparacion = (num1 > num2) ? true : false; //boolean
+
+            //escribimos msj según resultado
+            let msj;
+            msj = (comparacion) ? num1 + " es mayor. " : num1 + " es menor. ";
+            alert(msj);
+        }
+
+        function num2esPositivo() {
+            let num2 = document.getElementById("num2").value;
+
+            let positivo = (num2 > 0) ? true : false; //boolean
+
+            //escribimos msj según resultado
+            let msj;
+            msj = (positivo) ? num2 + " es positivo. " : num2 + " es negativo o 0. ";
+            alert(msj);
+
+        }
+        function num1esNegativo() {
+            let num1 = document.getElementById("num1").value;
+
+            let negativo = (num1 <= 0) ? true : false; //boolean
+            //escribimos msj según resultado
+            let msj;
+            msj = (negativo) ? num1 + " es negativo. " : num1 + " es positivo o 0. ";
+            alert(msj);
+
+        }
+        function suma1() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let suma = (num1++ >= num2) ? true : false; //boolean
+            let msj = "¿" + num1 + " supera o iguala a " + num2 + "?";
+            msj = (suma) ? msj + " SI SUPERA ": msj + " NO SUPERA ";
+            alert(msj)
+
+        }
 
 
 
 
-            
-        </script>
-        
-    </body>
-    </html>
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_0_2_Array</title>
+</head>
+
+<body>
+    <div id="papel"></div>
+
+
+    <script>
+        // Ejercicio: Crea un array con los elementos 'botella', 'zeta', 'androide' y 'minuto' en un script que los ordene alfabéticamente y luego los muestre en pantalla uno debajo de otro.
+        alert("hola");
+        var elementos = ['botella', 'zeta', 'androide', 'minuto'];
+        //ordenar elementos
+
+        elementos.sort();
+        for (let i = 0; i < elementos.length; i++) {
+            const element = elementos[i];
+            // alert(element);
+            // document.write(element);
+            document.getElementById("papel").innerHTML += element + "<br>";
+        }
+        /* Ejercicio: Crea un array con los elementos '4', '21', '1' , '30' y '100000 ' en un script que los ordene de menor a mayor y luego los muestre en pantalla. */
+        var numeros = ['4', '21', '1', '30', '100000 '];
+        var numerosAux = new Array();
+        for (let i = 0; i < numeros.length; i++) {
+            const element = numeros[i];
+            // parseInt(element);
+            numerosAux.push(Number(element));
+        }
+
+        //añadimos a array prototype la funcion de ordenar numeros
+        Array.prototype.sortNumbers = function () {
+            return this.sort(
+                function (a, b) {
+                    return a - b
+                }
+            );
+        }
+        numeroAux = numerosAux.sortNumbers();
+
+        //mostramos el array
+        for (let i = 0; i < numerosAux.length; i++) {
+            const element = numerosAux[i];
+            // alert(element);
+            // document.write(element);
+            document.getElementById("papel").innerHTML += element + "<br>";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_0_3_ManipularArray</title>
+</head>
+
+<body style="display: flex;">
+
+    <script>
+
+        function manipular() {
+            var textarea = document.getElementById('introDatos');
+            var texto = textarea.value;
+            let palabras = texto.split(/\s+/);
+            mostrarPalabras(palabras);
+        }
+        function mostrarPalabras(palabras) {
+            let arrayTamano = palabras.length;
+            document.getElementById("resultado").innerHTML = "<b>Primera palabra: </b>" + palabras[0] + "<br>";
+            document.getElementById("resultado").innerHTML += "<b>Ultima palabra : </b>" + palabras[arrayTamano - 1]+ "<br>";
+            document.getElementById("resultado").innerHTML += "<b>Número de  palabras: </b>" + arrayTamano+ "<br>";
+            document.getElementById("resultado").innerHTML += "<b>Ordenadas alfabeticamente: </b>"+ "<br>";
+            palabras.sort();
+            for (let i = 0; i < palabras.length; i++) {
+                const element = palabras[i];
+                if (i != (palabras.length - 1))
+                    document.getElementById("resultado").innerHTML += element + " - ";
+                else
+                    document.getElementById("resultado").innerHTML += element;
+            }
+
+
+        }
+    </script>
+
+    <div>
+        <h1>Manipular Array</h1>
+        <h2>Introduce algunas palabras: </h2>
+        <br>
+        <textarea name="introDatos" id="introDatos" rows="10" cols="50"></textarea>
+        <br>
+        <input type="button" onclick="manipular()" value="Aceptar" id="aceptar" name="aceptar">
+    </div>
+    <div id=resultado style="box-shadow: 2px;">
+        <p>prueba para maquetacion</p>
+    </div>
+
+</body>
+
+</html>

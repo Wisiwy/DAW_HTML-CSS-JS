@@ -1,0 +1,69 @@
+<!-- Crea un script que indique por pantalla si un número introducido es par o impar utilizando una función de usuario. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD3_3_0_1_ParImpar</title>
+</head>
+
+<body>
+    <h1>PAR o IMPAR<h1>
+            <!-- INTRO DATOS -->
+            <h2>Intro un numero:</h2>
+            <label for="num1">Num1</label>
+            <input type="number" onchange="cambio(this.id, this.value)" name="num1" id="num1">
+            <br>
+
+            <label for="num2">Num2</label>
+            <input type="number" onchange="cambio(this.id, this.value)" name="num2" id="num2">
+            <hr>
+            <!-- BOTONES -->
+            <button type="button" onclick="parImpar()">Es par</button>
+            <button type="button" onclick="suma()">Suma</button>
+
+            <!-- RESULTADO -->
+            <div id="resultado"></div>
+            <script>
+
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                // num1 = parseInt(num1);
+                // num2 = parseInt(num2);
+
+                function cambio(id, value) {
+                    switch (id) {
+                        case 'num1':
+                            num1 = value;
+                            break;
+                        case 'num2':
+                            num2 = value;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                function parImpar() {
+                    let comprobacion = (num1 % 2) == 0;
+                    let msj = (comprobacion) ? num1 + " es par." : num1 + " es impar.";
+                    alert(msj);
+                }
+                // Crea una aplicación que sume dos números enteros utilizando una función de usuario.
+                function suma() {
+                    let rtdo = parseInt(num1) + parseInt(num2);
+                    mostrarResultado(rtdo);
+                }
+                //Ejercicio: Crea una función de usuario que devuelva un resultado.
+                function mostrarResultado(rtdo) {
+                    alert(rtdo);
+                }
+
+
+
+            </script>
+
+</body>
+
+</html>
