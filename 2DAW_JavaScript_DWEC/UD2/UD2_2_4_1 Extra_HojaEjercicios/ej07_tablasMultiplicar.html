@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script >
+        var num = prompt('Calcular la tabla multiplicar de: ');
+        var tabla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var tablaEscrita = document.getElementById('resultadoTabla');
+        var contenidoTabla = '';
+        for (let i = 0; i < tabla.length; i++) {
+            const element = tabla[i];
+            let rest = element * num;
+          //  document.write(rest);
+            //alert(element + " x " + num + " = " + element * num);
+            contenidoTabla += (element + " x " + num + " = " + element * num);
+           // contenidoTabla += rest;
+        }
+        tablaEscrita.innerText = contenidoTabla;
+
+    </script>
+    <div id="resultadoTabla"></div>
+
+
+</body>
+
+</html>

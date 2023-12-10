@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2</title>
+    <script>
+        function ordenar() {
+            var array1 = [num1, num2, num3, num4];
+            array1 = array1.sort((a, b) => a - b);
+            array1 = array1.reverse();
+
+            /*   let mostrar = document.getElementById("mostrar");
+              mostrar.innerText = array1.join('\n'); */
+            for (let i = 0; i < array1.length; i++) {
+                const element = array1[i];
+                //mostrar.innerHTML += element.toString(); 
+                alert(element.toString());
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <label for="num1">Intro operando1:</label>
+    <input type="text" id="num1" value="0">
+    <br>
+    <label for="num2">Intro operando2:</label>
+    <input type="text" id="num2" value="0">
+    <br>
+    <label for="num3">Intro operando2:</label>
+    <input type="text" id="num3" value="0">
+    <br>
+    <label for="num4">Intro operando2:</label>
+    <input type="text" id="num4" value="0">
+
+    <br>
+    <button type="button" id="ordenarBtn" onclick="ordenar()">Ordenar</button>
+    <div id="mostrar">
+
+    </div>
+
+    <script type="module">
+
+        var num1 = document.getElementById('num1').value;
+        var num2 = document.getElementById('num2').value;
+        var num3 = document.getElementById('num3').value;
+        var num4 = document.getElementById('num4').value;
+
+        /*document. var array1 = [num1, num2, num3,num4];
+        array1 = array.sort();
+        array1 = array.reverse(); */
+        document.getElementById("ordenarBtn").addEventListener("click", ordenar);
+
+        /* 
+                function ordenar() {
+                    var array1 = [num1, num2, num3, num4];
+                    array1 = array1.sort();
+                    array1 = array1.reverse();
+        
+                    let mostrar = document.getElementById("mostrar");
+                    for (let i = 0; i < array1.length; i++) {
+                        const element = array1[i];
+                        mostrar.innerHTML += element.toString();
+        
+                    }
+        
+                } */
+
+    </script>
+
+
+
+
+</body>
+
+</html>
