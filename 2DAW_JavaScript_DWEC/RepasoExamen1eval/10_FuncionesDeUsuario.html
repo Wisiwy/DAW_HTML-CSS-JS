@@ -1,0 +1,89 @@
+///////////////////////////////////////////////////
+////////// FUNCIONES DE USUARIO /////////
+///////////////////////////////////////////////////
+
+
+/******************/
+//** DEFINIRLAS ****/
+/******************/
+
+//definiarlas en el
+
+<HEAD></HEAD>. El navegador siempre carga esto.
+/* nombre función:
+solo letras numeros o _
+Unico
+no empezar numero
+no palabra clave o reservada */
+
+function nombre (argumentos){
+let numDevolver;
+//instrucciones
+return numDevolver
+}
+
+
+/******************/
+//** INVOCACION ****/
+/******************/
+
+//ONLOAD() o ONCLICK() - Atributos de etiquetas
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Array de Coches</title>
+    <script>
+        // Definir la clase Coche
+        function Coche(marca_in, modelo_in, anyo_in) {
+            this.marca = marca_in;
+            this.modelo = modelo_in;
+            this.anyo = anyo_in;
+        }
+
+        // Crear el array de coches
+        var coches = new Array(4);
+        coches[0] = new Coche("Ferrari", "Scaglietti", "2010");
+        coches[1] = new Coche("BMW", "Z4", "2010");
+        coches[2] = new Coche("Seat", "Toledo", "1999");
+        coches[3] = new Coche("Fiat", "500", "1995");
+
+        // Mostrar información de los coches en el documento
+        function mostrarCoches() {
+            for (var i = 0; i < coches.length; i++) {
+                document.write("Marca: " + coches[i].marca +
+                    " - Modelo: " + coches[i].modelo +
+                    " - Año de fabricación: " + coches[i].anyo + "<br>");
+            }
+        }
+        // Definimos la función saludar
+        function saludar() {
+            alert("¡Hola desde la función!");
+        }
+    </script>
+
+</head>
+
+<body onload="mostrarCoches()">
+
+
+    <button onclick="saludar()">Haz clic para saludar</button>
+
+</body>
+
+</html>
+
+/*************************************/
+//** OBJETOS definidos por USUARIO **/
+/**************************************/
+
+<!-- El codigo anteriro crea objetos a traves de la funcion coches y crea un boton para saludar  -->
+
+<!-- Se pueden cambiar propiedades y metodos de la funcion coche -->
+<script>
+    var mi_coche = new Coche("Pegeout", "206cc", "2003");
+    mi_coche.color = "azul";
+</script>
