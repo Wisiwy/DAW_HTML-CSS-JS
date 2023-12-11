@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <title>Cookies Events</title>
+        
+    </head>
+    <body>
+        <button id="verTodas">Ver todas las cookies</button>
+        <button id="crearCookie1">Crear cookie 1</button>
+        <button id="crearCookie2">Crear cookie 2</button>
+        <button id="borrarCookie1">Borrar cookie 1</button>
+        <button id="borrarCookie2">Borrar cookie 2</button>
+    </body>
+
+
+    <script>
+        //2. Añadir escuchador de evento y llamada de funcion callback
+        document.getElementById("verTodas").addEventListener("click",verTodas);
+        document.getElementById("crearCookie1").addEventListener("click",crearCookie);
+        document.getElementById("crearCookie2").addEventListener("click",crearCookie);
+        document.getElementById("borrarCookie1").addEventListener("click",borrarCookie);
+        document.getElementById("borrarCookie2").addEventListener("click",borrarCookie);
+   
+
+        //3. Funciones callback
+        function verTodas(){
+            alert(document.cookie);
+        }
+
+        //4. Extraer información de un evento en las funciones 
+        //callback para identificar el botón del que vienen
+        function crearCookie(e){
+            //3. navegadores antiguos de Microsoft no creaban el objeto evento
+            if(!e){e = window.event;}
+            if(e.target.id=="crearCookie1"){
+                document.cookie ="nombre = Alex";
+            }else if(e.target.id=="crearCookie2"){
+                document.cookie= "apellido = Almazan";
+            }
+        }
+
+
+        //5. Para borrar, proceso similar
+        function borrarCookie(e){
+            //navegadores antiguos de Microsoft no creaban el objeto evento
+            if(!e){e = window.event;}
+
+            if(e.target.id=="borrarCookie1"){
+                document.cookie ="nombre= ;expires=Thu, 01 Jan 1970 00:00:01 UTC;";
+            }else if(e.target.id=="borrarCookie2"){
+                document.cookie="apellido= ;expires=Thu, 01 Jan 1970 00:00:01 UTC;";
+            }
+        }
+   
+   </script>
+</html>

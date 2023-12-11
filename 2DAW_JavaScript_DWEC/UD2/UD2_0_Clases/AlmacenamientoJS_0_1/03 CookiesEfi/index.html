@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <head>
+        <title>Cookies Eficiente para manejar más cookies</title>
+        <script src="miScript.js"></script>
+    </head>
+    <body>
+        <button id="verTodas">Ver todas las cookies</button>
+        <button id="crearCookie">Crear cookie</button>
+        <button id="modificarCookie">Modificar cookie</button>
+        <button id="leerCookie">Leer cookie</button>
+        <button id="borrarCookie">Borrar cookie</button>
+    </body>
+
+
+    <script>
+        //2. Añadir escuchador de evento y llamada de funcion callback
+        document.getElementById("verTodas").addEventListener("click",verCookies);
+        document.getElementById("crearCookie").addEventListener("click",crearModifCookie);
+        document.getElementById("modificarCookie").addEventListener("click",crearModifCookie);
+        document.getElementById("leerCookie").addEventListener("click",leerCookie);
+        document.getElementById("borrarCookie").addEventListener("click",borrarCookie);
+   
+
+        function verCookies(){
+            alert("Cookies actuales.\n"+document.cookie);
+        }
+
+        function crearModifCookie(){
+            var nombre= prompt("Introduza el nombre de la cookie");
+            var valor = prompt("Introduzca su valor");
+            var expiracion = parseInt(prompt("Introduzca el número de días para que expire"));
+            setCookie(nombre, valor, expiracion);
+            verCookies();
+
+        }
+
+        function leerCookie(){
+            var nombre= prompt("Introduza el nombre de la cookie a consultar");
+            var resultado = getCookie(nombre);
+           alert (resultado);
+        }
+
+        function borrarCookie(){
+            var nombre= prompt("Introduza el nombre de la cookie a borrar");
+            deleteCookie(nombre);
+            verCookies();
+        }
+
+
+        //FUNCIONES DEL W3 Schools
+        //3. nombre= nombre cookie; valor = valor cookie; expiracion= días.
+        function setCookie(nombre,valor, expiracion){
+            var d= new Date();
+            //4. Fecha actual más número de días introducidos por argumento "expiración"
+            d.setTime(d.getTime()+expiracion*24*60*60*1000);
+
+            //5. creacion de la cooki
+            var expir= "expires="+d.toUTCString();
+            document.cookie = nombre+"="+valor+";"+expir+";path=/";
+
+            alert(document.cookie);
+        }
+
+        //6. Recuperar cookie por nombrede cookie
+        function getCookie(nombre){
+            var nom= nombre+"=";
+            //7. Creacion de un array con cada elemento
+            var array = document.cookie.split(";");
+            
+            //8. Recorremos el array
+            for (var i=0; i < array.length; i++){
+                //9. cogemos cada elemento del array
+                var c = array[i];
+                //10. Evaluar c hasta encontrar vacios
+                while (c.charAt(0)== " "){ //12345
+                    //11. Pasamos a c, todo menos el primer elemento
+                    c= c.substring(1);
+                }
+                //12. Extraer la parte del final
+                if(c.indexOf(nombre)==0){
+                    //13. substring= Desde...hasta
+                    return c.substring(nom.length, c.length);
+                }
+            }
+            //return vacio si no encuentra el nombr de la cookie
+            return "";
+        }
+
+        //14. Funcion para eliminar
+        function deleteCookie(nombre){
+            setCookie(nombre,"",0);
+        }
+
+        
+   </script>
+</html>

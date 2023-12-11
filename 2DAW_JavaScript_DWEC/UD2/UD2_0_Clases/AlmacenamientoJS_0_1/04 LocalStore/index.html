@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <head>
+        <title>Local Storage | Session Storage</title>
+        
+    </head>
+    <body>
+        <div id="espacio">
+
+        </div>
+    </body>
+
+
+    <script>
+        /*El objeto Storage (API de almacenamiento web) permite almacenar datos
+        de manera local en el navegador y sin necesidad de realizar una conexión 
+        a base de datos
+        */
+       
+        /*
+        localStorage: almacena la información de forma indefinida o hasta que se 
+        elimine la info de forma intencionada.
+        sessionStorage: almacena mientras la pestaña del navegador esté abierta,
+        una vez se cierra, la información se elimina de forma automática.
+        */
+
+        /*
+         Características de Local Storage y Session storage:
+         -Permiten almacenar entre 5 MB y 10MB de información; incluyendo texto y multimedia
+         -La información está almacenada en la máquina cliente; no es enviada, en cada peticion
+         al servidor, está ruta del navegador del cliente.
+         -Utilizan un número mínimo de peticiones al servidor para reducir el tráfico de red.
+         -Previene pérdida de información cuando se desconecta de la red.
+         -La información es guardada por dominio web (inlcuye todas la páginas del sitio).
+         -LocalStorage solo soporta Strings
+        */
+
+        //1. Comprobar si el navegador soporta el objeto Storage
+        /*if(typeof(Storage)!= 'undefined'){
+            alert('Navegador compatible con Storage.')
+        }else{
+            alert('Navegador NO compatible con Storage.')
+        }*/
+
+        //2. Muestra que es código nativo
+        console.log(Storage);
+
+        //3. Asignamos unos elementos a storage
+        let listado =['PHP','Python','Java','C#','JavaScript'];
+        localStorage.setItem("cursos", listado);
+
+        //4.Mediante sesinStorage crearemos un elemento que se borrara automáticamente
+        sessionStorage.setItem("cursos1", listado);
+
+        //5. Leer elementos almacenados
+        //no necesario set item
+        localStorage.canal="Unacadenasinmas"; //==localStorage.setItem("canal","Unacadenasinmas")
+        let lectura = localStorage.getItem("canal");  //==localStorage.canal;
+        console.log(lectura);
+        //no necesario get item
+        console.log(localStorage.cursos);
+
+        //6. Para almacenarlo en JSON (JavaScript Object Notation)
+        localStorage.setItem("cursos2", JSON.stringify(listado));
+        let auxJSON=JSON.stringify(listado); 
+        console.log("array en JSON: " + auxJSON);
+        //7. Recuperar JSON
+        let curso2Almacenado = JSON.parse(localStorage.cursos2);
+        console.log(curso2Almacenado); 
+
+        //8. Eliminar elemento
+        //localStorage.removeItem("cursos1");
+        //9. Limpiar todo
+        //localStorage.clear();
+
+        //10. EXTENDIENDO EL EJEMPLO
+       lst = [{
+            name: "Pedro",
+            age: "27"
+        },{
+            name:"Sergio",
+            age: "23"
+        }];
+        
+        localStorage.setItem("personas", JSON.stringify(lst));
+        let nuevaLista = localStorage.getItem("personas");   
+
+        let nuevaLista1 = JSON.parse(localStorage.getItem("personas"));
+        console.log("nuevaLista es " + typeof(nuevaLista));
+        console.log("nuevaLista1 es " + typeof(nuevaLista1));
+
+
+        //11. Llevarlo a nuestro HTML
+        nuevaLista1.forEach(element => {
+            let espacioDiv = document.getElementById("espacio");
+            let div = document.createElement("div");
+           //cada elemento sera de objeto lst
+            div.innerHTML = element.name + " " + element.age;
+            espacioDiv.appendChild(div);
+
+        });
+
+   </script>
+</html>

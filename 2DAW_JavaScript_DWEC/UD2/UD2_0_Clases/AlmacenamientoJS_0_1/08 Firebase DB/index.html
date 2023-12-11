@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <title>Firebase - SAAS DB</title>
+        <script src="miScript.js" type="module"></script>
+
+    </head>
+    <body>
+        <header><h3>Lista de contactos en FireBase</h3></header>
+        <br>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre"><br>
+        <label for="id">Id</label>
+        <input type="text" id="id"><br>
+        <label for="edad">Edad</label>
+        <input type="text" id="edad"><br>
+        <label for="comida_favorita">Comida favorita</label>
+        <input type="text" id="comida_favorita">
+        <br><br>
+        <div class="padre_boton">
+           <!--  <button onclick="almacenarContacto()" id="btn_Guardar">Guardar contacto</button> -->
+            <button id="btn_Guardar">Guardar contacto</button>
+        </div>      
+        <hr>
+        <button id="btn_Importar">Importar contactos</button>
+        <br><br>
+        <section id="muestra">Valor</section>
+
+        <!-- 2.Poner las líneas necesarias para la conexion App y DB de Firebase -->
+       <!--  <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js"></script>
+         -->  
+    </body>
+</html>
