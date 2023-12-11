@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--**HGROUP, FIGURE, FIGCAPTION -->
+    <article>
+        <!-- El elemento <hgroup> agrupa un conjunto de elementos <h1> a <h6> para representar un solo encabezado -->
+        <hgroup>
+            <!-- El encabezado principal del artículo -->
+            <h2>Palencia</h2>
+            <!-- Un subencabezado para el artículo, específicamente sobre paisajes -->
+            <h3>Paisajes</h3>
+        </hgroup>
+        <!-- El elemento <figure> representa cualquier contenido que se referencia desde el contenido principal -->
+        <figure>
+            <!-- Una imagen que representa las Montañas Palentinas con un texto alternativo -->
+            <img src="montanaPalentina.jpg" alt="Vista de la Montaña Palentina" width="350" height="400" />
+            <!-- Una leyenda para la imagen -->
+            <figcaption>Vista de la Montaña Palentina desde Camporredondo</figcaption>
+        </figure>
+    </article>
+    <hr>
+    <!-- DETAILS, Y SUMMARY -->
+    <details>
+        <summary> La ciudad de Palencia </summary>
+        <p>Localidad de 80.000 habitantes situada entre los Valles de Cerrato y la Tierra de Campos en plena meseta
+            castellana</p>
+        <p>Más información en <a href=”https://es.wikipedia.org/wiki/Palencia”> Wikipedia-Ciudad de Palencia </a> </p>
+    </details>
+
+    <!-- **MENU -->
+
+    <!-- Un párrafo con un atributo de menú contextual (contextmenu) -->
+    <p contextmenu="pintar" id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis sint
+        molestias sit perspiciatis cupiditate neque iste architecto fugiat ipsa deserunt
+        <!-- Otro párrafo dentro del primero -->
+    <p>Est, asperiores, rerum, fugiat, eius at ullam fugit id odit ducimus facere in dolorem itaque.</p>
+    </p>
+
+    <!-- Menú contextual con ID "pintar" -->
+    <menu type="context" id="pintar">
+        <!-- Opción del menú para pintar de rojo -->
+        <menuitem label="Pintar de rojo" onclick="document.getElementById('p1').style.backgroundColor='red'">
+        </menuitem>
+        <!-- Opción del menú para pintar de verde -->
+        <menuitem label="Pintar de verde" onclick="document.getElementById('p1').style.backgroundColor='green'">
+        </menuitem>
+    </menu>
+
+    <!-- **DIALOG, FORM,FIELDSET -->
+    <HR>
+    <dialog id=”favDialog” open>
+        <form method=”dialog”>
+            <section>
+                <fieldset>
+                    <legend>Sexo</legend> <input type=”radio” id=”hombre” name=”sexo”> <label
+                        for=”hombre”>Hombre</label><br> <input type=”radio” id=”mujer” name=”sexo”> <label
+                        for=”mujer”>Mujer</label>
+                </fieldset> <br> <label for=”nombre”>Nombre</label> <input type=”text” name=”nombre” id=”hombre”>
+            </section>
+            <menu> <button id=”cancel” type=”reset”>Cancelar </button> <button type=”submit”>Aceptar</button>
+            </menu>
+        </form>
+    </dialog>
+
+
+
+
+</body>
+
+</html>

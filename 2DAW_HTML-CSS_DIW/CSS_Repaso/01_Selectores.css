@@ -1,0 +1,143 @@
+/* Selector UNIVERSAL */
+* {
+    color: black;
+}
+
+/* CLASE e IDENTIFICADOR */
+.rojo {
+    color: red;
+}
+
+#parrafo1 {
+    color: #339999;
+    background-color: #D6D6D6;
+}
+
+/* DENTRO DE */
+section article p {
+    color: red;
+}
+
+section .rojo {
+    color: red;
+}
+
+/* POR ATRIBUTOS */
+p.clase1[lang=”en”] {
+    font-style: italic;
+}
+
+/* HIJO DIRECTO */
+ul>li {
+    list-style-type: square;
+}
+
+/* HERMANO ABYACENTE */
+p+p {
+    margin-top: 10px;
+}
+
+/* HERMANOS GENERALES: Aplica estilo a todos los párrafos que comparten el mismo padre */
+p~p {
+    color: green;
+}
+
+/* FIRST-CHILD: Aplica estilo al primer a hijo de un contenedor */
+div>p:first-child {
+    font-style: italic;
+}
+
+/* LAST-CHILD: Aplica estilo al último a hijo de un contenedor */
+div>p:last-child {
+    text-decoration: underline;
+}
+
+/* NTH-CHILD: Selector nth-child: Aplica estilo al segundo y cuarto párrafo hijo de un contenedor */
+div>p:nth-child(2),
+div>p:nth-child(4) {
+    background-color: #f2f2f2;
+}
+
+/* HOVER, LLINK, VISITE, ACTIVE */
+a:active {
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* AFTER, BEFORE, FOCUS, ENABLES, */
+
+/* Estilos para enlaces con foco */
+a:focus {
+    outline: 2px solid blue;
+}
+
+/* Estilos para enlaces activados o seleccionados */
+a:enabled {
+    color: green;
+}
+
+/* Estilos para enlaces desactivados o no seleccionados */
+a:disabled {
+    color: gray;
+}
+
+/* Contenido generado antes del contenido del enlace */
+a:before {
+    content: "👈 ";
+    margin-right: 5px;
+}
+
+/* Contenido generado después del contenido del enlace */
+a:after {
+    content: " 👉";
+    margin-left: 5px;
+}
+
+/* PSUUDOLEMENTOS ::first-line :: SELECTION */
+
+/* FIRST-LINE Estilos para la primera línea del elemento */
+p::first-line {
+    font-weight: bold;
+    color: blue;
+}
+
+/* FIRST-LETTER Estilos para la primera letra del elemento */
+p::first-letter {
+    font-size: 1.5em;
+    color: red;
+}
+
+/* AFTER Contenido generado después del elemento */
+p::after {
+    content: " [Fin del párrafo]";
+    color: green;
+}
+
+/* BEFORE Contenido generado antes del elemento */
+p::before {
+    content: " [Inicio del párrafo] ";
+    color: orange;
+}
+
+/* SELECTION Estilos para el texto seleccionado del elemento */
+p::selection {
+    background-color: yellow;
+    color: black;
+}
+
+/* PLACEHOLCER Pseudoclase experimental para el marcador de posición de un input */
+input::-moz-placeholder {
+    color: gray;
+}
+
+/* Pseudoclase experimental para el marcador de posición de un input en WebKit */
+input::placeholder {
+    color: gray;
+}

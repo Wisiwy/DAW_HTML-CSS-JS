@@ -1,0 +1,53 @@
+/* Ejemplo de uso de unidades de medida en CSS */
+/* Fijas
+
+    px (píxeles): Fija, unidad de medida absoluta que no cambia en relación con otros elementos en la página.
+    rem (tamaño relativo al elemento raíz): Fija, pero relativa al tamaño de fuente del elemento raíz (<html>), lo que permite un escalado global.
+    vh (viewport height): Fija, pero relativa al 1% de la altura de la ventana gráfica.
+
+Relativas
+
+    % (porcentaje): Relativa, ya que depende del tamaño del contenedor o del elemento padre.
+    em (tamaño relativo a la fuente): Relativa, ya que depende del tamaño de fuente del elemento padre más cercano.
+    auto: Relativa, ya que el navegador ajusta automáticamente el valor según el contexto.
+ */
+
+
+
+
+body {
+    font-size: 16px; /* Tamaño de fuente base para el cuerpo del documento en píxeles */
+  }
+  
+  .container {
+    width: 80%; /* Ancho del contenedor en porcentaje */
+    margin: 20px auto; /* Márgenes superior e inferior de 20 píxeles, y laterales automáticos */
+  }
+  
+  .texto {
+    padding: 1em; /* Padding del texto en em */
+  }
+  
+  .encabezado {
+    font-size: 2rem; /* Tamaño de fuente del encabezado en rem */
+    margin-bottom: 10px; /* Márgen inferior del encabezado en píxeles */
+  }
+  
+  .divisor {
+    border: 1px solid #333; /* Borde de 1 píxel sólido con color hexadecimal */
+  }
+  
+  .seccion {
+    height: 50vh; /* Altura de la sección en 50% del viewport height (vh) */
+  }
+  
+  .imagen {
+    max-width: 100%; /* Ancho máximo de la imagen en porcentaje */
+  }
+  
+  /* Márgenes y padding utilizando unidades mixtas */
+  .elemento {
+    margin: 10px 2%; /* Márgenes superior e inferior de 10 píxeles, y laterales del 2% */
+    padding: 0.5em 1em; /* Padding de 0.5 em en la parte superior e inferior, y 1 em en los laterales */
+  }
+  

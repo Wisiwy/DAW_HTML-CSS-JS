@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    
+}
+
+.cuadrado {
+    background-color: #ea0000;
+    width: 700px;
+    height: 600px;
+    position: fixed;
+    top: 195px;
+    left: 125px;
+}
+
+.circuloExterno {
+    background-color: black;
+    width: 570px;
+    height: 570px;
+    border-radius: 570px;
+    position: fixed;
+    left: 190px;
+    top: 210px;
+}
+
+.circuloInterno{
+    background-color:#ea0000;
+    width: 550px;
+    height: 550px;
+    border-radius: 550px;
+    position: fixed;
+    left: 200px;
+    top: 220px;
+}
+
+.circuloInterno2{
+    background-color: black;
+    width: 520px;
+    height: 520px;
+    border-radius: 520px;
+    position: fixed;
+    left: 215px;
+    top: 235px;
+}
+
+.triangulo1{
+    width: 0;
+    height: 0;
+    border-top: 400px solid #ea0000;
+    border-right: 120px solid transparent;
+    border-left: 120px solid transparent;
+    position: fixed;
+    top:280px;
+    left:360px
+    }
+
+.triangulo2{
+    width: 0;
+    height: 0;
+    border-right: 120px solid transparent;
+    border-bottom: 400px solid #ea0000;
+    border-left: 120px solid transparent;
+    position: fixed;
+    top:310px;
+    left:360px
+    }

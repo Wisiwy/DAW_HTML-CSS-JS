@@ -1,0 +1,115 @@
+.contenedor{
+    margin:50px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.cuadrado {
+     width: 100px; 
+     height: 100px; 
+     background: #428bca;
+     border: 3px solid #555;
+}
+.rombo-2 {
+    width: 100px; 
+    height: 100px; 
+    border: 3px solid #555; 
+    background: #428bca;
+    -webkit-transform: rotate(45deg) skew(15deg, 15deg);
+    -moz-transform: rotate(45deg) skew(15deg, 15deg);
+    -ms-transform: rotate(45deg) skew(15deg, 15deg);
+    -o-transform: rotate(45deg) skew(15deg, 15deg);
+    transform: rotate(45deg) skew(15deg, 15deg);
+    
+}
+.paralelogramo {
+    width: 150px; 
+    height: 100px; 
+    border: 3px solid #555; 
+    background: #428bca;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+}
+.trapecio-top {
+    width: 250px;                /* Ancho del trapecio */
+    height: 0px;                 /* Se establece la altura en 0 ya que es un trapecio */
+    border-right: 60px solid transparent;  /* Borde derecho para crear la inclinación en el lado derecho */
+    border-left: 60px solid transparent;   /* Borde izquierdo para crear la inclinación en el lado izquierdo */
+    border-top: 100px solid #428bca;      /* Borde superior, representa la altura del trapecio y su color */
+}
+
+
+.triangulo {
+    width: 0;                              /* Ancho del elemento establecido en 0 */
+    height: 0;                             /* Altura del elemento establecida en 0 */
+    border-left: 100px solid #f0ad4e;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-top: 50px solid transparent;    /* Borde superior sólido con un ancho de 50px y transparente (sin color) */
+    border-bottom: 50px solid transparent; /* Borde inferior sólido con un ancho de 50px y transparente (sin color) */
+}
+.triangulo-tricolor {
+    width: 0;                               /* Ancho del elemento establecido en 0 */
+    height: 0;                              /* Altura del elemento establecida en 0 */
+    border-left: 100px solid #428bca;       /* Borde izquierdo sólido con un ancho de 100px y color #428bca (azul) */
+    border-top: 50px solid #f0ad4e;         /* Borde superior sólido con un ancho de 50px y color #f0ad4e (naranja) */
+    border-bottom: 50px solid #d9534f;      /* Borde inferior sólido con un ancho de 50px y color #d9534f (rojo oscuro) */
+}
+
+.circulo {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #5cb85c;
+}
+.oval {
+    width: 250px;
+    height: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #5cb85c;
+}
+.semi-circulo {
+    width: 100px; 
+    height: 50px; 
+    border: 2px solid #555; 
+    background: #5cb85c;
+    -moz-border-radius: 100px 100px 0 0;
+    -webkit-border-radius: 100px 100px 0 0;
+    border-radius: 100px 100px 0 0;
+}
+.semi-circulo-2 {
+    width: 50px; 
+    height: 100px; 
+    border: 2px solid #555; 
+    background: #5cb85c;
+    -moz-border-radius: 0 100px 100px 0;
+    -webkit-border-radius: 0 100px 100px 0;
+    border-radius: 0 100px 100px 0;
+}
+/* Hacemos un punto y jugamos con los bordes  */
+.color-chart {
+    width:0;
+    height:0;
+    border-right: 50px solid #d9534f;
+    border-top: 50px solid #428bca;
+    border-left: 50px solid #f0ad4e;
+    border-bottom: 50px solid #5cb85c;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+/* hacemos una linea y jugamos con los bordes */
+.ribbon {
+    width: 0px;
+    height: 120px;
+    border-left: 50px solid #4fd9c9;
+    border-right: 50px solid #d9534f;
+    border-bottom: 35px solid #428bca;
+}

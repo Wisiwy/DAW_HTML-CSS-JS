@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- **CAPTION:titulo tabla -->
+    <table style="border:1px solid black">
+        <caption>Ventas</caption>
+        <tr>
+            <th>Hardware</th>
+            <td>12.190 €</td>
+        </tr>
+        <tr>
+            <th>Software</th>
+            <td>9.870 €</td>
+        </tr>
+    </table>
+
+    <table>
+
+        <!-- <colgroup> agrupa y aplica estilos a las columnas de la tabla -->
+        <colgroup>
+            <!-- <col> define una columna con fondo gris -->
+            <col style="background-color: gray">
+            <!-- <col> define dos columnas consecutivas con fondo amarillo -->
+            <col span="2" style="background-color: yellow;">
+        </colgroup>
+        <!-- <thead> agrupa la cabecera de la tabla -->
+        <thead>
+            <tr style="background-color: black; color:white">
+                <th>País</th>
+                <th>Capital</th>
+                <th>Otras ciudades</th>
+            </tr>
+        </thead>
+        <!-- <tbody> agrupa el cuerpo de la tabla -->
+        <tbody>
+            <tr>
+                <th>España</th>
+                <td>Madrid</td>
+                <td>Barcelona, Zaragoza, Sevilla, Valencia, Bilbao</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

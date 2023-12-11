@@ -1,0 +1,126 @@
+body {
+    background-color: black;
+}
+
+.cuerpo {
+    background-color: #808080;
+    width: 400px;
+    height: 270px;
+    border-radius: 50px;
+    position: fixed;
+    top: 430px;
+    left: 500px;
+}
+
+.sombraCuerpo {
+    background-color: #D3D3D3;
+    width: 320px;
+    height: 250px;
+    position: fixed;
+    top: 449px;
+    left: 544px;
+    border-radius: 100px 100px 0 0;
+}
+
+.brazo1 {
+    background-color: rgb(112, 7, 133);
+    width: 4px;
+    height: 70px;
+    position: fixed;
+    top: 630px;
+    left: 610px;
+}
+
+.brazo2 {
+    background-color: rgb(112, 7, 133);
+    width: 4px;
+    height: 70px;
+    position: fixed;
+    top: 630px;
+    left: 790px;
+}
+
+.cabeza {
+    background-color: #D3D3D3;
+    width: 340px;
+    height: 270px;
+    border-radius: 90px;
+    position: fixed;
+    top: 230px;
+    left: 530px;
+}
+
+.cuello {
+    background-color: rgb(112, 7, 133);
+    width: 300px;
+    height: 100px;
+  /*   clip-path: ellipse(50% 50%); */
+    border-radius: 80%;
+
+    position: fixed;
+    left: 550px;
+}
+
+
+
+.cristal {
+    background-color: rgb(112, 7, 133);
+    width: 270px;
+    height: 190px;
+    position: fixed;
+    left: 565px;
+    top: 270px;
+    border-radius: 90px 90px 50px 50px;
+
+}
+
+.oreja1 {
+    background-color: #D3D3D3;
+    width: 390px;
+    height: 90px;
+    border-radius: 30px 30px 15px 15px;
+    position: fixed;
+    top: 310px;
+    left: 505px;
+    z-index: -1;
+}
+
+.reflejo1 {
+    background-color: white;
+    width: 70px;
+    height: 18px;
+    border-radius: 100px;
+    position: fixed;
+    left: 700px;
+    top: 285px;
+}
+
+.reflejo2 {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    position: fixed;
+    left: 670px;
+    top: 285px;
+}
+
+.antena {
+    background-color: #D3D3D3;
+    width: 7px;
+    height: 100px;
+    position: fixed;
+    left: 863px;
+    top: 211px;
+}
+
+.bola {
+    background-color: rgb(112, 7, 133);
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    position: fixed;
+    top: 200px;
+    left: 852px;
+
+}
