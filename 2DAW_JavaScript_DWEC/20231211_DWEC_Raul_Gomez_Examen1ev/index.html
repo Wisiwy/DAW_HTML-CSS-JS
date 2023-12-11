@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra,Papel y Tijera</title>
+    <!-- <script src="miScript.js" type="module"></script> -->
+    <script>
+        //importamos clase no me sale copio todo aqui
+        //   import { Partida } from './Partida.js';
+
+        class Partida {
+
+            //CODIGO PARA COMPARACIONES 
+            //1 - PIEDRA
+            //2 - PAPEL
+            //3 - TIJERA
+
+            constructor(jugador) {
+                //generamos num aleatorio entre 1 -3
+                const num = Math.ceil(Math.random() * 3);
+
+                this.jugador = jugador; // int
+                this.maquina = num;
+                this.comprobarJugada;
+            }
+
+            set resultado(resultado) {
+                this._resultado = resultado; //Decimal 
+            }
+
+            get resultado() {
+                return this._resultado;
+            }
+
+            /*             set jugador(jugador) {
+                            this.jugador = jugador; //Decimal 
+                        }
+            
+                        get jugador() {
+                            return this.jugador;
+                        }
+            
+                        set maquina(maquina) {
+                            this.maquina = resultado; //Decimal 
+                        }
+            
+                        get maquina() {
+                            return this.maquina;
+                        } */
+
+            comprobarJugada(jugador, maquina) {
+
+                //empate
+                if (jugador !== maquina) {
+
+                    //causistica juego
+                    switch (jugador) {
+                        case 1: //piedra pierde papel (2)
+                            this.resultado = (maquina == 2) ? "pierde" : "gana";
+                            break;
+                        case 2: //papel pierde tijera (3)
+                            this.resultado = (maquina == 3) ? "pierde" : "gana";
+                            break;
+                        case 3: //tijera pierde piedra(1)
+                            this.resultado = (maquina == 1) ? "pierde" : "gana";
+                            break;
+                        default:
+                            alert("error de partida");
+                            break;
+                    }
+                } else {
+                    this.resultado = "empate"; //string
+                }
+            }
+
+
+
+            msj_resultado() {
+                let msj = '';
+                switch (this._resultado) {
+                    case "empate":
+                        msj = "Las fuerzas estan igualadas. Interesante combate"
+                        break;
+                    case "pierde":
+                        msj = "Wuac, wuac .. pierdes"
+                        break;
+                    case "gana":
+                        msj = "Poder infinito, victoria. "
+                        break;
+                    default:
+                        msj = "error"
+                        break;
+                }
+                return msj;
+            }
+
+            convertirCodigo(cod) {
+
+                switch (cod) {
+                    case 1:
+                        return 'Piedra';
+                        break;
+                    case 2:
+                        return 'Papel';
+                        break;
+                    case 3:
+                        return 'Tijera';
+                        break;
+                    default:
+                        return "error"
+                        break;
+                }
+
+            }
+
+            toString() {
+                let msjJugador = this.convertirCodigo(this.jugador);
+                let msjMaquina = this.convertirCodigo(this.maquina);
+
+                return msjJugador + " vs " + msjMaquina;
+            }
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <!-- instrucciones -->
+    <h1>Piedra, papel o tijera</h1>
+    <p>Tienes que elegir una de las opciones: piedra, papel o tijera.<br>El PC elegirá su opción y dará el resultado.
+        <br>
+        En 3 segundos, empezará una nueva ronda.
+    </p>
+    <br>
+    <hr>
+    <!-- botones -->
+    <h2>¡Elige!</h2>
+    <label for="piedra_btn">Piedra</label>
+    <button id="piedra_btn" onclick="jugador = 1" value="1">Elige</button><br>
+    <label for="papel_btn">Papel</label>
+    <button id="papel_btn" onclick="jugador = 2" value="2" onclick="">Elige</button><br>
+    <label for="tijera_btn">Tijera</label>
+    <button id="tijera_btn" onclick="jugador = 3" value="3">Elige</button><br>
+    <hr>
+
+    <!-- resultado -->
+    <div id="resultado"></div>
+    <!-- msj resultado -->
+    <div id="msj "></div>
+    <!-- mensaje segundos -->
+
+
+    <script>
+
+        //creamos partida regogiendo datos
+        var jugador = 0; //int -jugada jugador
+
+        //INTENTO DE SACAR PANTALLA
+/*         jugador = prompt("Que juegas (Piedra 1, papel 2 o tijera 3): ");
+        let partida = new Partida(jugador);
+        partida.comprobarJugada();
+        let resultado = document.getElementById("resultado");
+        var msjPartida = String(partida.msj_resultado());
+        alert(partida.toString());
+
+        resultado.innerHTML = "<p>" + msjPartida + "</p>"; */
+
+        //do {
+        //mostramos el mensaje
+        //OPCION ALERT Y PROMPTS
+                 jugador = prompt("Que juegas (Piedra 1, papel 2 o tijera 3): ");
+                let partida = new Partida(jugador);
+                partida.comprobarJugada();
+                var msjPartida = String(partida.msj_resultado());
+                alert(msjPartida); 
+
+
+        //GUARDAR EN COOKIES
+        //guardamos partidas en un array
+        /*             var sesion = []; //strings
+                    sesion.push(partida._resultado);
+                    alert(sesion);
+                    //si no esta crado la recogemos si esta
+                    setCookie() */
+
+
+
+
+        //TODO hacer buucle partidas mientras no se prete boton
+        //} while (condition);
+
+        function setCookie(nombre, valor, expiracion) {
+            var d = new Date();
+            //4.Fecha actual más número de días introducidos por argumento"exspiración"
+            d.setTime(d.getTime() + (expiracion * 24 * 60 * 60 * 1000)); //conversion a cookies
+
+            //5.Creacion de las cookie
+            var expir = "expires=" + d.toUTCString(); //formateo a UTCs
+            document.cookie = nombre + "=" + valor + ";" + expir + ";path=/";
+            alert(document.cookie);
+        }
+    </script>
+</body>
+
+</html>
