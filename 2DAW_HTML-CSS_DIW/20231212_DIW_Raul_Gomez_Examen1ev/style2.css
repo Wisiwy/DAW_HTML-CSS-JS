@@ -1,0 +1,78 @@
+* {
+     box-sizing: border-box;
+  } 
+body{
+    margin:15%;
+}
+main{
+    display: flex;
+    margin: auto;
+}
+h1{
+text-align: center;
+}
+
+/* Seccion Titulos de las rondas */
+#rondas {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* COLUMNAS PARA CADA RONDA */
+.ronda{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.jugador, .gn{
+    text-align: center;
+    vertical-align: baseline;
+    width: 100%;
+}
+
+/* Organizacion de ronda 1 jugadores */
+
+#j1,#j3,#j5,#j7{
+    border-bottom: 2px solid #555; 
+
+}
+#j2,#j4,#j6,#j8{
+    border-right: 2px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-bottom: 2px solid #555; 
+}
+
+/* Lineas ronda 2 ganadores */
+
+#g1,#g3,#g4,#g6{
+    border-bottom: 2px solid #555; 
+
+}
+#g2,#g4,#g6{
+    border-right: 2px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-bottom: 2px solid #555; 
+    
+}
+#g5, #g6,#g7{
+    border-bottom: 2px solid #555; 
+    border-left: 2px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+
+}
+
+
+/* Hover de los ganadoder */
+.gn:hover{
+    font-weight: bold;
+    color:green;
+}
+#g5:hover,#g6:hover{
+    color:blue;
+}
+#g7:hover {
+    color: red;
+}
+footer{
+    text-align: center;
+    align-content: baseline;
+}

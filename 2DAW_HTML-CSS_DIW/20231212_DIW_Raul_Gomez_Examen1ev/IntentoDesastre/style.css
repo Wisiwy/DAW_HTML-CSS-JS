@@ -1,0 +1,35 @@
+
+body{
+    margin:15%;
+}
+main{
+    display: flex;
+    
+    background-color: aquamarine;
+
+}
+table{
+    border: collapse;
+}
+#fila3 .ronda1,#fila7 .ronda1,#fila11 .ronda1,#fila15 .ronda1  {
+    border-right: 1px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-top: 1px solid #555;    /* Borde superior sólido con un ancho de 50px y transparente (sin color) */
+
+}
+#fila4 .ronda1,#fila8 .ronda1,#fila12 .ronda1,#fila16 .ronda1 {
+    border-right: 1px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-bottom: 1px solid #555;
+}
+#fila4 .ronda2,#fila12 .ronda2 {
+    border-right: 1px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-top: 1px solid #555;
+}
+#fila7 .ronda2,#fila15 .ronda2 {
+    border-right: 1px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    border-bottom: 1px solid #555;
+}
+#fila5 .ronda2,#fila6 .ronda2,#fila13 .ronda2,#fila14 .ronda2 {
+    border-right: 1px solid #555;      /* Borde izquierdo sólido con un ancho de 100px y color #f0ad4e */
+    
+}
+
