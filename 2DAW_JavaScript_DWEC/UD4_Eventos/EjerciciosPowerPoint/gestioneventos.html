@@ -1,0 +1,32 @@
+<!-- 
+    1. Crea un script donde al pulsar con el botón izq del ratón sobre una imagen, aparezca una ventana emergente con un texto. 
+    2. Crea un script donde al pulsar una atecla dentro de un campo de entrada, aparezca una ventana emergente con un texto. 
+    3. Crea tres campos de entrada, cuando el último obtenga el foco, debe aparecer una ventana emergente con un texto. 
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function foco(){
+            alert('tienes el foco en este campo'); blur();
+            document.getElementById('campo1').focus();
+        }
+    </script>
+  </head>
+  <body>
+    <h2>Ej1 - Boton izq, ventana emergente.</h2>
+    <img src="img/cartelEvertything.jpg" alt="cartePeli" onclick="alert('texto')">
+    <hr>
+    <h2>Ej2 - Tecla campo entrada, ventana emergente.</h2>
+    <input type="text" onkeydown="alert('estas pulsando teclas')">
+    <hr>
+    <h2>Ej3 - Foco en campo entrada, ventana emergente.</h2>
+    <input id = campo1 type="text" >
+    <input id = campo2 type="text" >
+    <input id = campo3 type="text" onfocus="foco()">
+    
+  </body>
+  </html>
