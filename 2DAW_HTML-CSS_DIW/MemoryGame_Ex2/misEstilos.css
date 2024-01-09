@@ -1,0 +1,75 @@
+/* Establecer variable de tamaños comunes para todo elemnto (sobre todo las tarjetas) */
+:root {
+    --w: calc(70vw / 6);
+    --h: calc(70vh / 4);
+}
+
+/* 3. Transiciones para hacer que todo se mueva más suave */
+* {
+    transition: all 0.5s;
+}
+
+
+/* 4.Definición de las clases realacionadas con las tarjetas */
+.area-tarjeta,
+.tarjeta,
+.cara {
+    width: var(--w);
+    min-width: 80px;
+    height: var(--w);
+}
+
+/* 5. La posición es relevante para solapar tarjeta y cara */
+.tarjeta {
+    position: relative;
+    /* propiedad de 3D */
+    transform-style: preserve-3d;
+    /* Para aplicar animación @keyframes, es solo la animación de incio de juego */
+    animation: iniciar 3s;
+}
+
+/* 5. La posicio es relevante apara solapar tarjeta y cara */
+.cara {
+    position: absolute;
+    /* para ocultar al rotar */
+    backface-visibility: hidden;
+    /* sombreado */
+    box-shadow: inset 0 0 0 5px white;
+    /* ajuste iconos */
+    font-size: 500%;
+    /* para centar el icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 6. Color de la parte oculta */
+.trasera {
+    background-color: lightcyan;
+    transform: rotateY('180deg');
+}
+
+/* 6. Color de la parte mostrada */
+.superior {
+    background: linear-gradient(orange,darkorange);
+}
+
+/* 7. Se elige un color que case con el elegido de las tarjetas */
+body {
+    padding: 0;
+    margin: 0;
+    -webkit-perspective: 1000;
+    background-color: powderblue;
+    /* distribución */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Calibri;
+}
+
+div {
+    display: inline-block;
+}
