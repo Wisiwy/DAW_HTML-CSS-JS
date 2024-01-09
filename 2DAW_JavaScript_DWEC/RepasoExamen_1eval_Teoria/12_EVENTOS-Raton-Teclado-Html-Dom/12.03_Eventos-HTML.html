@@ -1,0 +1,78 @@
+<!--//////////////////////////// -->
+<!--//// EVENTOS DE HTML //// -->
+<!--//////////////////////////// -->
+
+<!--1. ONLOAD: Cuando un elemento, como una página web o una imagen, se ha cargado completamente.
+    2. ONUNLOAD: Justo antes de que el usuario abandone la página o cierre la ventana del navegador.
+    3. ONABORT: Cuando se cancela la carga de un recurso, como una imagen.
+    4. ONERROR: Cuando se produce un error al cargar un recurso, como una imagen o un script.
+    5. ONSELECT: Cuando se selecciona texto en un elemento de entrada o área de texto.
+    6. ONCHANGE: Cuando el contenido de un elemento de entrada, select o textarea cambia y pierde el foco.
+    7. ONSUBMIT: Cuando se envía un formulario.
+    8. ONRESET: Cuando se restauran los valores de un formulario a sus valores predeterminados.
+    9. ONRESIZE: Cuando se cambia el tamaño de la ventana del navegador.
+    10. ONSCROLL: Cuando se realiza un desplazamiento en una página web.
+    11. ONFOCUS: Cuando un elemento recibe el foco, como un campo de entrada.
+    12. ONBLUR: Cuando un elemento pierde el foco. -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Eventos HTML</title>
+    <style>
+        #miInput {
+            margin-bottom: 10px;
+        }
+
+        #miTextArea {
+            margin-bottom: 10px;
+        }
+
+        #miSelect {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- onload y onunload -->
+<body onload="alert('Página cargada')" onunload="alert('Adiós, usuario')">
+    <h1>Ejemplo de Eventos HTML</h1>
+
+    <!-- onabort y onerror -->
+    <img src="imagen_que_no_existe.jpg" onabort="alert('Carga de imagen cancelada')" onerror="alert('Error al cargar la imagen')">
+
+    <!-- onselect y onchange -->
+    <input type="text" id="miInput" value="Selecciona y cambia" onselect="alert('Texto seleccionado')" onchange="alert('Valor cambiado')">
+
+    <!-- onsubmit y onreset -->
+    <form onsubmit="alert('Formulario enviado'); return false;" onreset="alert('Formulario restablecido')">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Restablecer">
+    </form>
+
+    <!-- onresize y onscroll -->
+    <div id="miDiv" style="height: 200px; width: 200px; overflow: auto; border: 1px solid black;" onresize="alert('Ventana redimensionada')" onscroll="alert('Ventana desplazada')">
+        Contenido que puede desplazarse
+    </div>
+
+    <!-- onfocus y onblur -->
+    <input type="text" onfocus="alert('Input enfocado')" onblur="alert('Input desenfocado')">
+
+    <script>
+        // Script para onfocus y onblur
+        var miTextArea = document.getElementById('miTextArea');
+        miTextArea.addEventListener('focus', function() {
+            alert('TextArea enfocado');
+        });
+
+        miTextArea.addEventListener('blur', function() {
+            alert('TextArea desenfocado');
+        });
+    </script>
+</body>
+
+</body>
+</html>

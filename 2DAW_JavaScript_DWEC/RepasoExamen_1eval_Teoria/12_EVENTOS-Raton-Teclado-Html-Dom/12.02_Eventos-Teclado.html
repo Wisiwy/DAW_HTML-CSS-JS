@@ -1,0 +1,46 @@
+<!--//////////////////////////// -->
+<!--//// EVENTOS DE TECLADO //// -->
+<!--//////////////////////////// -->
+
+<!--1. onkeydown: Este evento se activa cuando una tecla del teclado es presionada.
+    2. onkeyup: Este evento se activa cuando se suelta una tecla del teclado.
+    3. onkeypress: Cuando se presiona y mantiene presionada una tecla del teclado, 
+                pero solo para caracteres visibles (no se activa para teclas que no generan caracteres).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado en JavaScript</title>
+</head>
+<body>
+
+<!-- Eventos de Teclado con ADD EVENT LISTENER -->
+
+<input id="inputEvento" type="text" placeholder="Presiona una tecla">
+<p id="mensajeEvento">Presiona una tecla</p>
+
+<script>
+    // Con addEventListener
+    var inputEvento = document.getElementById('inputEvento');
+    var mensajeEvento = document.getElementById('mensajeEvento');
+
+    inputEvento.addEventListener('keydown', function(event) {
+        mensajeEvento.textContent = 'Tecla presionada: ' + event.key;
+    });
+
+    inputEvento.addEventListener('keyup', function() {
+        mensajeEvento.textContent = 'Presiona una tecla';
+    });
+</script>
+
+<!-- Eventos de Teclado como ATRIBUTO de la etiqueta -->
+<input type="text" placeholder="Presiona una tecla" 
+       onkeydown="mensajeAtributo.textContent = 'Tecla presionada: ' + event.key"
+       onkeyup="mensajeAtributo.textContent = 'Presiona una tecla'">
+<p id="mensajeAtributo">Presiona una tecla</p>
+
+</body>
+</html>

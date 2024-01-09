@@ -1,0 +1,61 @@
+<!--//////////////////////////// -->
+<!--//// EVENTOS DE DOM //// -->
+<!--//////////////////////////// -->
+
+<!--1. DOMSubtreeModified: Cuando se realiza cualquier cambio en el subárbol del DOM. Esto puede ser una inserción, eliminación o modificación de nodos.
+    2. DOMNodeInserted: Cuando un nuevo nodo es insertado en el DOM. Puede ser cualquier tipo de nodo, ya sea elemento, atributo, texto, etc.
+    3. DOMNodeRemoved: Cuando un nodo es removido del DOM. Este evento se dispara antes de que el nodo sea eliminado.
+    4. DOMNodeRemovedFromDocument: Cuando un nodo es removido del documento (página). Este evento se dispara después de que el nodo ha sido eliminado..
+    5. DOMNodeInsertedIntoDocument: Cuando un nodo es insertado en el documento. Este evento se dispara después de que el nodo ha sido insertado.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos del DOM</title>
+</head>
+<body>
+
+<div id="miDiv">Contenido inicial</div>
+
+<script>
+    var miDiv = document.getElementById('miDiv');
+
+    // DOMSubtreeModified
+    miDiv.addEventListener('DOMSubtreeModified', function() {
+        console.log('Subárbol del DOM modificado');
+    });
+
+    // DOMNodeInserted
+    miDiv.addEventListener('DOMNodeInserted', function(event) {
+        console.log('Nuevo nodo insertado:', event.target);
+    });
+
+    // DOMNodeRemoved
+    miDiv.addEventListener('DOMNodeRemoved', function(event) {
+        console.log('Nodo removido:', event.target);
+    });
+
+    // DOMNodeRemovedFromDocument
+    miDiv.addEventListener('DOMNodeRemovedFromDocument', function(event) {
+        console.log('Nodo removido del documento:', event.target);
+    });
+
+    // DOMNodeInsertedIntoDocument
+    miDiv.addEventListener('DOMNodeInsertedIntoDocument', function(event) {
+        console.log('Nodo insertado en el documento:', event.target);
+    });
+
+    // Modificar el DOM para activar los eventos
+    setTimeout(function() {
+        var nuevoElemento = document.createElement('p');
+        nuevoElemento.textContent = 'Nuevo elemento';
+        miDiv.appendChild(nuevoElemento);
+
+        miDiv.removeChild(miDiv.firstChild);
+    }, 2000);
+</script>
+
+</body>
+</html>

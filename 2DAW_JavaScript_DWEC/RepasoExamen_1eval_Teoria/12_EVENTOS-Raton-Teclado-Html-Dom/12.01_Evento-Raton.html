@@ -1,0 +1,110 @@
+<!--/////////////////////////////// -->
+<!--/////// EVENTOS DE RATÓN /////// -->
+<!--/////////////////////////////// -->
+
+<!--1. onclick: Se activa cuando se hace clic con el botón izquierdo del ratón.
+    2. ondblclick: Se activa cuando se hace doble clic con el botón izquierdo del ratón.
+    3. onmousedown: Se activa cuando se presiona un botón del ratón.
+    4. onmouseup: Se activa cuando se libera un botón del ratón.
+    5. onmouseover: Se activa cuando el puntero del ratón entra en el área del elemento.
+    6. onmouseout: Se activa cuando el puntero del ratón sale del área del elemento.
+    7. onmousemove: Se activa cuando el puntero del ratón se mueve dentro del área del elemento. 
+                    En este caso, también se muestra en la consola las coordenadas del ratón. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de JavaScript</title>
+    <style>
+        #miElemento, #miElemento2 {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="miElemento" 
+        onclick="alert('Se hizo clic en el elemento 1')"
+        ondblclick="alert('Se hizo doble clic en el elemento 1')" 
+        onmousedown="cambiarColor('darkblue')"
+        onmouseup="cambiarColor('lightblue')" 
+        onmouseover="resaltar('lightyellow')" 
+        onmouseout="resaltar('')"
+        onmousemove="mostrarCoordenadas(event)">
+        Mi elemento 1
+    </div>
+
+
+    <div id="miElemento2">
+        Pasa el ratón sobre mí, Mi elemento 2
+
+    </div>
+    <script>
+
+
+        //METODO ADD EVENT LISTENER 
+        var elemento = document.getElementById('miElemento2');
+
+        // Evento click
+        elemento.addEventListener('click', function () {
+            alert('Se hizo clic en el elemento2');
+        });
+
+        // Evento dblclick
+        elemento.addEventListener('dblclick', function () {
+            alert('Se hizo doble clic en el elemento2');
+        });
+
+        // Evento mousedown
+        elemento.addEventListener('mousedown', function () {
+            cambiarColor('green');
+        });
+
+        // Evento mouseup
+        elemento.addEventListener('mouseup', function () {
+            cambiarColor('lightgreen');
+        });
+
+        // Evento mouseover
+        elemento.addEventListener('mouseover', function () {
+            resaltar('yellow');
+        });
+
+        // Evento mouseout
+        elemento.addEventListener('mouseout', function () {
+            resaltar('');
+        });
+
+        // Evento mousemove
+        elemento.addEventListener('mousemove', function (event) {
+            mostrarCoordenadas(event);
+        });
+
+        //FUNCIONES
+        function cambiarColor(color) {
+            document.getElementById('miElemento2').style.backgroundColor = color;
+        }
+
+        function resaltar(fondo) {
+            document.getElementById('miElemento2').style.background = fondo;
+        }
+
+        function mostrarCoordenadas(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log('Coordenadas del ratón: (' + x + ', ' + y + ')');
+        }
+    </script>
+
+</body>
+
+</html>
