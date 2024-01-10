@@ -11,8 +11,8 @@
     <title>Document</title>
     <script>
         function foco(){
-            alert('tienes el foco en este campo'); blur();
-            document.getElementById('campo1').focus();
+            alert('tienes el foco en este campo');
+           // document.getElementById('campo1').focus();
         }
     </script>
   </head>
@@ -26,7 +26,7 @@
     <h2>Ej3 - Foco en campo entrada, ventana emergente.</h2>
     <input id = campo1 type="text" >
     <input id = campo2 type="text" >
-    <input id = campo3 type="text" onfocus="foco()">
+    <input id = campo3 type="text" onfocus="foco()"  blur();>
     
   </body>
   </html>
