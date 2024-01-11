@@ -1,5 +1,11 @@
+/* ROOT vs HTML (diferencias) */
+/*      https://stackoverflow.com/questions/60680887/root-html-selector-any-differences */
+/* API información */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors */
+
 /* Establecer variable de tamaños comunes para todo elemnto (sobre todo las tarjetas) */
 :root {
+   /* https://developer.mozilla.org/es/docs/Web/CSS/calc */
     --w: calc(70vw / 6);
     --h: calc(70vh / 4);
 }
@@ -28,6 +34,14 @@
     animation: iniciar 3s;
 }
 
+
+/* 8. Efecto para las tarjetas, para voltearlas */
+/* Pasas posteriormente aJ S */
+.area-tarjeta:hover .tarjeta{
+    /* rotacion en Y al hover */
+    transform:rotateY(180deg);
+}
+
 /* 5. La posicio es relevante apara solapar tarjeta y cara */
 .cara {
     position: absolute;
@@ -44,9 +58,9 @@
 }
 
 /* 6. Color de la parte oculta */
-.trasera {
-    background-color: lightcyan;
-    transform: rotateY('180deg');
+.trasera{
+    background-color:lightcyan;
+    transform: rotateY(180deg);
 }
 
 /* 6. Color de la parte mostrada */
@@ -58,6 +72,7 @@
 body {
     padding: 0;
     margin: 0;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/perspective */
     -webkit-perspective: 1000;
     background-color: powderblue;
     /* distribución */
@@ -73,3 +88,15 @@ body {
 div {
     display: inline-block;
 }
+
+/* 10. CSS para botón nuevo juego */
+.nuevoJuego{
+    background: linear-gradient(orange,darkorange);
+    padding: 20px;
+    border-radius: 50%;
+    border: white 3px solid;
+    font-size: 130%;
+    /* 20. El juego va a tener un cursor tipo pointer */
+    /* cursor:pointer; */
+
+    }
