@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/procesar_formulario" method="post">
+
+        <!-- Tipo Texto con Atributos name, maxlength, size, readonly y value -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="50" size="30" value="Ejemplo" readonly>
+        <hr>
+      
+        <!-- Tipo Contraseña con Atributos name, maxlength, size y value -->
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" maxlength="20" size="20" value="Contraseña123">
+        <hr>
+      
+        <!-- Tipo Check Box con Atributos name, value, checked y disabled -->
+        <label for="suscripcion">Suscribirse:</label>
+        <input type="checkbox" id="suscripcion" name="suscripcion" value="1" checked disabled>
+        <hr>
+      
+        <!-- Tipo Radio con Atributos name, value y checked -->
+        <label for="opcion1">Opción 1:</label>
+        <input type="radio" id="opcion1" name="opcion" value="opcion1" checked>
+        <label for="opcion2">Opción 2:</label>
+        <input type="radio" id="opcion2" name="opcion" value="opcion2">
+        <hr>
+      
+        <!-- Tipo Submit (Botón de Enviar) -->
+        <button type="submit">Enviar</button>
+        <!-- Este botón envía los datos del formulario al servidor para su procesamiento. -->
+        <hr>
+      
+        <!-- Tipo Reset (Botón de Reiniciar) -->
+        <button type="reset">Reiniciar</button>
+        <!-- Este botón restablece todos los campos del formulario a sus valores predeterminados. -->
+        <hr>
+      
+        <!-- Tipo File (Selector de Archivo) con Atributo accept -->
+        <label for="archivo">Seleccionar Archivo:</label>
+        <input type="file" id="archivo" name="archivo" accept=".jpg, .jpeg, .png">
+        <!-- Este elemento permite a los usuarios seleccionar un archivo local para cargar. -->
+        <hr>
+      
+        <!-- Tipo Hidden (Campo Oculto) -->
+        <input type="hidden" name="id" value="123">
+        <!-- Este campo oculto no es visible para el usuario, pero puede contener datos importantes que se enviarán con el formulario. -->
+        <hr>
+      
+        <!-- Tipo Imagen con Atributos src y alt -->
+        <input type="image" src="boton.png" alt="Botón de Imagen">
+        <!-- Este elemento se presenta como una imagen y actúa como un botón de envío. 
+            La posición del clic se utiliza como coordenada para enviar el formulario. -->
+        <hr>
+      
+        <!-- Tipo Botón con Atributo onclick -->
+        <button type="button" onclick="alert('¡Botón presionado!')">Presionar</button>
+        <!-- Este botón no tiene una acción predeterminada de formulario; la acción se define mediante JavaScript. -->
+        <hr>
+      
+        <!-- Tipo Fecha -->
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <!-- Este campo permite a los usuarios seleccionar una fecha. El formato depende del navegador. -->
+      
+      </form>
+      
+</body>
+</html>

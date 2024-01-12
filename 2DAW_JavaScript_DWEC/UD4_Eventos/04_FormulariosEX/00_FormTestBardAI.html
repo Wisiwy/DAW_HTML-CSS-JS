@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Car Model Introduction Form</title>
+  <link rel="stylesheet" href="styles/coches.css">
+  
+</head>
+<body >
+  <h1 class="title">Introduce a BMW Car Model</h1>
+
+  <form class="form" id="car-model-form">
+    <div class="field">
+      <label for="car-model" class="label">Car Model:</label>
+      <input type="text" id="car-model" name="carModel" class="input" required>
+    </div>
+
+    <div class="field">
+      <label for="release-year" class="label">Release Year:</label>
+      <input type="number" id="release-year" name="releaseYear" class="input" min="1970" max="2024" required>
+    </div>
+
+    <div class="field">
+      <label for="location" class="label">Location:</label>
+      <input type="text" id="location" name="location" class="input" required>
+    </div>
+
+    <div class="field">
+      <label for="seller-name" class="label">Seller Name:</label>
+      <input type="text" id="seller-name" name="sellerName" class="input" required>
+    </div>
+
+    <button type="submit" class="button">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

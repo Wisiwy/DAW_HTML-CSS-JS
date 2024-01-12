@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificar el Valor de una Caja de Texto con JavaScript</title>
+</head>
+<body>
+
+<form>
+  <label for="miInput">Texto en la caja de texto:</label>
+  <input type="text" id="miInput" name="miInput">
+  <button type="button" onclick="cambiarTexto()">Cambiar Texto</button>
+</form>
+
+<script>
+  function cambiarTexto() {
+    // Obtén el elemento de entrada por su ID
+    var inputElement = document.getElementById('miInput');
+
+    // Establece el nuevo valor de la caja de texto
+    inputElement.value = 'Nuevo texto desde JavaScript';
+  }
+</script>
+
+</body>
+</html>

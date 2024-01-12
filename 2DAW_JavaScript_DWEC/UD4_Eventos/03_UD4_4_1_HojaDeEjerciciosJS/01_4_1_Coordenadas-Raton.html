@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coordenadas</title>
+
 </head>
-<body>
+
+<body onmousemove="mostrarCoordenadas(event)">
     <article id="navegador">
         <label for="">Coordenada X navegador</label>
         <input type="text" name="" id="">
@@ -14,17 +17,52 @@
     </article> <br>
     <article id="monitor">
         <label for="">Coordenada X monitor</label>
-        <input type="text" name="" id="">
-        
+        <input type="text" name="monitorX" id="monitorX">
+
         <label for="">Coordenada Y monitor</label>
-        <input type="text" name="" id="">
+        <input type="text" name="monitorY" id="monitorY">
     </article> <br>
     <article id="absoluta">
         <label for="">Coordenada X absoluta</label>
         <input type="text" name="" id="">
         <label for="">Coordenada Y absoluta</label>
         <input type="text" name="" id="">
-    </article> 
+    </article>
     <label></label>
 </body>
+<script>
+   
+
+
+
+    function mostrarCoordenadas(event) {
+        
+        //mostrar de navegador X e Y
+        var screenX = `${event.screenX}`;
+        var screenY = `${event.screenY}`;
+        var inputMonitorY = document.getElementById('monitorX');
+        inputElement.value = screenX;
+        var inputMonitorX = document.getElementById('monitorY');
+        inputElement.value = screenY;
+        //mostrar de monitor X e Y
+        var screenX = `${event.screenX}`;
+        var screenY = `${event.screenY}`;
+        var inputMonitorY = document.getElementById('monitorX');
+        inputElement.value = screenX;
+        var inputMonitorX = document.getElementById('monitorY');
+        inputElement.value = screenY;
+        //mostrar de page X e Y
+        var screenX = `${event.screenX}`;
+        var screenY = `${event.screenY}`;
+        var inputMonitorY = document.getElementById('monitorX');
+        inputElement.value = screenX;
+        var inputMonitorX = document.getElementById('monitorY');
+        inputElement.value = screenY;
+        
+
+        
+    }
+  
+</script>
+
 </html>
