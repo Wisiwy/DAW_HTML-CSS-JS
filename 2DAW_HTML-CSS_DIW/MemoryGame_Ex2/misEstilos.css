@@ -1,11 +1,11 @@
 /* ROOT vs HTML (diferencias) */
 /*      https://stackoverflow.com/questions/60680887/root-html-selector-any-differences */
 /* API información */
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors */
 
 /* Establecer variable de tamaños comunes para todo elemnto (sobre todo las tarjetas) */
 :root {
-   /* https://developer.mozilla.org/es/docs/Web/CSS/calc */
+    /* https://developer.mozilla.org/es/docs/Web/CSS/calc */
     --w: calc(70vw / 6);
     --h: calc(70vh / 4);
 }
@@ -31,16 +31,15 @@
     /* propiedad de 3D */
     transform-style: preserve-3d;
     /* Para aplicar animación @keyframes, es solo la animación de incio de juego */
-    animation: iniciar 3s;
+    animation: iniciar 1s;
 }
 
 
 /* 8. Efecto para las tarjetas, para voltearlas */
-/* Pasas posteriormente aJ S */
-.area-tarjeta:hover .tarjeta{
-    /* rotacion en Y al hover */
+/* Pasas posteriormente a JS */
+/* .area-tarjeta:hover .tarjeta{
     transform:rotateY(180deg);
-}
+} */
 
 /* 5. La posicio es relevante apara solapar tarjeta y cara */
 .cara {
@@ -58,14 +57,14 @@
 }
 
 /* 6. Color de la parte oculta */
-.trasera{
-    background-color:lightcyan;
+.trasera {
+    background-color: lightcyan;
     transform: rotateY(180deg);
 }
 
 /* 6. Color de la parte mostrada */
 .superior {
-    background: linear-gradient(orange,darkorange);
+    background: linear-gradient(orange, darkorange);
 }
 
 /* 7. Se elige un color que case con el elegido de las tarjetas */
@@ -90,13 +89,27 @@ div {
 }
 
 /* 10. CSS para botón nuevo juego */
-.nuevoJuego{
-    background: linear-gradient(orange,darkorange);
+.nuevoJuego {
+    background: linear-gradient(orange, darkorange);
     padding: 20px;
     border-radius: 50%;
     border: white 3px solid;
     font-size: 130%;
     /* 20. El juego va a tener un cursor tipo pointer */
     /* cursor:pointer; */
+}
 
+/* 17.Creación y llamada arriba (.tarjeta animation de esta función de animación */
+/* Animación para girar la cara 5 secs */
+@keyframes iniciar {
+
+    20%,
+    90% {
+        transform: rotateY(180deg);
     }
+
+    0%,
+    100% {
+        transform: rotateY(0deg);
+    }
+}
