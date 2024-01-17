@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<script>
-    
-    function mostrarColor(){
-        $("div").css('background-color');
-        //https://es.stackoverflow.com/questions/136915/c%C3%B3mo-puedo-recoger-el-color-de-fondo-de-un-div-o-cualquier-elemento-con-jquer
-    }
-</script>
+    <link rel="stylesheet" href="estilos/02_style_4_1.css">
+    <title>Zonas de colores</title>
+    <script>
+
+
+    function mostrarColor(event) {
+
+       /*    //1. FORMA CONSULTA jQueary, necesaria biblioteca
+                // src="https://code.jquery.com/jquery-3.6.4.min.js"
+                let fondoElemento = $(elemento).css('background-color');  */
+
+            //2.FORMA getComputeStyle  
+            // Recojo el elemento del evento
+            let elemento = event.target;
+
+            // Obtengo el color de fondo calculado, independientemente de cómo se haya aplicado
+            let estiloComputado = window.getComputedStyle(elemento);
+            let fondoElemento = estiloComputado.backgroundColor;
+
+            // Muestro el color en un cuadro de alerta: sale en RGM
+            alert(fondoElemento);
+        }
+
+    </script>
 
 </head>
 
 <body>
-    <div onclick = "mostrarColor()"></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div id="rec1" onclick="mostrarColor(event)"></div>
+    <div id="rec2" onclick="mostrarColor(event)"></div>
+    <div id="rec3" onclick="mostrarColor(event)"></div>
+    <div id="rec4" onclick="mostrarColor(event)"></div>
 </body>
+
 </html>

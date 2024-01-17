@@ -1,0 +1,20 @@
+div{
+    width: 25vw;
+    height: 100vw;
+}
+body{
+    display: flex;
+
+}
+#rec1 {
+    background-color: rgb(253, 130, 130);
+}
+#rec2 {
+    background-color: rgb(241, 250, 149);
+}
+#rec3 {
+    background-color: rgb(172, 152, 245);
+}
+#rec4 {
+    background-color: rgb(158, 255, 157);
+}

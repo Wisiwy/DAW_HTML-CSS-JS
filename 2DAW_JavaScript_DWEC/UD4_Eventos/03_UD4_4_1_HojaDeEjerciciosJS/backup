@@ -1,0 +1,19 @@
+         function mostrarColor(event) {
+            //Recojo el elemento del evento
+            let elemento = event.target;
+
+         //1. FORMA CONSULTA jQueary, necesaria biblioteca
+                // src="https://code.jquery.com/jquery-3.6.4.min.js"
+    let fondoElemento = $(elemento).css('background-color'); 
+
+    //2.FORMA getComputeStyle
+
+    let estiloComputado = window.getComputedStyle(elemento);
+    let fondoElemento = estiloComputado.backgroundColor;
+    // alert("boton funciona");
+    // let div = document.getElementById('color');
+    //let color = string(div.style.backgroundColor);
+    // $("div").css('background-color');
+    //https://es.stackoverflow.com/questions/136915/c%C3%B3mo-puedo-recoger-el-color-de-fondo-de-un-div-o-cualquier-elemento-con-jquer
+    alert(fondoElemento);
+    } 

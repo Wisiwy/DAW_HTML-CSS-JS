@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<!-- Llamada en etiqueta HTML para que se active en todo la pagina.  -->
+<html lang="en" onmousemove="mostrarCoordenadas(event)">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/01_style_4_1.css">
     <title>Coordenadas</title>
 
 </head>
 
-<body onmousemove="mostrarCoordenadas(event)">
+<body>
     <article id="navegador">
         <label for="">Coordenada X navegador</label>
-        <input type="text" name="" id="">
+        <input type="text" name="" id="navegadorX">
+        
         <label for="">Coordenada Y navegador</label>
-        <input type="text" name="" id="">
+        <input type="text" name="" id="navegadorY">
     </article> <br>
     <article id="monitor">
         <label for="">Coordenada X monitor</label>
@@ -24,9 +28,10 @@
     </article> <br>
     <article id="absoluta">
         <label for="">Coordenada X absoluta</label>
-        <input type="text" name="" id="">
+        <input type="text" name="" id="absolutaX">
+
         <label for="">Coordenada Y absoluta</label>
-        <input type="text" name="" id="">
+        <input type="text" name="" id="absolutaY">
     </article>
     <label></label>
 </body>
@@ -37,29 +42,33 @@
 
     function mostrarCoordenadas(event) {
         
-        //mostrar de navegador X e Y
-        var screenX = `${event.screenX}`;
-        var screenY = `${event.screenY}`;
-        var inputMonitorY = document.getElementById('monitorX');
-        inputElement.value = screenX;
-        var inputMonitorX = document.getElementById('monitorY');
-        inputElement.value = screenY;
-        //mostrar de monitor X e Y
-        var screenX = `${event.screenX}`;
-        var screenY = `${event.screenY}`;
-        var inputMonitorY = document.getElementById('monitorX');
-        inputElement.value = screenX;
-        var inputMonitorX = document.getElementById('monitorY');
-        inputElement.value = screenY;
-        //mostrar de page X e Y
-        var screenX = `${event.screenX}`;
-        var screenY = `${event.screenY}`;
-        var inputMonitorY = document.getElementById('monitorX');
-        inputElement.value = screenX;
-        var inputMonitorX = document.getElementById('monitorY');
-        inputElement.value = screenY;
-        
+        //mostrar de NAVEGADOR => CLIENT X e Y
+        var navegadorX = `${event.clientX}`;
+        var navegadorY = `${event.clientY}`;
 
+        //Intro en div el valor recogido del evento
+        var inputNavegadorX = document.getElementById('navegadorX');
+        inputNavegadorX.value = navegadorX;
+        var inputNavegadorY = document.getElementById('navegadorY');
+        inputNavegadorY.value = navegadorY;
+
+        //Mostrar de MONITOR=>SCREEN X e Y
+        var monitorX = `${event.screenX}`;
+        var monitorY = `${event.screenY}`;
+
+        var inputMonitorX = document.getElementById('monitorX');
+        inputMonitorX.value = monitorX;
+        var inputMonitorY = document.getElementById('monitorY');
+        inputMonitorY.value = monitorY;
+
+        //Mostrar de ABSOLUTA=> PAGE X e Y
+        var absolutaX = `${event.pageX}`;
+        var absolutaY = `${event.pageY}`;
+
+        var inputAbsolutaX = document.getElementById('absolutaX');
+        inputAbsolutaX.value = absolutaX;
+        var inputAbsolutaY = document.getElementById('absolutaY');
+        inputAbsolutaY.value = absolutaY;
         
     }
   
