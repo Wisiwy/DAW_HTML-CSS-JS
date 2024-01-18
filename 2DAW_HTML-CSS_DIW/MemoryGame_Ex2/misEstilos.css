@@ -31,7 +31,7 @@
     /* propiedad de 3D */
     transform-style: preserve-3d;
     /* Para aplicar animación @keyframes, es solo la animación de incio de juego */
-    animation: iniciar 3s;
+    animation: iniciar 1s;
 }
 
 

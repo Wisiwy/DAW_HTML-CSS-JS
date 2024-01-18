@@ -1,3 +1,5 @@
+
+
 /* 13. Función que genera el array para disponer de imágenes en las tarjetas */
 function cargarIconos() {
     //Icono de texto
@@ -35,7 +37,7 @@ function generarTablero() {
     let tarjetas = [];
     //Reiniciar seleciones 
     selecciones = [];
-    let cantidadTarjetas = 24;
+    cantidadTarjetas = 2;
     //Pendiente definir cantidadTarjetas
     for (let i = 0; i < cantidadTarjetas; i++) {
         //12. Estaor pasos se van sucediendo a medida que vamos engrosando y necesitando el código. Al principios es solo. 
@@ -101,14 +103,27 @@ function deseleccionar(selecciones) {
             trasera2.style.background = "plum";
         }
         //22.Con la función de verificacionFin 
-        /*  if (verificarFin()) {
+         if (verificarFin()) {
              //23.Libreria responsive, ojo incluir scr
              swal.fire({
                  title:`El juego ha finalizado`,
                  text:`¡Enhorabuena!`,
                  icon:`succes`
              })
-         } */
+         }
 
     }, 1000)
+}
+
+
+
+//21.Verificar el final
+function verificarFin() {
+    for (let i = 0; i < cantidadTarjetas; i++) {
+        let trasera = document.getElementById("trasera" + i)
+        if (trasera.style.background != "plum") {
+            return false;
+        }
+        return true;
+    }
 }
