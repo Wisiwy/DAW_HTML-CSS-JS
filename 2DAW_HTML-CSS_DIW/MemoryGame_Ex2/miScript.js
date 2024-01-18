@@ -44,7 +44,7 @@ function generarTablero() {
         tarjetas.push(
             `<div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
                 <div class="tarjeta" id="tarjeta${i}">
-                    <div class="cara trasera id= "trasera${i}">
+                    <div class="cara trasera" id= "trasera${i}">
                     ${iconos[0]}
                     </div>
                     <div class="cara superior">
@@ -75,7 +75,7 @@ function seleccionarTarjeta(i) {
     let tarjeta = document.getElementById("tarjeta" + i)
     if (tarjeta.style.transform != "rotateY(180deg)") {
         tarjeta.style.transform = "rotateY(180deg)"
-        selecciones.push(i);
+        selecciones.push(i)
     }
     if (selecciones.length == 2) {
         //arreglovacio
