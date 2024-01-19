@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres Cajas</title>
+    <script>
+        function permite(elEvento, permitidos) {
+
+            // do {
+            // Variables que definen los caracteres permitidos.
+            var numeros = "0123456789";
+            var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            var numeros_caracteres = numeros + caracteres;
+            var teclas_especiales = [34, 38, 59];
+            // 34 = ", 38 = &, 59 = ;
+
+            // Seleccionar los caracteres a partir del parámetro de la función.
+            switch (permitidos) {
+
+                case 'num':
+                    permitidos = numeros;
+                    break;
+                case 'car':
+                    permitidos = caracteres;
+                    break;
+                case 'num_car':
+                    permitidos = numeros_caracteres;
+                    break;
+            }
+
+            // Obtener la tecla pulsada.
+            var evento = elEvento || window.event;
+            var codigoCaracter = evento.charCode || evento.keyCode;
+            var caracter = String.fromCharCode(codigoCaracter);
+
+            // Comprobar si la tecla pulsada es alguna de las teclas especiales.
+            var tecla_especial = false;
+            for (var i in teclas_especiales) {
+                if (codigoCaracter == teclas_especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+            return permitidos.indexOf(caracter) != -1 || tecla_especial
+            // PROBATINA CON DO...WHILE
+            // Comprobar si la tecla pulsada se encuentra en los caracteres permitidos
+            // o si es una tecla especial.
+            /*             if (permitidos.indexOf(caracter) != -1 || tecla_especial) {
+                            var myString = + permitidos.indexOf(caracter);
+                        } */
+            //Comprobar no dejar menos de 10 caracteres
+            /*    } while (myString.length <= 10) {
+                   return myString;
+               } */
+        }
+    </script>
+</head>
+
+<body>
+    //Sólo números.
+    <input type="text" id="texto" maxlength="10" onkeypress="return permite(event, 'num')" /> <br>
+    <hr>
+    //Sólo letras.
+    <input type="text" id="texto" maxlength="10" onkeypress="return permite(event, 'car')" /> <br>
+    <hr>
+    //Sólo letras o números.
+    <input type="text" id="texto" maxlength="10" onkeypress="return permite(event, 'num_car')" /> <br>
+    <hr>
+</body>
+
+</html>

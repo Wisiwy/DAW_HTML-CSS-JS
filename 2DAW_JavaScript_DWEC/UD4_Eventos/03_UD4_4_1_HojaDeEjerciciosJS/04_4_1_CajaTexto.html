@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de texto</title>
+    <script>
+        var numCaracteres = 1;
+
+        function cuentaCaracteres(event) {
+            // console.log(event);
+            numCaracteres++;
+            let resto = 100 - numCaracteres;
+            let restoCaracteres = document.getElementById("restoCaracteres");
+            restoCaracteres.innerText = `Quedan ${resto} caracteres`;
+            console.log(numCaracteres);
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <p id="restoCaracteres">
+
+    </p>
+    <p>Cuenta caracterse</p>
+    <textarea name="" id="area" cols="30" rows="10" onkeypress="cuentaCaracteres(event)"></textarea>
+
+   
+</body>
+
+</html>
