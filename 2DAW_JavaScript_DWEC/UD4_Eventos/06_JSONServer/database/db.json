@@ -1,0 +1,20 @@
+{
+    "article":[
+        {
+            "id":1,
+            "title":"build an API using JSON Server",
+            "authorId": 2
+        },
+        {
+            "id":2,
+            "title":"build an API using GO",
+            "authorId": 2
+        },
+        {
+            "id":3,
+            "title":"build an API using Postman",
+            "authorId": 2
+        }
+    ]
+    
+}
