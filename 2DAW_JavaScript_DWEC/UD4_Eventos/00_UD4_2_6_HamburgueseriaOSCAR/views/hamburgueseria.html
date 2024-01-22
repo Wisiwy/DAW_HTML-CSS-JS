@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Raul Gomez">
+    <title>Revision hamburgueseria de Oscar</title>
+    <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
+</head>
+
+<body>
+    <h1>Menú </h1>
+    <header>
+        <nav id="nav-menu">
+            <button id="btn-menu-hamburguesas" onclick="mostrarMenu('hamburguesas')">Hamburguesas</button>
+            <button id="btn-menu-hamburguesas" onclick="mostrarMenu('bebidas')">Bebidas</button>
+            <button id="btn-menu-hamburguesas" onclick="mostrarMenu('complementos')">Complementos</button>
+            <button id="btn-menu-hamburguesas" onclick="mostrarMenu('postres')">Postres</button>
+        </nav>
+    </header>
+    <section id="contenidoMenu">
+
+    </section>
+
+    <h2 id="precioTotal"></h2>
+    <button onclick="generaTicket()">Obtén tu ticket</button>
+</body>
+
+</html>
