@@ -1,0 +1,104 @@
+<!--/* DOM: nodos y estructura del html 
+        -Document
+        -Html
+            -Head
+                -<title></title>
+            -Body
+                <div></div>
+                <section></section>
+            */ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cla01_Dom</title>
+    <style>
+        #mi_id_prueba {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="parrafo"> Mi primera clase practica de DOm</p>
+    <input type="text" id="todoTitle">
+    <button id="agregarTarea">Agregar tarea</button>
+    <ul id="todo_list">
+
+    </ul>
+
+    <script type="text/javascript">
+        //var parrafo = document.getElementById("parrafo");
+        var parrafo = document.getElementsByTagName('p');
+        parrafo[0].id = "mi_id_prueba";
+        parrafo[0].style.color = 'blue';
+        console.log(parrafo);
+
+        /* ##WINDOWS## - Hace referencia a toda la ventana del navegador */
+        window.localStorage.setItem('color', 'blue'); //guardar variable valor
+        window.alert;
+        window.navigator; //info del propio navegador (mozilla,idioma, chrome...)
+        window.location //llegar url, historial...
+        window.history
+
+        /* 03-LISTA DE TODO */
+        var tareas = [
+            "Hacer la colada",
+            "Preparar la cena",
+            "Tirar la basura"
+        ];
+        /* Podemos hacerlo por ID, pero veremos query selector (como css) */
+        var todoList = document.querySelector('#todo_list');
+        for (let i = 0; i < tareas.length; i++) {
+            var tarea = tareas[i];
+            agregarTarea(tarea, ('elemento_' + i))
+
+            //05.Sustituimos codigo por la funcion agregarTarea.
+            /* //Creamos elento de DOM "li"
+            var li = document.createElement('li');
+            //Le añadimos contenido
+            li.textContent = tarea;
+            //Añadir id a cada uno de los elementos li
+            li.id = 'elemento_' + i;
+            //Lo añadimos al ul list
+            todoList.appendChild(li); */
+
+        }
+        //03.1 ELIMINAR elemento por id. Con seTimeOut:
+        //recibe guncion y milisegundos en los que se ejecuta la funcion
+        setTimeout(function () {
+            var elementoEliminar = document.getElementById('elemento_2');
+            todoList.removeChild(elementoEliminar);
+        }, 2000);
+
+        //04.AGREGAR BOTON AÑADIR TAREA.
+        //Añadir eventos. Input para añadir texto
+        var agregarBoton = document.getElementById('agregarTarea');
+        agregarBoton.addEventListener('click', function () {
+            var todoValue = document.getElementById('todoTitle').value;
+            console.log(todoValue);
+            //Creamos elemento li con el value del input text
+            /* var li = document.createElement('li');
+            li.textContent = todoValue;
+            todoList.appendChild(li); */
+            agregarTarea(todoValue);
+
+
+        })
+
+        //05.Evitar duplicar codigo con funcion
+        function agregarTarea(tarea, id) {
+            var li = document.createElement('li');
+            li.textContent = tarea;
+            if (id) {
+                li.id = id;
+            }
+            todoList.appendChild(li);
+
+        }
+    </script>
+</body>
+
+</html>

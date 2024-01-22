@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegEx</title>
+</head>
+
+<body>
+    <h1>Expresiones Regulares</h1>
+    <script type="text/javascript">
+        var banda = "AC/DC";
+
+        //01. comprobar que haya una barra
+        var regExp = /\//g;
+        // si encuentra en una barra
+        console.log(banda.search(regExp));
+        //devuelve posicion de / dentro del array, -1 si no encuentra nada
+
+        //02. comprobar si esta en minúscula
+        var texto = "hola mundo";
+        var regExp2 = /^[a-z]/g;
+        // ^ comienza en minuscula
+        // $ finaliza
+        // \ escapar caracteres eslpeciales.
+        console.log(texto.search(regExp2)); //devuelve donde esta
+        console.log(regExp2.test(texto)); //devuelve bool
+
+        //03. evaluar texto termine en cualquier caracer
+        var regExp3 = /hol\./;
+        var texto2 = "holr";
+        console.log(texto2.search(regExp3));
+        console.log(regExp3.test(texto2));
+
+        //04. Evaluar si termina en s, plural
+
+        var regExp4 = /s$/;
+        var texto3 = "bienvenidos";
+        console.log(texto3.search(regExp4));
+        console.log(regExp4.test(texto3));
+
+
+
+
+    </script>
+</body>
+
+</html>

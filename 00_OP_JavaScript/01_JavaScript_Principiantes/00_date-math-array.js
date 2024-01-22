@@ -19,9 +19,7 @@ function generarNum(numeroMax) {
     return Math.round(Math.random() * numeroMax);
 }
 
-
 /* ARRAYS */
-
 var colores = ["verde", "Azul", "rojo"]
 console.log(colores[0]);
 console.log(colores[1]);

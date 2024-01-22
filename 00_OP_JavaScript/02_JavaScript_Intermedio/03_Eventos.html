@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase lista DOM</title>
+</head>
+
+<body>
+    <h1>Eventos</h1>
+    <button id="cambiarFondo">Cambiar fondo.</button>
+    <script type="text/javascript">
+        document.addEventListener("keydown", function (evento) {
+            console.log(evento);
+        })
+        //funcion de num aleatoria para aplicar rgb random
+        function random(numMaximo) {
+            return Math.round(Math.random() * numMaximo);
+        }
+        //para boton
+        var boton = document.getElementById("cambiarFondo");
+        boton.addEventListener("click", function (evento) {
+            //cambiar color fondo con la funcion 
+            //array con colores rgb
+            var randomColor = [
+                random(255),
+                random(255),
+                random(255)
+            ];
+            document.body.style.backgroundColor = `rgb(${randomColor[0]},${randomColor[1]},${randomColor[2]})`;
+            console.log(event);
+            //event.target - importnte
+        })
+
+        //Crear nuestro propio evento, dispara 
+        document.addEventListener('cambiarFondo', function(){
+            console.log(evento);
+        })
+        var evento2 = new CustomEvent('cambiarFondo',{'detail': 'Hola Raul'});
+        document.dispatchEvent(evento2);
+
+    </script>
+
+</body>
+
+</html>
