@@ -5,40 +5,37 @@ body {
 
 /* HEADER */
 header {
-/*     border: solid 3px green;
- */    display: flex;
-    justify-content:space-between;
-    max-width: 100%;
+    border: solid 3px green;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
     background: var(--white-bg-color);
-    padding: 0.5em;
 }
 
 .logo {
     width: 5%;
-/*     border: solid 4px red;
- */}
-
-.nombreWeb {
-/*     border: solid 4px red;
- */    text-align: center;
+    border: solid 4px red;
+}
+.nombreWeb{
+    border: solid 4px red;
 }
 
 /* NAVEGADOR PRINCIPAL  */
 
 /* TODO Arreglar */
 .nav-principal {
-/*     border: solid 4px red;
- */}
+    border: solid 4px red;
+}
 
-.nav-principal>ul {
+.nav-principal ul {
     display: flex;
     margin: auto;
     justify-content: space-between;
     text-align: center;
 }
 
-.nav-principal ul li {
-    position: relative;
+.nav-principal li {
     padding: 1rem 2rem 1.15rem;
     text-transform: uppercase;
     cursor: pointer;
@@ -46,11 +43,6 @@ header {
     list-style: 2px ar(--main-color);
     min-width: 80px;
     margin: auto;
-}
-
-.nav-principal a {
-    display: block;
-    padding: 15px 20px;
 }
 
 .nav-principal li:hover {
@@ -67,31 +59,15 @@ header {
 }
 
 /*NAVEGADOR SUBMENU */
-.submenu {
+#razas>ul {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #c50606;
 }
 
-.nav-principal li:hover .submenu {
-    display: block;
-  }
-  
-  .submenu li {
-    display: block;
-  }
-  
-  .submenu a {
-    padding: 10px 20px;
-  }
-  
-  .submenu li:hover {
-    background-color: #555;
-  }
-
-
+#razas:hover>ul {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 
 /* ANIMIACIÓN BOTONES NAVEGADOR */
 HTML CSS Result Skip Results Iframe EDIT ON * {
@@ -125,8 +101,8 @@ HTML CSS Result Skip Results Iframe EDIT ON * {
 /* ************ */
 /* MAIN */
 main {
-/*     border: solid 3px;
- */    width: 100%;
+    border: solid 3px;
+    width: 100%;
     background-color: var(--white-bg-color);
 
 }
@@ -134,9 +110,6 @@ main {
 
 footer {
     width: 100%;
-    border-top: solid var(--secondary-color) 0.4rem;
-    background: var(--main-color);
-    height: 10rem;
-    text-align: center;
-line-height: 10rem;
+    background-color: var(--main-gradient);
+
 }

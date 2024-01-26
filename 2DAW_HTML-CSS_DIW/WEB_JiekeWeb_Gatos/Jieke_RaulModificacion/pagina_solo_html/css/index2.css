@@ -1,0 +1,90 @@
+body {
+    font-family: var(--txt-font), sans-serif;
+    background-color: var(--white-bg-color);
+    color: var(--black-font);
+}
+
+header {
+    background: var(--main-gradient);
+    color: var(--white-bg-color);
+    padding: 10px;
+    text-align: center;
+}
+
+#logo {
+    max-width: 100px; /* Adjust the size as needed */
+    max-height: 100px; /* Adjust the size as needed */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white-bg-color);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--black-font);
+}
+
+main {
+    padding: 20px;
+}
+
+#hero {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#home_contenedor_tarjetas-gatos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarjeta {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#home_imagenes {
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: var(--secondary-gradient);
+    color: var(--white-bg-color);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Additional styles for links inside the footer */
+footer a {
+    color: var(--white-bg-color);
+}
+
+footer a:hover {
+    color: var(--black-font);
+}
