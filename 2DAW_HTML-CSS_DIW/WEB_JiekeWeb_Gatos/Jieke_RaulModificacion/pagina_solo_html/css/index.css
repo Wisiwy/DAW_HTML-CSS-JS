@@ -1,0 +1,22 @@
+
+
+#home_contenedor_tarjetas-gatos{
+    
+}
+#home_contenedor_tarjetas-gatos ul{
+    /* TODO hacer grid */
+    display: flex;
+    justify-content: space-between;
+}
+.tarjeta{
+    background-color: aqua;
+    height: 50px;
+    display: flex;
+    width: 33%;
+
+}
+#home_imagenes{
+    height: 50 px;
+    display: none;
+}
+ 

@@ -1,5 +1,55 @@
-/* FontsGoogle TITULOS: 
- Agbalumo 
- 
- TEXTO:
- poppins*/
+/* ************ */
+/* TIPOGRAFÍA */
+@font-face {
+    font-family: "Roboto";
+    src: url(../font/RobotoCondensed-Regular.ttf);
+    font-weight: regular;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+/* *************************** */
+/* VARIABLES: colores y tamaños */
+:root {
+    /* colores */
+    --main-color: #F2CAA7;
+    --secondary-color: #7A979D;
+    --black-font: #05081C;
+    --white-bg-color: #FAFAFA;
+
+    --main-gradient:linear-gradient(359deg, #FD9C4C 0%,#F2CAA7 52%,#FD9C4C 100%);
+    --secondary-gradient: linear-gradient(359deg, #7A979D 0%,#C7F6FF 52%,#7A979D 100%);
+
+    /* tipografías */
+    --titulo-font: 'Gloria Hallelujah', cursive;
+    --txt-font: Roboto;
+}
+
+/* ******************* */
+/* RESETEO DE FORMATOS POR DEFECTO, DOCUMNETO */
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: var(--txt-font);
+}
+
+body {
+    background: var(--white-bg-color);
+}
+
+/* ********* */
+/* TITULOS */
+h1,h3 {
+    font-family:var(--titulo-font);
+}
+h2,h4,h5,h6,p,figcaption{
+    font-family: var(--txt-font);
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: black;
+}
+
