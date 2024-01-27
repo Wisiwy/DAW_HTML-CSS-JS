@@ -25,27 +25,28 @@
 
 /* ******************* */
 /* RESETEO DE FORMATOS POR DEFECTO, DOCUMNETO */
-html {
-    /* Se establece al medida root en 16 px. Estandar texto para web */
-    font-size: 16px;
+* {
     /*El tamaño que le damos a la caja lo coje desde el borde*/
     box-sizing: border-box;
     min-height: 100%;
-}
-
-* {
+    font-family: var(--txt-font);
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    font-family: var(--txt-font);
 }
 
+html {
+    /* Se establece al medida root en 16 px. Estandar texto para web */
+    font-size: 16px;
+}
 
+/* ELEMENTOS COMUNES A TODO EL DOCUMENTO */
 body {
-    background: var(--white-bg-color);
+    height: 100%;
+    
 }
 
-img{
+img {
     max-width: 100%;
 }
 

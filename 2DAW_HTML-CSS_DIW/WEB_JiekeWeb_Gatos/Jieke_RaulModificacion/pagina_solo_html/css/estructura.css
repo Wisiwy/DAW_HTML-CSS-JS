@@ -5,9 +5,10 @@ body {
 
 /* HEADER */
 header {
-/*     border: solid 3px green;
- */    display: flex;
-    justify-content:space-between;
+    /*     border: solid 3px green;
+ */
+    display: flex;
+    justify-content: space-between;
     max-width: 100%;
     background: var(--white-bg-color);
     padding: 0.5em;
@@ -15,20 +16,23 @@ header {
 
 .logo {
     width: 5%;
-/*     border: solid 4px red;
- */}
+    /*     border: solid 4px red;
+ */
+}
 
 .nombreWeb {
-/*     border: solid 4px red;
- */    text-align: center;
+    /*     border: solid 4px red;
+ */
+    text-align: center;
 }
 
 /* NAVEGADOR PRINCIPAL  */
 
 /* TODO Arreglar */
 .nav-principal {
-/*     border: solid 4px red;
- */}
+    /*     border: solid 4px red;
+ */
+}
 
 .nav-principal>ul {
     display: flex;
@@ -77,19 +81,19 @@ header {
 
 .nav-principal li:hover .submenu {
     display: block;
-  }
-  
-  .submenu li {
+}
+
+.submenu li {
     display: block;
-  }
-  
-  .submenu a {
+}
+
+.submenu a {
     padding: 10px 20px;
-  }
-  
-  .submenu li:hover {
+}
+
+.submenu li:hover {
     background-color: #555;
-  }
+}
 
 
 
@@ -125,8 +129,9 @@ HTML CSS Result Skip Results Iframe EDIT ON * {
 /* ************ */
 /* MAIN */
 main {
-/*     border: solid 3px;
- */    width: 100%;
+    /*     border: solid 3px;
+ */
+    width: 100%;
     background-color: var(--white-bg-color);
 
 }
@@ -138,5 +143,5 @@ footer {
     background: var(--main-color);
     height: 10rem;
     text-align: center;
-line-height: 10rem;
+    line-height: 10rem;
 }

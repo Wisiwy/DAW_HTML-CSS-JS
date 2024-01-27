@@ -15,9 +15,6 @@ h1 {
     color: var(--secondary-color);
 }
 
-
-
-
 /* ************* */
 /* SECCIÓN FICHAS */
 #intro{
@@ -28,7 +25,7 @@ h1 {
     padding: 4em 2em;
 /*     border: 5px solid yellow;
  */    display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .ficha{
     max-width: 20em;
@@ -74,7 +71,7 @@ summary{
     padding: 4em 2em;
 /*     border: 5px solid rgb(255, 64, 0);
  */    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
  .contenedor_imagenes a{
