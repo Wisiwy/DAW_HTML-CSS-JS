@@ -14,6 +14,9 @@
 h1 {
     color: var(--secondary-color);
 }
+h5{
+    text-align: center;
+}
 
 /* ************* */
 /* SECCIÓN FICHAS */
@@ -66,6 +69,12 @@ summary{
     margin: 1em;
 }
 
+hr {
+    border: none; 
+    border-top: 3px solid var(--secondary-color); 
+    margin: 2rem 0; 
+}
+
 /* IMAGENES */
 .contenedor_imagenes{
     padding: 4em 2em;
@@ -87,11 +96,9 @@ summary{
 
 .contenedor_imagenes img{
     opacity: 0.5;
-
 }
 .contenedor_imagenes img:hover{
     opacity: 0.8;
-
 }
 
 

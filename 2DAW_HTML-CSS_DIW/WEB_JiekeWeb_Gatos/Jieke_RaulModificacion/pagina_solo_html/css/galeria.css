@@ -5,7 +5,7 @@ main{
 }
 .galeria{    
     margin: 2em;
-    border: solid 5px red;
+     border: dotted 5px var(--secondary-color);
     background-color:var(--main-color) ;
     max-width: 80%;
     padding: 2em 2em;
@@ -22,8 +22,8 @@ main{
     max-width: 100%;
     border-radius: 5px;
     position: relative;
-    border: solid 3px yellow;
-
+/*     border: solid 3px yellow;
+ */
 }
 
 .gato__img{
@@ -33,6 +33,7 @@ main{
     border-radius: 5px;
     object-fit: fill;
     object-position: center top;    
+    min-height: 100%;
 
 }
 
@@ -62,7 +63,8 @@ main{
 }
 
 iframe{
-
+    min-height: 100%;
+min-width: 100%;
 }
 #video1{
     grid-column: 1/span 2;
