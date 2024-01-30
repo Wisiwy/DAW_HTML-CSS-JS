@@ -1,3 +1,56 @@
+/* CREACION DE LA CLASE PEDIDO */
+/**
+ * 
+ */
+class Pedido {
+    //Id autoincremental. 
+    static ultimaId = 0;
+
+    constructor(cesta, infoExtra) {
+        this.id = ++Pedido.ultimaId;
+        this.cesta = cesta; //array[] de alimentos
+        this.precioTotal = this.calcularTotal(); //calculos con array cesta[]
+        this.timestamp = new Date();
+        this.infoExtra = infoExtra;
+    }
+
+    /**
+     * 
+     * @returns precion total del array cesta. 
+     */
+    calcularTotal() {
+        return this.cesta.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
+    }
+    //Saacado de generar ticket
+    //let totalPagar = cesta.reduce((accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
+
+    //TODO set infoExtra con lo recogido en el cuadro de texto. 
+
+    /* GETTERS */
+    getId() {
+        return this.id;
+    }
+
+    getCesta() {
+        return this.cesta;
+    }
+
+    getPrecioTotal() {
+        return this.precioTotal;
+    }
+
+    getTimestamp() {
+        return this.timestamp;
+    }
+
+    getInfoExtra() {
+        return this.infoExtra;
+    }
+    /* **** */
+
+}
+
 /*Defino 1 clase padre "alimento" con un constructor común (id, nombre y precio) 
 * además de almacenar la cantidad de unidades que hay de cada alimento.
 * Luego definire las clases hijos que heredan de alimento.
@@ -39,8 +92,8 @@ class Hamburguesa extends alimento {
 
 //Defino la clase bebida heredando casi todo de la clase padre pero cambiando el precio.
 class Bebida extends alimento {
-    constructor(id, nombre,precio, cantidad) {
-        super(id, nombre,precio, cantidad);
+    constructor(id, nombre, precio, cantidad) {
+        super(id, nombre, precio, cantidad);
     }
 }
 
@@ -65,19 +118,10 @@ class Postre extends alimento {
         return "<strong>| NOMBRE | SABOR | PRECIO |</strong>";
     }
 }
-/* CREACION DE LA CLASE CESTA */
+
+
 //Declaro la variable ticket donde guardaré los ítems que solicite el cliente. 
-class Cesta {
-    constructor() {
-        //array de alimentos, productos seleccionados, cantidad de ellos viene dada en el propio producto
-        this.elementos = elementos;
-        this.precioTotal = precio_total
-    }
-    verCesta() {
-
-    };
-}
-
+var cesta = [];
 
 /* Instancio un array para cada grupo de alimentos(Hamburguesas, Bebidas, Postres y Complementos).
 *  Los arrays será constantes para que no se modifiquen 
@@ -90,13 +134,13 @@ const hamburguesas = [
     new Hamburguesa("hamburguesas[2]", "Clasica", ["ternera", "huevo", "pepinillos", "cebolla", "tomate", "queso"], false, 10.50)
 ];
 const bebidas = [
-    new Bebida("bebidas[0]", "Sprite",1.50),
-    new Bebida("bebidas[1]", "Cocacola",1.50),
-    new Bebida("bebidas[2]", "Fanta",1.50),
-    new Bebida("bebidas[3]", "Acuarius",1.50),
-    new Bebida("bebidas[4]", "Nestea",1.50),
-    new Bebida("bebidas[5]", "Agua",1.20),
-    new Bebida("bebidas[6]", "CruzCampo",1)
+    new Bebida("bebidas[0]", "Sprite", 1.50),
+    new Bebida("bebidas[1]", "Cocacola", 1.50),
+    new Bebida("bebidas[2]", "Fanta", 1.50),
+    new Bebida("bebidas[3]", "Acuarius", 1.50),
+    new Bebida("bebidas[4]", "Nestea", 1.50),
+    new Bebida("bebidas[5]", "Agua", 1.20),
+    new Bebida("bebidas[6]", "CruzCampo", 1)
 ];
 bebidas[5].precio = 1.2;
 bebidas[6].precio = 1;
@@ -114,8 +158,10 @@ const complementos = [
 ];
 
 
-
-//Con esta función se muestra el arry de productos en función del elemento activo del "option" (en el archivo html);
+/**
+ * Al pulsar boton se pasa el menu que quiero mostrar
+ * @param {*} tipoProducto 
+ */
 function mostrarMenu(tipoProducto) {
     switch (tipoProducto) {
         //dependiendo qué está seleccionado, paso diferentes arrays a la funcion que muestra el menú.
@@ -136,7 +182,7 @@ function mostrarMenu(tipoProducto) {
     }
 }
 /**
- * 
+ * Muestro el array de alimentos especificaco en mostrarMenu()
  * @param {*} arrays 
  */
 
@@ -188,14 +234,14 @@ function anadirProducto(producto) {
     * Así condeguimos evitar duplicados. 
     * Si ya existiera, se habría cambiado la cantidad del producto antes y sto afectaría tambien al ticket
     */
-    if (!ticket.includes(producto))
-        ticket.push(producto);
+    if (!cesta.includes(producto))
+        cesta.push(producto);
 
 }
 //función para quitar un alimento del ticket
 function suprimirProducto(producto) {
     //cojo la posición del producto a suprimir
-    let posicion = ticket.lastIndexOf(producto);
+    let posicion = cesta.lastIndexOf(producto);
     //cojo el texto de la cantidad del producto
     let texto = document.getElementById("count" + producto.id);
 
@@ -208,24 +254,74 @@ function suprimirProducto(producto) {
         texto.innerHTML = producto.cantidad;
         // Y finalmente si la cantidad es 0, elimino el producto del ticket
         if (producto.cantidad == 0)
-            ticket.splice(posicion, 1);
+            cesta.splice(posicion, 1);
     }
 }
 //Función que se ejecuta al pulsar el botón de "generar ticket"
 function generaTicket() {
     //creo una variable local "totalPagar" que recorre el ticket con la función reduce,
     //acumulando en cada posición el precio del producto por la cantidad de éste.
-    let totalPagar = ticket.reduce((accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
+    let totalPagar = cesta.reduce((accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
     //creo una variable local para el texto del ticket/factura llamada "elementoTotal"
     let elementoTotal = document.getElementById("precioTotal");
     elementoTotal.innerHTML = "";
 
     //Muestro el contenido del ticket en 2 pasos:
-    ticket.forEach((alimento) => {
+    cesta.forEach((alimento) => {
         //Primero muestro los ítems del pedido con su cantidad y el precio total de ese producto
         elementoTotal.innerHTML += "<br>" + alimento.nombre + "  -- " + alimento.cantidad + " -->" + alimento.precio * alimento.cantidad + "€";
     });
     //Y por último muestro el precio total
     elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar + "€";
+
+}
+
+/* ********************************************** */
+
+/* 1. Crear pedido  con la cesta */
+/* var element_infoExtra = document.getElementById("infoextra");
+var infoExtra= element_infoExtra.value; */
+
+function hacerPedido() {
+    window.location.href = '../views/recibo.html';
+
+    //crear pedido
+
+    //recoger info cesta y textarea
+    let infoExtra = "No hay info extras";
+    var pedido_cliente = new Pedido(cesta, infoExtra);
+    console.log(pedido_cliente);
+
+    //0. Mostrar id del pedido, numero referencia. 
+    var titulo = document.getElementById("tituloRecibo");
+    titulo.innerHTML = "Tu pedido" + pedido_cliente.getId;
+
+    //1.Mostrar productos del pedido
+    mostrarPedido(pedido_cliente);
+
+    //2. Mostrar precio total a pagar. 
+    let element_pagar = document.getElementById("totalPagar");
+    element_pagar.innerText = pedido_cliente.getPrecioTotal;
+
+    //3. Orden del pedido, en cocina orden . Guardar en sesion. Sera orden por sersion de navegacion 
+
+    //4. Guardar pedido, por dia mirar donde. (¿?lOCAL storage.)
+    //ARRAY CON HISTORIAL DEL PEDIDOS.  
+
+    //5. Cancelar pedido. Borrado. 
+
+    //6. Recuperar pedido en el index. 
+
+
+
+}
+
+function mostrarPedido(pedido) {
+    let elementoProductos = document.getElementById("contenido_recibo");
+    let array = pedido.getCesta;
+    array.forEach((alimento) => {
+        elementoProductos.innerHTML+="<br>"+ alimento.nombre+"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
+    });
+    
 
 }

@@ -7,5 +7,5 @@ function redireccionMenu(){
 }
 
 
-
+//recoger los pedidos antiguos de variable de sesion. 
 var btnAntiguos = document.getElementById('btn_antiguos');

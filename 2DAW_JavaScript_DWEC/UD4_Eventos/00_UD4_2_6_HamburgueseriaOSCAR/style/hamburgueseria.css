@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbd10b;
+    color: #64435d;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #64435d;
+    color: #fbd10b;
+    margin: 0;
+}
+
+header , section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+button {
+    flex: 1;
+    padding: 15px;
+    margin: 0 10px;
+    background-color: #64435d;
+    color: #fbd10b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+button:hover {
+    background-color: #52354a;
+}
+
+section{
+     max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#btn_tupedido{
+    width: 100%;
+    box-sizing: border-box;
+}
+#precioTotal {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #52354a;
+}
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}

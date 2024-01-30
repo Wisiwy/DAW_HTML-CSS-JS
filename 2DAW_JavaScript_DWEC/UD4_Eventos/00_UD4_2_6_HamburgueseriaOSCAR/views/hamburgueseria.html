@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Raul Gomez">
     <title>Revision hamburgueseria de Oscar</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/hamburgueseria.css">
+    <!-- SCRIPTS -->
     <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
 </head>
 
@@ -20,11 +23,21 @@
         </nav>
     </header>
     <section id="contenidoMenu">
+        <!-- Html insertado desde JS -->
+    </section>
+    <section>
+        <button onclick="generaTicket()" id="btn_tupedido"><h1>TU PEDIDO</h1></button>
 
+        <h2 id="precioTotal"></h2>
+    </section>
+    <section>
+        <h2>Observaciones pedido (alergias, cambios ingredientes) : </h2>
+        <textarea name="infoextra" id="infotextra" cols="30" rows="10"></textarea>
+    </section>
+    <section class="botones">
+        <button onclick="hacerPedido()">Hacer pedido</button>
     </section>
 
-    <h2 id="precioTotal"></h2>
-    <button onclick="generaTicket()">Obtén tu ticket</button>
 </body>
 
 </html>
