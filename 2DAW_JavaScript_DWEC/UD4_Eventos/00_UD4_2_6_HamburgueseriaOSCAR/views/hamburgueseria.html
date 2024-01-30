@@ -8,8 +8,7 @@
     <title>Revision hamburgueseria de Oscar</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../style/hamburgueseria.css">
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
+
 </head>
 
 <body>
@@ -26,7 +25,9 @@
         <!-- Html insertado desde JS -->
     </section>
     <section>
-        <button onclick="generaTicket()" id="btn_tupedido"><h1>TU PEDIDO</h1></button>
+        <button onclick="generaTicket()" id="btn_tupedido">
+            <h1>TU PEDIDO</h1>
+        </button>
 
         <h2 id="precioTotal"></h2>
     </section>
@@ -35,9 +36,14 @@
         <textarea name="infoextra" id="infotextra" cols="30" rows="10"></textarea>
     </section>
     <section class="botones">
+        <!-- <a href="recibo.html"><button onclick="almacenarCesta()">Hacer pedido</button></a> -->
         <button onclick="hacerPedido()">Hacer pedido</button>
+        <a href="recibo.html"><button >Pagar pedido</button>
+    
     </section>
 
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
 </body>
 
 </html>

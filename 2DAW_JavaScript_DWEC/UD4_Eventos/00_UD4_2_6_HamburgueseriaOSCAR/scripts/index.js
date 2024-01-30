@@ -1,5 +1,5 @@
 //Redireccion de paginas
-var btnPedido = document.getElementById('btn_hacerPedid');
+var btnPedido = document.getElementById('btn_hacerPedido');
 //btnPedido.addEventListener('click', redireccionMenu());
 
 function redireccionMenu(){

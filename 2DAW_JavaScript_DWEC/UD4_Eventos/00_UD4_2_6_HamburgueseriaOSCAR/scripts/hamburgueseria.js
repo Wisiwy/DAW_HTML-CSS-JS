@@ -275,26 +275,57 @@ function generaTicket() {
     elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar + "€";
 
 }
+/* ************************************************ */
+function hacerPedido(){
+    var infoExtra= document.getElementById("infoextra");
+    let info = "hola";
+    var pedido_cliente = new Pedido(cesta, info);
+    console.log(pedido_cliente);
+    sessionStorage.setItem("pedido",JSON.stringify(pedido_cliente));
+    //guardar variable objeto en sessionStorage
+    //almacenarSessionStorage(pedido_cliente);
+}
+function visualizarPedido(){
+    let pedido = JSON.parse(sessionStorage.getItem("pedido"));
+    console.log(pedido);
 
+     //0. Mostrar id del pedido, numero referencia.
+     var element_titulo = document.getElementById("tituloRecibo");
+     element_titulo.innerText = "Tu pedido" + pedido.getId();
+
+     //1.Mostrar productos del pedido
+    mostrarPedido(pedido);
+
+    //2. Mostrar precio total a pagar. 
+    let element_pagar = document.getElementById("totalPagar");
+    element_pagar.innerText = pedido.getPrecioTotal();
+
+}
 /* ********************************************** */
 
 /* 1. Crear pedido  con la cesta */
 /* var element_infoExtra = document.getElementById("infoextra");
 var infoExtra= element_infoExtra.value; */
 
-function hacerPedido() {
-    window.location.href = '../views/recibo.html';
+//sessionStorage.setItem("miCesta", cesta);
 
-    //crear pedido
+/* function hacerPedido() {
+
+
+    //Intento fallido de redireccionar
+    //window.location.href = '../views/recibo.html';
+
+    //Pasar cesta[] por session storage
+        //let cesta =sessionStorage.getItem("miCesta");
 
     //recoger info cesta y textarea
     let infoExtra = "No hay info extras";
     var pedido_cliente = new Pedido(cesta, infoExtra);
     console.log(pedido_cliente);
 
-    //0. Mostrar id del pedido, numero referencia. 
-    var titulo = document.getElementById("tituloRecibo");
-    titulo.innerHTML = "Tu pedido" + pedido_cliente.getId;
+    //0. Mostrar id del pedido, numero referencia.
+    var element_titulo = document.getElementById("tituloRecibo");
+    element_titulo.innerText = "Tu pedido" + pedido_cliente.getId();
 
     //1.Mostrar productos del pedido
     mostrarPedido(pedido_cliente);
@@ -312,16 +343,16 @@ function hacerPedido() {
 
     //6. Recuperar pedido en el index. 
 
-
-
-}
+} */
 
 function mostrarPedido(pedido) {
-    let elementoProductos = document.getElementById("contenido_recibo");
-    let array = pedido.getCesta;
-    array.forEach((alimento) => {
-        elementoProductos.innerHTML+="<br>"+ alimento.nombre+"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
-    });
-    
 
+    window.location.href = '../views/recibo.html';
+
+
+    let elementoProductos = document.getElementById("contenido_recibo");
+    let arrayCesta = pedido.getCesta();
+    arrayCesta.forEach((alimento) => {
+        elementoProductos.innerHTML+="<br>"+ alimento.nombre +"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
+    });
 }

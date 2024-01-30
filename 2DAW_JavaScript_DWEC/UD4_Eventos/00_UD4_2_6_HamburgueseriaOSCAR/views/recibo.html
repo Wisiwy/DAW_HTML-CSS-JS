@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido</title>
-     <!-- CSS -->
-     <link rel="stylesheet" href="../style/recibo.css">
-     <!-- SCRIPTS -->
-     <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/recibo.css">
+
 </head>
 
-<body>
+<body onload = "visualizarPedido()">
 
     <header>
-        <h1 id="tituloRecibo"> </h1>
+        <section id="tituloRecibo"></section>
     </header>
     <main>
         <section id="contenido_recibo">
             <h2>aqui va el contenido del recibo</h2>
-            <table id= productosPedido">
+            <table id=productosPedido">
 
             </table>
             <article id="totalPagar">
 
             </article>
-    
+
 
         </section>
         <section id="botones">
@@ -35,7 +34,8 @@
         </section>
 
     </main>
-
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
 </body>
 
 </html>
