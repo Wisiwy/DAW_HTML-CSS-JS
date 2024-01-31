@@ -32,12 +32,12 @@
     </section>
     <section>
         <h2>Observaciones pedido (alergias, cambios ingredientes) : </h2>
-        <textarea name="infoextra" id="infotextra" cols="30" rows="10"></textarea>
+        <textarea onchange="setearInfo()" name="infoextra" id="infoextra" cols="30" rows="10"></textarea>
     </section>
     <section class="botones">
         <!-- <a href="recibo.html"><button onclick="almacenarCesta()">Hacer pedido</button></a> -->
-        <button onclick="hacerPedido()">Hacer pedido</button>
-        <a href="recibo.html"><button >Pagar pedido</button>
+        <button onclick="cancelarPedido()">Cancelar pedido</button>
+        <button onclick="tramitarPedido()">Tramitar pedido</button>
     
     </section>
 

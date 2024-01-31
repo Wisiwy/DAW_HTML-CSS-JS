@@ -10,16 +10,25 @@
 
 </head>
 
-<body onload = "visualizarPedido()">
+<body>
 
     <header>
-        <section id="tituloRecibo"></section>
+        <h1>Ooooossssscar Burguer</h1>
+        <section id="tituloRecibo">
+
+        </section>
     </header>
     <main>
+        
         <section id="contenido_recibo">
             <h2>aqui va el contenido del recibo</h2>
             <table id=productosPedido">
-
+                <tr>
+                    <th><h3>Cta</h3></th>
+                    <th><h3>Descripcion</h3></th>
+                    <th><h3>Precio</h3></th>
+                </tr>
+                <!-- Append filas por productos en pedido -->
             </table>
             <article id="totalPagar">
 
@@ -28,14 +37,20 @@
 
         </section>
         <section id="botones">
-            <button>Pagar</button>
+            <button onclick="visualizarPedido()">Mostrar ticket</button>
             <button>Cancelar</button>
             <button>Guardar Pedido</button>
         </section>
-
     </main>
+
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="../scripts/hamburgueseria.js"> </script>
+    <script type="text/javascript" src="../scripts/clases/Alimento.js"></script>
+    <script type="text/javascript" src="../scripts/clases/Bebida.js"></script>
+    <script type="text/javascript" src="../scripts/clases/Complemento.js"></script>
+    <script type="text/javascript" src="../scripts/clases/Hamburguesa.js"></script>
+    <script type="text/javascript" src="../scripts/clases/Pedido.js"></script>
+    <script type="text/javascript" src="../scripts/clases/Postre.js"></script>
+    <script type="text/javascript" src="../scripts/recibo.js"></script>
 </body>
 
 </html>

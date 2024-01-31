@@ -18,6 +18,10 @@ class Pedido {
             (accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
     }
 
+    /**
+     * IMPRIMIR CESTA
+     */
+
     /* GETTERS & SETTERS */
     getId() {
         return this.id;
