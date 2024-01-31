@@ -1,133 +1,16 @@
-/* CREACION DE LA CLASE PEDIDO */
-/**
- * 
- */
-class Pedido {
-    //Id autoincremental. 
-    static ultimaId = 0;
+/* import {Bebida} from "./clases/Bebida.js";
+import {Complemento} from "./clases/Complemento.js";
+import {Hamburguesa} from "./clases/Hamburguesa.js";
+import {Pedido} from "./clases/Pedido.js";
+import {Postre} from "./clases/Postre.js"; */
 
-    constructor(cesta, infoExtra) {
-        this.id = ++Pedido.ultimaId;
-        this.cesta = cesta; //array[] de alimentos
-        this.precioTotal = this.calcularTotal(); //calculos con array cesta[]
-        this.timestamp = new Date();
-        this.infoExtra = infoExtra;
-    }
+//Instanciación Pedido
+var pedido = new Pedido();
 
-    /**
-     * 
-     * @returns precion total del array cesta. 
-     */
-    calcularTotal() {
-        return this.cesta.reduce(
-            (accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
-    }
-    //Saacado de generar ticket
-    //let totalPagar = cesta.reduce((accumulator, currentValue) => accumulator + currentValue.precio * currentValue.cantidad, 0);
-
-    //TODO set infoExtra con lo recogido en el cuadro de texto. 
-
-    /* GETTERS */
-    getId() {
-        return this.id;
-    }
-
-    getCesta() {
-        return this.cesta;
-    }
-
-    getPrecioTotal() {
-        return this.precioTotal;
-    }
-
-    getTimestamp() {
-        return this.timestamp;
-    }
-
-    getInfoExtra() {
-        return this.infoExtra;
-    }
-    /* **** */
-
-}
-
-/*Defino 1 clase padre "alimento" con un constructor común (id, nombre y precio) 
-* además de almacenar la cantidad de unidades que hay de cada alimento.
-* Luego definire las clases hijos que heredan de alimento.
-* La clase padre "alimento" contara también con dos funciones útiles:
-*   - mostrarParametros() para mostrar los parametros de la clase de una forma bonita.
-*   - mostrarCabecera() para mostrar la cabezera de la clase de una forma bonita.
-*/
-class alimento {
-    constructor(id, nombre, precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = 0;
-    }
-    mostrarParametros() {
-        return this.nombre + " --> " + this.precio + "€ ";
-    }
-    mostrarCabecera() {
-        return "<strong>| NOMBRE | PRECIO |</strong>";
-    }
-}
-
-//Defino la clase hamburguesa y añado los atributos "ingredientes" y un atributo que dice si es apta para veganos.
-class Hamburguesa extends alimento {
-    constructor(id, nombre, ingredientes, vegana, cantidad, precio) {
-        super(id, nombre, cantidad, precio);
-        this.ingredientes = ingredientes;
-        //Declaro vegana como un booleano
-        this.vegana = Boolean(vegana);
-    }
-    //Añado los ingredientes a los parametros y la cabecera
-    mostrarParametros() {
-        return this.nombre + ": " + this.ingredientes + " --> " + this.precio + "€ ";
-    }
-    mostrarCabecera() {
-        return "<strong>| NOMBRE | INGREDIENTES | PRECIO |</strong>";
-    }
-}
-
-//Defino la clase bebida heredando casi todo de la clase padre pero cambiando el precio.
-class Bebida extends alimento {
-    constructor(id, nombre, precio, cantidad) {
-        super(id, nombre, precio, cantidad);
-    }
-}
-
-//Defino la clase Complemento heredando todo de la clase padre.
-class Complemento extends alimento {
-    constructor(id, nombre, cantidad, precio) {
-        super(id, nombre, cantidad, precio);
-    }
-}
-//Defino la clase Postre heredando casi todo de la clase padre pero añadiendo el sabor.
-class Postre extends alimento {
-    constructor(id, nombre, sabor, cantidad, precio) {
-        super(id, nombre, cantidad, precio);
-        //añado el parametro sabor
-        this.sabor = sabor;
-    }
-    //edito los metodos para añadir el atributo valor tanto a la cabecera como a los parámetros.
-    mostrarParametros() {
-        return this.nombre + " " + this.sabor + " --> " + this.precio + "€ ";
-    }
-    mostrarCabecera() {
-        return "<strong>| NOMBRE | SABOR | PRECIO |</strong>";
-    }
-}
-
-
-//Declaro la variable ticket donde guardaré los ítems que solicite el cliente. 
-var cesta = [];
-
-/* Instancio un array para cada grupo de alimentos(Hamburguesas, Bebidas, Postres y Complementos).
+/* INSTANCIACIÓN ARRAYs para cada grupo de Alimentos(Hamburguesas, Bebidas, Postres y Complementos).
 *  Los arrays será constantes para que no se modifiquen 
 *  y en el primer valor de cada elemento declararemos su id para utilizarla más tarde al recorrerlo.
 */
-
 const hamburguesas = [
     new Hamburguesa("hamburguesas[0]", "Gallega", ["Carne de buey", "pan de cerveza negra", "queso San Simón", "lacón crujiente", "pimientos de Padrón", "ajada"], false, 15.50),
     new Hamburguesa("hamburguesas[1]", "Bump Green", ["remolacha", "quinoa"], true, 7.50),
@@ -142,16 +25,14 @@ const bebidas = [
     new Bebida("bebidas[5]", "Agua", 1.20),
     new Bebida("bebidas[6]", "CruzCampo", 1)
 ];
-bebidas[5].precio = 1.2;
-bebidas[6].precio = 1;
 const postres = [
     new Postre("postres[0]", "Helado", "chocolate", 2.50),
     new Postre("postres[1]", "Helado", "nata", 2.00),
     new Postre("postres[2]", "Batido", "vainilla", 2.50),
     new Postre("postres[3]", "Batido", "arandanos", 3.00),
     new Postre("postres[4]", "Tarta", "queso", 2.25),
-    new Postre("postres[5]", "Tarta", "chocolate", 1.90)];
-
+    new Postre("postres[5]", "Tarta", "chocolate", 1.90)
+];
 const complementos = [
     new Complemento("complementos[0]", "Patatas", 1.80),
     new Complemento("complementos[1]", "Nuggets", 3.20)
@@ -182,7 +63,7 @@ function mostrarMenu(tipoProducto) {
     }
 }
 /**
- * Muestro el array de alimentos especificaco en mostrarMenu()
+ * Muestro el array de Alimentos especificaco en mostrarMenu()
  * @param {*} arrays 
  */
 
@@ -193,35 +74,37 @@ function mostrarProductos(arrays) {
     contenidoMenu.innerHTML = "";
 
     //Creo la cabecera
-    contenidoMenu.innerHTML += "<ul>"
+    contenidoMenu.innerHTML += `<ul>${arrays[0].mostrarCabecera()}<br/><br/>`;
+    
+
+    /* TODO BORRAR si funciona  
+   contenidoMenu.innerHTML += "<ul>"
     contenidoMenu.innerHTML += arrays[0].mostrarCabecera();
-    contenidoMenu.innerHTML += "<br/><br/>";
+    contenidoMenu.innerHTML += "<br/><br/>"; */
 
     //Recorro cada uno de los elementos del array para mostrar los distintos tipos de 
     //haburguesas, bebidas, complementos o postres diferentes.
 
-    arrays.forEach((alimento) => {
+    arrays.forEach((Alimento) => {
         let Cadena = "";
         //muestro los parametros
-        Cadena += alimento.mostrarParametros();
-
+        Cadena += Alimento.mostrarParametros();
         /*añado dos botones (+) y (-) además de un texto entre medias que dirá la cantidad de ítems de ese tipo se han solicitado.
         * (por defecto cantidad=0). 
         *   - El botón del (+) al ser pulsado, invoca a la función añadirProducto(producto).
         *   - El botón del (-) al ser pulsado, invoca a la función suprimirProducto(producto).
-        * El párametro "producto" será el id de el alimento.
+        * El párametro "producto" será el id de el Alimento.
         *
         * IMPORTANTE: El texto dentro que se genera en azul clarito, tiene id en función del alimeto,
-        * ya que la forma de declarar su id es la siguiente: {id="count'+alimento.id+'"}
+        * ya que la forma de declarar su id es la siguiente: {id="count'+Alimento.id+'"}
         */
-
-        Cadena += '<button  onclick="suprimirProducto(' + alimento.id + ')"> - </button> <a id="count' + alimento.id + '" style="color:DodgerBlue;">' + alimento.cantidad + '</a>';
-        Cadena += '<button  onclick="anadirProducto(' + alimento.id + ')"> + </button>  ';
+        Cadena += '<button  onclick="suprimirProducto(' + Alimento.id + ')"> - </button> <a id="count' + Alimento.id + '" style="color:DodgerBlue;">' + Alimento.cantidad + '</a>';
+        Cadena += '<button  onclick="anadirProducto(' + Alimento.id + ')"> + </button>  ';
         contenidoMenu.innerHTML += "<li>" + Cadena + "</li>";
     });
     contenidoMenu.innerHTML += "</ul>"
 }
-//función para añadir un alimento al ticket
+//función para añadir un Alimento al ticket
 function anadirProducto(producto) {
     //cojo el texto de la cantidad del producto
     let texto = document.getElementById("count" + producto.id);
@@ -238,7 +121,7 @@ function anadirProducto(producto) {
         cesta.push(producto);
 
 }
-//función para quitar un alimento del ticket
+//función para quitar un Alimento del ticket
 function suprimirProducto(producto) {
     //cojo la posición del producto a suprimir
     let posicion = cesta.lastIndexOf(producto);
@@ -267,9 +150,9 @@ function generaTicket() {
     elementoTotal.innerHTML = "";
 
     //Muestro el contenido del ticket en 2 pasos:
-    cesta.forEach((alimento) => {
+    cesta.forEach((Alimento) => {
         //Primero muestro los ítems del pedido con su cantidad y el precio total de ese producto
-        elementoTotal.innerHTML += "<br>" + alimento.nombre + "  -- " + alimento.cantidad + " -->" + alimento.precio * alimento.cantidad + "€";
+        elementoTotal.innerHTML += "<br>" + Alimento.nombre + "  -- " + Alimento.cantidad + " -->" + Alimento.precio * Alimento.cantidad + "€";
     });
     //Y por último muestro el precio total
     elementoTotal.innerHTML += "<br><br> Precio total: " + totalPagar + "€";
@@ -352,7 +235,7 @@ function mostrarPedido(pedido) {
 
     let elementoProductos = document.getElementById("contenido_recibo");
     let arrayCesta = pedido.getCesta();
-    arrayCesta.forEach((alimento) => {
-        elementoProductos.innerHTML+="<br>"+ alimento.nombre +"  -- "+alimento.cantidad+" -->"+alimento.precio*alimento.cantidad+"€";
+    arrayCesta.forEach((Alimento) => {
+        elementoProductos.innerHTML+="<br>"+ Alimento.nombre +"  -- "+Alimento.cantidad+" -->"+Alimento.precio*Alimento.cantidad+"€";
     });
 }

@@ -130,10 +130,9 @@ main {
  */
     width: 100%;
     background-color: var(--white-bg-color);
+    margin-bottom: 10rem;
 
 }
-
-
 /* footer {
     width: 100%;
     border-top: solid var(--secondary-color) 0.4rem;
@@ -151,6 +150,8 @@ footer {
     padding: 2rem 0; 
     background: var(--main-color);
     border-top: solid var(--secondary-color) 0.3em;
+    position: fixed;
+    bottom: 0;
 }
 footer p{
     color: var(--secondary-color);
