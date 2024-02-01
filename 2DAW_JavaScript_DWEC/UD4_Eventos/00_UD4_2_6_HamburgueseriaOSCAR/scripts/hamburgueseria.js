@@ -172,11 +172,13 @@ function generaTicket() {
  */
 function setearInfo(){
     let infoAux = pedido.getInfoExtra();
-    infoAux+=document.getElementById('infoextra').value;
+    //infoAux+=document.getElementById('infoextra').value;
+    infoAux=document.getElementById('infoextra').value;
     pedido.setInfoExtra(infoAux);
 }
+
 function tramitarPedido(){
-    alert(pedido.getId());
+    alert("Mi id " + pedido.getId());
     //Guardamos pedido en la sesion navegador.
     sessionStorage.setItem("pedido", JSON.stringify(pedido));
     alert("Tramitando pedido...");
@@ -243,14 +245,3 @@ var infoExtra= element_infoExtra.value; */
 
 } */
 
-function mostrarPedido(pedido) {
-
-    window.location.href = '../views/recibo.html';
-
-
-    let elementoProductos = document.getElementById("contenido_recibo");
-    let arrayCesta = pedido.getCesta();
-    arrayCesta.forEach((Alimento) => {
-        elementoProductos.innerHTML += "<br>" + Alimento.nombre + "  -- " + Alimento.cantidad + " -->" + Alimento.precio * Alimento.cantidad + "€";
-    });
-}
