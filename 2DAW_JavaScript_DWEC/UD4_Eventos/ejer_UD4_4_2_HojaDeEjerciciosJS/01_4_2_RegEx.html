@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2.1 RegEx Alerts</title>
+    <link rel="stylesheet" href="./estilos/01_4_2_RegEx.css">
+</head>
+
+<body>
+    <main>
+        <h1>HOla que tal</h1>
+        <div id="contenido"></div>
+    </main>
+    <script>
+        //Regex
+        var regexNombre = /^[a-zA-Z]+$/;
+        var regexDNI = /^[0-9]{8}[a-zA-Z]{1}$/;
+        var regexTlfn = /^[\d]{9}$/; //\d equivalente a [0-9]
+        var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        var arrayTipos = ['nombre', 'apellido', 'dni', 'tlfn', 'email'];
+        var arrayRegex = [regexNombre, regexNombre, regexDNI, regexTlfn, regexEmail];
+        
+        //buclie chequeo
+        for (let i = 0; i < arrayTipos.length; i++) {
+            let tipo = arrayTipos[i];
+            let regex = arrayRegex[i];
+            checkRegex(tipo, regex);
+        }
+
+        //funcion chequeo string
+        function checkRegex(tipo, regex) {
+            do {
+                var str = prompt(`Intro ${tipo} : `);
+                // str.trim();
+                var check = str.trim().match(regex);
+                //Muestro mensaje
+                check ? alert(`${str} es correcto.`) : alert("Erroneo, prueba otra vez.");
+            } while (!check);
+            mostrar(tipo, str);
+        }
+        function mostrar(tipo,str){
+            let element = document.getElementById("contenido");
+            let child = document.createElement("h2");
+            child.textContent =`${tipo}: ${str}`;
+            element.appendChild(child);
+        }
+
+
+    </script>
+</body>
+
+</html>

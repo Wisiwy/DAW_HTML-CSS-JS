@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(135deg, #f8b500, #ffffff);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+h2:hover {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
