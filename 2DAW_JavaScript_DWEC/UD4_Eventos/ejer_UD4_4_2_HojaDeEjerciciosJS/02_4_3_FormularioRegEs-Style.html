@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2.3 Formulario Regex- Formato</title>
+    <link rel="stylesheet" href="./estilos/01_4_2_RegEx.css">
+
+</head>
+
+<body>
+
+    <h1>Chequeo RegEx</h1>
+
+    <fieldset>
+        <legend>Formulario Regex</legend>
+
+        <form action="" method="post">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" required autofocus><br><br>
+
+            <label for="dni">DNI:</label><br>
+            <input type="text" id="dni" name="dni" required><br><br>
+
+            <!-- Investigando el chequeo se puede hacer con "required pattern" -->
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}"
+                title="Formato válido: 9 dígitos"><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <input type="submit" value="Enviar" onclick="checkForm()">
+            <input type="reset" name="limpiar" value="Limpiar formulario">
+
+        </form>
+    </fieldset>
+
+    <script>
+        //Regex
+        var regexNombre = /^[a-zA-Z]+$/;
+        var regexDNI = /^[0-9]{8}[a-zA-Z]{1}$/;
+        var regexTlfn = /^[\d]{9}$/; //\d equivalente a [0-9]
+        //var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var regexEmail = /^(.+\@.+\..+)$/;
+
+        //Chequeo on submit. 
+        function checkForm() {
+
+            //Recojo valores
+            var nombre = document.getElementById("nombre");
+            var apellido = document.getElementById("apellido")
+            var dni = document.getElementById("dni");
+            var telefono = document.getElementById("telefono");
+            var email = document.getElementById("email");
+
+            //alert con resultados
+            let msn = `Errores: \n\n `;
+            validaNombre(nombre.value) ? msn += `\t Nombre correcto.\n ` : msn += `\t ombre mal. Solo letras. \n`;
+            validaNombre(apellido.value) ? msn += `\t Apellido correcto.\n` : msn += `\t Apellido  mal. Solo letras. \n`;
+            validaDni(dni.value) ? msn += `\t Dni correcto. \n` : msn += `\t Dni mal. Pon uno correto. \n`;;
+            validaTlfn(telefono.value) ? msn += `\t Teléfono correcto. \n` : msn += `\t Telefono mal. 9 números. \n`;;
+            validaEmail(email.value) ? msn += `\t Email correcto.\n ` : msn += `\t Email mal. Debe ser Text@texto.texto \n`;;
+
+            alert(msn);
+
+            //cambiar formato
+            if (!validaNombre(nombre.value))
+                nombre.style.backgroundColor = "crimson";
+            if (!validaNombre(apellido.value))
+                apellido.style.backgroundColor = "crimson";
+            if (!validaDni(dni.value))
+                dni.style.backgroundColor = "crimson";
+            if (!validaTlfn(telefono.value))
+                telefono.style.backgroundColor = "crimson";
+            if (!validaEmail(email.value))
+                email.style.backgroundColor = "crimson";
+        }
+
+        function validaNombre(str) {
+            return regexNombre.test(str);
+        }
+        //Mejorada con validacion de modulo 23
+        function validaDni(str) {
+            var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D",
+                "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E", "T"];
+
+            //si no coincide con el regexDni
+            if (!str.match(regexDNI))
+                return false;
+            //o si la letra no coincide con la letra en la posicion del array que es el resto del numero /23 
+            if (str.charAt(8).toUpperCase() != letras[(str.substring(0, 8)) % 23])
+                return false;
+            //si cumple las dos concidiones anteriores devuelve true
+            return true;
+        }
+
+        function validaTlfn(str) {
+            return regexTlfn.test(str);
+        }
+
+        function validaEmail(str) {
+            return regexEmail.test(str);
+        }
+
+    </script>
+</body>
+
+</html>
