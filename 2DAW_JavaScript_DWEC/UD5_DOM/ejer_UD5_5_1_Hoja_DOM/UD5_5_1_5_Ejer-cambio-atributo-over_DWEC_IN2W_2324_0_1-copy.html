@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 2 - Ejercicio JavaScript DOM sin manejadores semánticos</title>
+</head>
+
+<body>
+    <a href="#" id="id_link" title="Enlace de prueba">Pulsa aquí</a>
+    <script>
+        // Make sure the whole page is loaded
+        window.onload = function () {
+            // Access the link element by its ID
+            var element = document.getElementById("id_link");
+            // Assign the event handler correctly
+            element.onmouseover = mostrarNodo;
+        }
+
+        function mostrarNodo() {
+            //Cambio del atributo
+            this.setAttribute('title','Enlace de prueba Cambiado.');
+
+            // Inside this function, 'this' refers to the element that triggered the event
+            // You don't need to reselect the element
+            // Recoger el nombre y el valor del tercer atributo
+            var nombreAtributo = this.attributes[2].nodeName;
+            var valorAtributo = this.attributes[2].nodeValue;
+            alert(nombreAtributo);
+            alert(valorAtributo);
+        }
+    </script>
+</body>
+
+
+</html>

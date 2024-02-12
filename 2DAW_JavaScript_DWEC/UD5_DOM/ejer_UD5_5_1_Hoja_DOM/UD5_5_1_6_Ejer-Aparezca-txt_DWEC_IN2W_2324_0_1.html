@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 2 - Ejercicio JavaScript DOM sin manejadores semánticos</title>
+</head>
+
+<body>
+    <section style="display: block;">
+        <a href="#" id="id_link" title="Enlace de prueba">Pulsa aquí</a>
+
+    </section>
+    <script>
+        // Make sure the whole page is loaded
+        window.onload = function () {
+            // Access the link element by its ID
+            var element = document.getElementById("id_link");
+            // Assign the event handler correctly
+            element.onmouseover = crearNodo;
+            element.onclick = modificarNodo;
+
+        }
+
+        function crearNodo() {
+            //Crear elemento
+            var txt = document.createElement('p');
+            txt.innerText = "Has pasado el ratón por el enlace";
+
+            //Unir elemento creado al section
+            document.body.firstElementChild.appendChild(txt);
+
+            //Para que solo funcione una vez anulamos onmouseover
+            this.onmouseover = null;
+        }
+
+
+        function modificarNodo() {
+
+            //TODO revisar
+            //cogemos el elemento a cambiar
+            let element = document.body.firstElementChild;
+            element.style.color = '#0101ff';
+            element.style.fontWeight = "bold";
+
+        }
+    </script>
+</body>
+
+
+</html>

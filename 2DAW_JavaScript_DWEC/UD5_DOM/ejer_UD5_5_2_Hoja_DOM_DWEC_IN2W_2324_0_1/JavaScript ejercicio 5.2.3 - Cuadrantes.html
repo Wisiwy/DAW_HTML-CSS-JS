@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio color cuadrantes</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+        .capa{
+            width: 50%;
+            height: 50%;
+        }
+        #rojo{
+            background-color: crimson;
+        }
+        #amarillo{
+            background-color: rgb(255, 255, 74);
+        }
+        #azul{
+            background-color: dodgerblue;
+        }
+        #verde{
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="rojo" class="capa"></div>
+    <div id="amarillo" class="capa"></div>
+    <div id="azul" class="capa"></div>
+    <div id="verde" class="capa"></div>
+    <script>
+        var capas = document.getElementsByClassName('capa');
+        for (let i = 0; i < capas.length; i++) {
+            capas[i].onclick = mostrarColor;    
+            
+        }
+
+
+        function mostrarColor(){
+
+            //en lugar de computedStyle se podría mostrar el nombre del div en referencia al color 
+            let element = event.target;
+            let estiloComputado = window.getComputedStyle(element);
+
+            let color = estiloComputado.backgroundColor;
+            
+            alert(color);
+        }
+
+    </script>
+</body>
+</html>

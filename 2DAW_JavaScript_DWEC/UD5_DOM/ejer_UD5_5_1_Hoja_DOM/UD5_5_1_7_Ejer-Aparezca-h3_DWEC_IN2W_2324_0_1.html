@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejer 2 - Ejercicio JavaScript DOM sin manejadores semánticos</title>
+</head>
+
+<body>
+    <section style="display: block;">
+        <a href="#" id="id_link" title="Enlace de prueba">Pulsa aquí</a>
+
+    </section>
+    <script>
+        // Make sure the whole page is loaded
+        window.onload = function () {
+            // Access the link element by its ID
+            var element = document.getElementById("id_link");
+            // Assign the event handler correctly
+            element.onclick = crearNodo;
+
+        }
+
+        function crearNodo() {
+            //Crear elemento
+            var h3 = document.createElement('h3');
+            h3.innerText = "Enlace pulsado";
+
+            //seleciono nodo padre de <a> con thisparennode y uso el metodo insertBefores
+            this.parentNode.insertBefore(h3,this);
+        
+        }
+
+
+        function modificarNodo() {
+
+            //TODO revisar
+            //cogemos el elemento a cambiar
+            let element = document.body.firstElementChild;
+            element.style.color = '#0101ff';
+            element.style.fontWeight = "bold";
+
+        }
+    </script>
+</body>
+
+
+</html>

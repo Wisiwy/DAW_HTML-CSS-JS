@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Ejercicio 5.2.2</title>
-		<script>
-			window.onload function () {
-			
-				alert("Se va a eliminar el texto de la página");
-				
-				document.getElementById("textoweb").innerHTML = "Nuevo texto";
-				
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 5.2.2</title>
+	<!-- 	<script>
+		window.onload = function () {
+
+
+			alert("Se va a eliminar el texto de la página");
+
+			setTimeout(function(){
+				document.getElementById("textoweb").innerHTML = "Texto cambiado";
 				alert("Texto sobreescrito");
+			}, 2000);
+		} 	
+	</script> -->
+</head>
+
+<body onload>
+	<p id="textoweb">
+		Este texto quedará anulado al cargar el script.
+	</p>
+	<script>
+		//Para que solo se haga una vez
+		var scriptCargado = false;
+		if (!scriptCargado) {
+			window.onload = function () {
+
+
+				alert("Se va a eliminar el texto de la página");
+
+				setTimeout(function () {
+					document.getElementById("textoweb").innerHTML = "Texto cambiado";
+					alert("Texto sobreescrito");
+				}, 1500);
 			}
-		</script>
-	</head>
-	<body onload>
-		<p id="textoweb">
-			Este texto quedará anulado al cargar el script.
-		</p>
-	</body>
+			scriptCargado = true;
+		}
+	</script>
+</body>
+
 </html>
 
 <!--
+Nohe hecho gran cosa solo 
+
     El ejercicio no muestra el "alert" al cargarse completamente la página,
 	evento "window.onload". ¿Sabes dónde están los errores?
+---
+	Crea una página con un texto y que ejecute dos scripts. El primero lanzará una ventana
+avisando que va a desaparecer el texto de la página y el segundo avisará del cambio.
+Puedes ayudarte del archivo adjunto.
 -->
