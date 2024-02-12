@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JavaScript DOM sin manejadores semánticos</title>
+</head>
+
+<body>
+    <a href="#" onclick = "mostrarNodo()"  id="id_link" title="Enlace de prueba">Pulsa aquí</a>
+    <script>
+        function mostrarNodo() {
+            //Recoger elemento por arbol DOM
+            var element = document.body.childNodes[1];
+            //Recoger el nombre y el valor del 3 atributo
+            var nombreAtributo = element.attributes[3].nodeName;
+            var valorAtributo = element.attributes[3].nodeValue;
+            alert(nombreAtributo);
+            alert(valorAtributo);
+        }
+    </script>
+</body>
+
+</html>
