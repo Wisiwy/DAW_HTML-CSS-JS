@@ -5,8 +5,15 @@
 		<title>Ejercicio 5.3.1</title>
 		<script>
 			function anade() {
-
+				const elemento1 = document.createElement('li');
+				elemento1.innerText = "elemento 1";
+				const elemento2 = document.createElement('li');
+				elemento2.innerText = "elemento 2";
+				document.getElementById('lista').appendChild(elemento1);
+				document.getElementById('lista').appendChild(elemento2);
 			}
+
+			
 		</script>
 	</head>
 	<body>
@@ -18,5 +25,7 @@
 			<li>Maecenas nisl arcu</li>
 		</ul>
 		<input type="button" value="Añadir elementos" onclick="anade();">
+		<input type="button" value="Añdir elementos 2" onclick="anade2();">
+		<!-- No entiendo diffe entre gestor evenot y lo que he hecho -->
 	</body>
 </html>

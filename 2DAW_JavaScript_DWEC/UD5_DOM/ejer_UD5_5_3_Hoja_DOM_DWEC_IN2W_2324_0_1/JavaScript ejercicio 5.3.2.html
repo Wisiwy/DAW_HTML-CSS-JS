@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 5.3.1</title>
+	<link rel="stylesheet" href="./style/5.3.2style.css">
+</head>
+
+<body>
+	<form action="">
+		<fieldset>	
+			<legend>Añadir cajas</legend>
+			<input type="text" name="Original" id="original">
+			<br>
+			<input type="button" value="Añadir más cajas" onclick="anade();">
+			<input type="button" value="Reiniciar" onclick="reinicia();">
+		</fieldset>		
+	</form>
+
+	<script>
+		function anade() {
+			let element = document.createElement('input');
+			element.setAttribute('type', 'text');
+			element.setAttribute('class', 'creados');
+			//selecciono original y añado el element despues del original
+			let original = document.getElementById('original');
+			original.insertAdjacentElement('afterend', element);
+			let br = document.createElement('br');
+			br.setAttribute('class', 'creados');
+			original.insertAdjacentElement('afterend', br);
+
+			
+		}
+
+		function reinicia() {
+			let creados = document.querySelectorAll('.creados');
+			let brcreados = document.querySelectorAll('br');
+
+			creados.forEach(element => {
+				element.parentNode.removeChild(element); 
+				
+			});
+		/* 	brcreados.forEach(element => {
+				element.parentNode.removeChild(element); 
+				
+			}); */
+		}
+	</script>
+</body>
+
+</html>

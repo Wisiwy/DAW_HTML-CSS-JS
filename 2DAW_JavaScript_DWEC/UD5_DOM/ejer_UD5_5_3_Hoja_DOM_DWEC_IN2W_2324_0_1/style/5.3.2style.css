@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+fieldset {
+    border: 2px solid crimson; /* Crimson border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    width: 500px;
+    background-color: beige; /* White background */
+    box-shadow: 0px 0px 10px 0px crimson; /* Crimson shadow */
+    display: flexbox;
+    flex-direction: column;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 18px;
+    color: crimson; /* Crimson text color */
+    text-align: center; /* Center align the legend */
+    margin-bottom: 10px; /* Add some space below the legend */
+}
+
+input[type="text"] {
+    width: calc(100% - 22px); /* Adjust based on your styling preference */
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: inset;
+}
+
+input[type="button"] {
+    width: calc(50% - 5px); /* Make buttons half the width with some margin */
+    margin: 5px; /* Add margin between buttons */
+    padding: 10px; /* Add padding to buttons */
+    background-color: crimson; /* Crimson background */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+input[type="button"]:hover {
+    background-color: darkred; /* Darker crimson on hover */
+}
