@@ -1,0 +1,45 @@
+<!-- 1.
+Slot:Un marcador de posición dentro de un componente web que los usuarios
+ pueden rellenar con su propio marcado, con el efecto de componer diferentes 
+ árboles DOM juntos.
+
+ https://developer.mozilla.org/es/docs/Web/API/Web_components/Using_templates_and_slots
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot</title>
+
+    <script src="myPara.js"></script>
+</head>
+<body>
+
+    <h1>Template básico</h1>
+
+  <template id="my-paragraph">
+    <style>
+      p {
+        color: white;
+        background-color: #666;
+        padding: 5px;
+      }
+    </style>
+    <p><slot name="my-text">Texto por defecto</slot></p>
+  </template>
+
+  <my-paragraph>
+    <span slot="my-text">Un texto un poco diferente!</span>
+  </my-paragraph>
+
+  <my-paragraph>
+    <ul slot="my-text">
+      <li>Un texto un poco diferente!</li>
+      <li>En una lista!</li>
+    </ul>
+  </my-paragraph>
+</body>
+</html>

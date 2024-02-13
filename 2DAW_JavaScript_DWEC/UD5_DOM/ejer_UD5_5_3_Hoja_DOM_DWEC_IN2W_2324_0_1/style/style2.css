@@ -51,3 +51,6 @@ input[type="button"] {
 input[type="button"]:hover {
     background-color: darkred; /* Darker crimson on hover */
 }
+p{
+    font-size: large;
+}

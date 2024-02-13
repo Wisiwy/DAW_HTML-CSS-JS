@@ -1,0 +1,34 @@
+<!-- 1. Cuando tienes que reutilizar las mismas estructuras de lenguaje de marcado 
+    repetidas veces en una página web, tiene sentido utilizar algún tipo de plantilla 
+    en lugar de repetir la misma estructura una y otra vez. Esto ya era posible hacerlo
+     antes, pero ahora es mucho mas fácil con el elemento HTML <template> 
+    (que está bien soportado en los navegadores modernos).
+     Este elemento y su contenido no son renderizados en el DOM, pero pueden ser referenciados vía JavaScript.
+ 
+ 
+ Template : Un mecanismo para guardar contenido en el lado cliente que no se renderiza 
+ cuando la página se carga sino que posteriormente se puede instanciar en tiempo de 
+ ejecución usando JavaScript. 
+
+
+    -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo template/plantilla</title>
+
+    <script src="plantilla.js" defer ></script>
+ </head>
+ <body>
+
+   <!-- Lo definido en template, no aparecerá en la página -->
+    <template id="my-paragraph">
+        <p>Mi párrafo</p>
+      </template>
+
+ 
+ </body>
+ </html>
