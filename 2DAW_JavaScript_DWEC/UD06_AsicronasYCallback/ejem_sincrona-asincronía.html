@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sincronía y Asincronía</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        //ejemplo sincrono
+        console.log("Inicio del codigo sincrono");
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        console.log("Fin del codigo sincrono");
+
+        //ejemplo asincrono
+        console.log("Inicio del codigo asincrono");
+        setTimeout(function () {
+            for (let i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }, 0);
+
+    </script>
+</body>
+
+</html>
