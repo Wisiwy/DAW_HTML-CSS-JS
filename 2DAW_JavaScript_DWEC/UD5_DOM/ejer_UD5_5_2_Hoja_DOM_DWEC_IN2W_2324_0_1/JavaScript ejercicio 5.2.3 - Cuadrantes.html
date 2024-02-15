@@ -39,7 +39,6 @@
         var capas = document.getElementsByClassName('capa');
         for (let i = 0; i < capas.length; i++) {
             capas[i].onclick = mostrarColor;    
-            
         }
 
 
@@ -47,8 +46,8 @@
 
             //en lugar de computedStyle se podría mostrar el nombre del div en referencia al color 
             let element = event.target;
+            
             let estiloComputado = window.getComputedStyle(element);
-
             let color = estiloComputado.backgroundColor;
             
             alert(color);

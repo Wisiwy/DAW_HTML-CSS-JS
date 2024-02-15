@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Ejercicio 5.3.5</title>
+	<title>Ejercicio 5.3.7</title>
 	<style>
 		.oculto {
 			display: none;
@@ -16,61 +16,55 @@
 </head>
 
 <body>
-	<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+	<p id="contenidos_1" class="visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
 		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
 		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
 		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
 		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
 		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-	<!-- <a id="enlace_1" href="#" onclick="muestraOculta(1)">Ocultar contenidos</a> -->
-	<a id="enlace_1" href="#" >Ocultar contenidos</a>
-	<br />
-	<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+	<a id="enlace_1" href="#" onclick="muestraOculta(this.id)">Ocultar contenidos</a>
+<!-- 	<a id="enlace_1" href="#" >Ocultar contenidos</a>
+ -->	<br />
+	<p id="contenidos_2"  class="visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
 		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
 		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
 		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
 		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
 		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-	<!-- <a id="enlace_2" href="#"onclick="muestraOculta(2)">Ocultar contenidos</a> -->
-	<a id="enlace_2" href="#" >Ocultar contenidos</a>
+	 <a id="enlace_2" href="#"onclick="muestraOculta(this.id)">Ocultar contenidos</a>
+	<!-- <a id="enlace_2" href="#" >Ocultar contenidos</a> -->
 
 	<br />
-	<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+	<p id="contenidos_3"  class="visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
 		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
 		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
 		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
 		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
 		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-	<!-- <a id="enlace_3" href="#" onclick="muestraOculta(3)">Ocultar contenidos</a> -->
-	<a id="enlace_3" href="#" >Ocultar contenidos</a>
+	 <a id="enlace_3" href="#" onclick="muestraOculta(this.id)">Ocultar contenidos</a>
+	<!--<a id="enlace_3" href="#" >Ocultar contenidos</a> -->
 
 
 
 	<script>
-		var visible = true;
+		
 		var enlace1 = document.getElementById("enlace_1");
 		var enlace2 = document.getElementById("enlace_2");
 		var enlace3 = document.getElementById("enlace_3");
-		enlace1.addEventListener('click', () => muestraOculta(1));
-		enlace2.addEventListener('click', () => muestraOculta(2));
-		enlace3.addEventListener('click', () => muestraOculta(3));
+		enlace1.addEventListener('click', muestraOculta);
+		enlace2.addEventListener('click', muestraOculta);
+		enlace3.addEventListener('click', muestraOculta);
 
-		function muestraOculta(num) {
-
-
-			var parrafos = document.body.querySelectorAll('p');
-			var anclas = document.body.querySelectorAll('a');
-			
-			let parrafo = parrafos[(num-1)];
-			let ancla = anclas[(num-1)];
-
-			if (visible) {
+		function muestraOculta(event) {
+			var ancla = event.target;
+			var parrafo = ancla.previousElementSibling;
+			var visible = parrafo.getAttribute('class');
+	
+			if (visible === 'visible') {
 				parrafo.setAttribute('class', 'oculto');
-				visible = false;
 				ancla.innerText = "Ver contenidos"
 			} else {
 				parrafo.setAttribute('class', 'visible');
-				visible = true;
 				ancla.innerText = "Ocultar contenidos"
 			}
 		}
@@ -78,16 +72,7 @@
 	</script>
 </body>
 <!-- -
-Cuando se pinche sobre el primer enlace, se oculte su sección relacionada.
-- Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de
-contenidos.
-- Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del
-primer enlace.
-- Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (puedes utilizar
-la propiedad “ innerHTML
-
-No debes usar manejadores de eventos semánticos. Puedes ayudarte del archivo adjunto.
-(Ayuda:
-Puedes pasar como parámetro un número 1, 2 o 3) -->
+Realiza el ejercicio anterior pasando “this” como parámetro (y sin pasar como parámetro un
+número 1, 2 o 3). -->
 
 </html>
