@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Ejercicio 5.3.5</title>
-		<script>
-			function muestraOculta() {
-			
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 5.3.5</title>
+	<style>
+		.oculto {
+			display: none;
+		}
+		.visible {
+			display: inline;
+		}
+	</style>
+	<script>
+		var visible = true;
+		function muestraOculta(num) {
+			var hijos = document.body.querySelectorAll('p');
+			let elemento = hijos[(num-1)];
+			if (visible) {
+				elemento.setAttribute('class', 'oculto');
+				visible = false;
+			} else {
+				elemento.setAttribute('class', 'visible');
+				visible = true;
 			}
-		</script>
-	</head>
-	<body>
-		<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-		<a id="enlace_1" href="#">Ocultar contenidos</a>
-		<br/>
-		<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-		<a id="enlace_2" href="#">Ocultar contenidos</a>
-		<br/>
-		<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
-		<a id="enlace_3" href="#">Ocultar contenidos</a>
-	</body>
+		}
+
+	</script>
+</head>
+
+<body>
+	<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+	<a id="enlace_1" href="#" onclick="muestraOculta(1)">Ocultar contenidos</a>
+	<br />
+	<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+	<a id="enlace_2" href="#"onclick="muestraOculta(2)">Ocultar contenidos</a>
+	<br />
+	<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+		libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,
+		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
+		porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at
+		posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+	<a id="enlace_3" href="#" onclick="muestraOculta(3)">Ocultar contenidos</a>
+</body>
+<!-- -
+Cuando se pinche sobre el primer enlace, se oculte su sección relacionada.
+- Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de
+contenidos.
+- Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del
+primer enlace.
+- Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (puedes utilizar
+la propiedad “ innerHTML
+
+No debes usar manejadores de eventos semánticos. Puedes ayudarte del archivo adjunto.
+(Ayuda:
+Puedes pasar como parámetro un número 1, 2 o 3) -->
+
 </html>
