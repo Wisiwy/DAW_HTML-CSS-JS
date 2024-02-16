@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch: promesas</title>
+</head>
+
+<body>
+    <div id="nombre"></div>
+
+    <script>
+        let datosJson;
+
+
+        //recojemos del json person el nombre y lo enseñamos
+        fetch('person.json')
+            .then(res=>res.json())
+            .then((salida)=>{
+                datosJson=salida;
+                let elementoTexto = document.getElementById("nombre");
+                elementoTexto.textContent = datosJson.direccion.calle;
+            })
+        .catch  (function(error){
+            //recoger el cathc
+        })
+
+    </script>
+</body>
+
+</html>

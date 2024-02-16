@@ -52,4 +52,19 @@ Tecnica permite actualizar ciertas partes de una pagina web. recargar solamente 
     objetoXHR.onreaystatechage
     }
 ```
-### 
+### PROMESA JAVASCROP
+Una vez quehayas completado esto haz eso otro. 
+fetch().then
+
+#### ¿Qué es una Promesa?
+
+> 
+
+
+
+## Tres ejempls de recoger datos de un archiv JSON o XML
+- 02 Json fetch
+- 03 peticion ajax
+- 04 con libreria JQueary
+
+### Uso de Fetch
