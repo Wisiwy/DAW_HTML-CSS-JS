@@ -44,8 +44,8 @@ class TarjetaGato extends HTMLElement {
         this.setAttribute('descripcion', value);
     }
 
-    attributeChangeCallback(nombreAtr, oldValue, newValue){
-        switch(nombreAtr.toLowerCase()){
+    attributeChangeCallback(nombreAtr, oldValue, newValue) {
+        switch (nombreAtr.toLowerCase()) {
             case "razaGato":
                 this.razaGato = newValue;
             case "linkWiki":
@@ -57,8 +57,21 @@ class TarjetaGato extends HTMLElement {
         }
     }
     connectedCallback() {
-        
-
+        //crear componentes
+        this.innerHTML =
+            ` <div class = "ficha">
+                <details>
+                    <summary>
+                        <h3>
+                         ${this.razaGato}
+                        </h3>
+                         <p>Para saber más</p>
+                    </summary>
+                    <a href="${this.linkWiki}"><img src="${this.imagen}"
+                    alt="${this.razaGato}"></a>
+                    </details>
+                    <p>${this.descripcion}</p>
+                </div>`
 
     }
 
@@ -66,4 +79,4 @@ class TarjetaGato extends HTMLElement {
 
 }
 
-window.customElements.define("hola-mundo", holaMundo);
+window.customElements.define("tarjeta-gato", TarjetaGato);
