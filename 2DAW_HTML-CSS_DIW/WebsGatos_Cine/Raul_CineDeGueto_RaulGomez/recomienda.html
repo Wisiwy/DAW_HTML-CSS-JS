@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="RaulGomez">
+    <meta name="description" content="Espacio dedicado a la aficion cinematográfica de Raúl Gómez">
+    <meta name="keywords" content="cine peliculas cultura actores critica cinematográfica">
+
+    <link rel="shortcut icon" href="./img/Favicon32px.png">
+    <title>Recomienda</title>
+</head>
+
+<body>
+    <!-- HEADER: con el logo y la navegación principal-->
+    <header>
+        <!-- LOGO -->
+        <div>
+            <a href="index.html"><img src="img/logo_cine.png" alt="Raul Cine Logo"
+                    style="height: 30px; width: 30px;"></a>
+        </div>
+        <!-- TÍTULO -->
+        <h2>Cine de Gueto</h2>
+        <!-- NAVEGACIÓN PRINCIPAL -->
+        <nav>
+            <ul>
+                <li><a href="./vistas.html">Vistas</a></li>
+                <li><a href="./proximas.html">Proximas</a></li>
+                <li><a href="./sobremi.html">Sobre mí</a></li>
+                <li><a href="./recomienda.html">Recomienda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <details>
+            <summary>
+                <b>Ameniza tu estancia &#127911;</b>
+            </summary>
+            <audio src="audio/Los Punsetes - Opinión de mierda (128 kbps).mp3" controls></audio>
+        </details>
+
+       
+        <!-- Formulario recomendacion peli -->
+        <section>
+            <form action="recomendaciones.html" method="post">
+                <fieldset>
+                    <legend><h2>Recomienda una peli </h2></legend>
+                    <!-- Peticion datos personales.  -->
+                    <h3>¿Quién eres?</h3>
+                    <p>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="">
+                    </p>
+                    <p>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="">
+                    </p>
+                    <p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="">
+                    </p>
+                    <hr>
+
+                    <!-- Preguntas compatibilidad con Raúl.  -->
+                    <h3>¿Será tu opinión, una opinión de mierda? </h3>
+                    <!-- pregunta radiobutton -->
+                    <p>
+                        Nolan es:
+                    <ul>
+                        <li>
+                            <input type="radio" name="nolan" value="genio" id="nolan">
+                            <label for=nolan">Un genio. <em>"Todas sus peliculas son maravillosas"</em>.</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="nolan" value="incomprendido" id="nolan">
+                            <label for=nolan">Un incomprendido. <em>"No entiendo nada de lo que hace pero hay.
+                                explosiones." </em></label>
+                        </li>
+                        <li>
+                            <input type="radio" name="nolan" value="sobrevalorada" id="nolan">
+                            <label for=nolan">Un director sobrevalorado.(Se recoloca sus gafas de pasta). <em>"Desde
+                                    Memento no hace nada que merezca la pena"</em> </label>
+                        </li>
+                    </ul>
+                    </p>
+                    <!-- pregunta checkbox -->
+                    <p>
+                        <abbr title="Multiple eleccion"> De las peliculas de Wes Anderson me gusta: </abbr>
+                    <ul style="list-style-type:none;">
+                        <li> <input type="checkbox" name="anderson1" value="colorinchis">
+                            <label for="anderson1">Sus colorinchis.</label>
+                        </li>
+                        <li> <input type="checkbox" name="anderson2" value="narrativa">
+                            <label for="anderson2">Narrativa episódica.</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="anderson3" value="personajes" id="p2">
+                            <label for="anderson3"> Sus personajes <abbr
+                                    title="Hablando de Wes, hay que ser un poco pedante."> hieráticos.</abbr> </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="anderson4" value="murray" id="p2">
+                            <label for="anderson4"> Qué aparece Bill Murray. </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="anderson5" value="paneos" id="p2">
+                            <label for="anderson5"> Sus paneos horizontales. </label>
+                        </li>
+                    </ul>
+                    </p>
+                    <!-- pregunta rango  -->
+                    <p>
+                        <label for="cineEspa">Acerca del Cine Español, ¿dondé te encuentras en estas escala? : </label>
+                        <br>
+                        <label>No me pierdo nada de Santiago Segura</label>
+                        <input type="range" name="cineEspa" min="0" max="5">
+                        <label>Solo sintonizo La2</label>
+
+                    </p>
+                    <hr>
+
+                    <!-- Recomendación de la peli -->
+                    <h3>Recomienda tu peli</h3>
+                    <p>
+                        <label for="pelicula">Película</label>
+                        <input type="text" name="peli" />
+                    </p>
+                    <!-- Select genero -->
+                    <p>
+                        <label for="genero">Género</label>
+                        <select name="genero" id="">
+                            <option value="terror">Terror</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="drama">Drama</option>
+                            <option value="suspense">Suspense</option>
+                            <option value="accion">Accion</option>
+                            <option value="bizarra">Bizarra</option>
+                            <option value="espanyolada">Españolada</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="colorSugiere">¿Qué color te sugiere la peli?</label>
+                        <input type="color" name="colorSugiere">
+                    </p>
+                    <p>
+                        <input type="submit" value="Enviar" name="submit">
+                        <input type="reset" value="Limpiar formulario" name="reset">
+                    </p>
+
+                    <!-- Añadir para meter comentarios de la  peli -->
+
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie con contacto, politica de privacidad... -->
+    <footer>
+        <hr>
+        <nav>
+            <ul>
+                <li>Politica de cookies</li>
+                <li>LetterBox</li>
+                <li>Contacto</li>
+                <li>Politica de cookies</li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>

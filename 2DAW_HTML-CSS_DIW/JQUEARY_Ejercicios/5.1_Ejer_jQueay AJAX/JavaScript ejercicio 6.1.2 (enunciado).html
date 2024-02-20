@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 6.1.2</title>
+	<style>
+		button {
+			padding: 12px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<p id="primero">PRIMER PARRAFO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+		in turpis sem, eu suscipit urna. Vestibulum odio purus, semper vitae
+		interdum non, placerat sit amet nunc. Ut scelerisque, lacus a laoreet
+		blandit, lectus libero placerat libero, eget volutpat turpis tellus
+		tincidunt tellus. Suspendisse imperdiet fermentum purus, et fringilla
+		est congue ac. Morbi enim ante, consequat eu tempus a, pulvinar vitae
+		felis. Vestibulum et sapien lectus. Curabitur odio ligula, gravida
+		quis tincidunt ut, ullamcorper nec metus. Duis non enim ante, non
+		pharetra nibh. Integer tellus lectus, condimentum eget bibendum vel,
+		posuere consequat eros. Class aptent taciti sociosqu ad litora
+		torquent per conubia nostra, per inceptos himenaeos.</p>
+
+	<p>SEGUNDO PARRAFO Duis id justo quis tortor posuere auctor sit amet id felis.
+		Proin mattis vulputate faucibus. Maecenas eget gravida leo. Curabitur
+		imperdiet nulla ac nisi pretium fermentum. Fusce pulvinar aliquet
+		dapibus. Nulla condimentum aliquet diam, non lobortis tortor
+		condimentum ornare. Sed justo nisl, viverra mollis commodo a,
+		ultricies in turpis. Sed risus est, scelerisque eget pretium quis,
+		pellentesque eget leo. Nullam erat ligula, suscipit ac egestas vitae,
+		accumsan eget dolor. Mauris lacus turpis, sollicitudin nec tincidunt
+		at, iaculis non dolor. Quisque diam est, mollis ac blandit hendrerit,
+		mollis ut metus. Vestibulum ligula massa, porttitor et elementum nec,
+		vehicula et tortor. Quisque vestibulum porttitor hendrerit. Morbi
+		mollis massa non felis hendrerit a ornare enim posuere. Praesent sit
+		amet dui viverra eros vulputate congue eget nec leo.</p>
+	<p id="ultimo">TERCER PARRAFO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+		in turpis sem, eu suscipit urna. Vestibulum odio purus, semper vitae
+		interdum non, placerat sit amet nunc. Ut scelerisque, lacus a laoreet
+		blandit, lectus libero placerat libero, eget volutpat turpis tellus
+		tincidunt tellus. Suspendisse imperdiet fermentum purus, et fringilla
+		est congue ac. Morbi enim ante, consequat eu tempus a, pulvinar vitae
+		felis. Vestibulum et sapien lectus. Curabitur odio ligula, gravida
+		quis tincidunt ut, ullamcorper nec metus. Duis non enim ante, non
+		pharetra nibh. Integer tellus lectus, condimentum eget bibendum vel,
+		posuere consequat eros. Class aptent taciti sociosqu ad litora
+		torquent per conubia nostra, per inceptos himenaeos.</p>
+
+	<button id="miBtn">Pulsa aquí</button>
+	<!--
+    Edita el archivo para que al pulsar en el botón, el primer párrafo desaparezca.
+	Pero si se vuelve a pulsar, debe aparecer de nuevo.
+-->
+	<!-- Libreria JQueary -->
+	<script>
+
+		// Al cargar el documento. 
+		$(document).ready(function () {
+			$("button").click(function () {
+				$("p").first().toggle();
+				$("p").last().toggle();
+			});
+		})
+		//La funcion toggle hace aparecer y desaparecer el nodo
+
+		/* 		// Desaparacer parrrafo
+				var ocultar = function (id) {
+					// $("#p1").css("display","none"); 
+					$(id).hide();
+				}
+				//Aparecer parrafo 
+				var mostrar = function (id) {
+					//$("#p1").css("display","block");
+					$(id).show;
+				} */
+
+	</script>
+</body>
+
+</html>

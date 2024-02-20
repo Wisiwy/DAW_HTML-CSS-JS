@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="misEstilos.css">
+    <!-- referencia de la biblioteca de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="miScript.js"></script>
+    <title>MemoryGame</title>
+</head>
+<body>
+    <!-- HTML -->
+    <!-- Estructura visual -->
+    <!-- 1. Estructura básica para mostrar las tarjetas, que se solapen y voltee el elemento -->
+    <div id="tablero">
+        <div class="area-tarjeta">
+            <div class="tarjeta">
+                <div class="cara trasera">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div class="cara superior">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 9. Colocación del elemento botón nuevoJuego -->
+    <br>
+    <button class="nuevoJuego" onclick="generarTablero()">Nuevo Juego</button>
+    
+</body>
+</html>

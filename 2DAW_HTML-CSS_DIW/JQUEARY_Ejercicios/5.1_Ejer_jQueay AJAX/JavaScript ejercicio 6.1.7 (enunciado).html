@@ -1,0 +1,42 @@
+
+<!--
+	Edita el archivo para que al pulsar sobre cada una de las imágenes, éstas desaparezcan.
+	La imagen pulsada debe desaparecer mediante un efecto tipo "slide".
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 6.1.7</title>
+		<style>
+		a img {
+			float: left;
+			margin: 1px;
+		}
+
+		#imagenes {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -207px;
+			margin-left: -290px;
+		}
+		</style>
+		<script src="jquery-3.6.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="imagenes">
+			<a href="index.php"> <img src="imagenes/inicio.gif" /></a> <a
+				href="pisos.html"> <img src="imagenes/pisos.gif" />
+			</a> <a href="cocinas.html"> <img src="imagenes/cocinas.gif" />
+			</a> <a href="banos.html"> <img src="imagenes/baños.gif" />
+			</a> <a href="contactar.html"> <img src="imagenes/contactar.gif" /></a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/estructura.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <!-- Fuentes -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="contenedor logo">
+            <img src="../img/logo_webGatos.svg" alt="Logo Web" >
+        </a>
+        <nav class="nav-principal">
+            <ul>
+                <li id="razas"><a href="index.html#razas">RAZAS</a>
+                    <ul class="submenu">
+                        <li><a href="ficha_atigrado.html">ATRIGRADO</a></li>
+                        <li><a href="ficha_scot.html">SCOT</a></li>
+                        <li><a href="ficha_siberiano.html">SIBERIANO</a></li>
+                    </ul>
+                </li>
+                <li><a href="galeria.html">GALERÍA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <h3 class="nombreWeb">Web de<br>Gatos</h3>
+    </header>
+    <main>
+        <section class="titulo">
+            <h3>CONTACTO</h3>
+        </section>
+        <section class="contenido">
+            <article class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23847.994449568243!2d-1.006264825683648!3d41.655757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd596bd5adaccddf%3A0xc0945992ad7fb976!2sResidencia%20Canina%20Don%20Perro%20y%20Do%C3%B1a%20Gata!5e0!3m2!1ses!2ses!4v1699022702299!5m2!1ses!2ses"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h3>"La curiosidad no ha matado a ningún Gato"</h3>
+                </article>
+            <article class="formulario">
+                <h2>Preguntanos</h2>
+                <form action="#" method="post">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="email">Correo Electrónico:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="asunto">Asunto:</label><br>
+                    <input type="text" id="asunto" name="asunto" required><br><br>
+
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Contenido solo para uso educativo</p>
+    </footer>
+</body>
+
+</html>

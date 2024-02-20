@@ -1,0 +1,107 @@
+.hero {
+    width: 100%;
+    height: 20rem;
+    background-image: url("../img/Huellas.png");
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid var(--secondary-color);
+    border-top: 4px solid var(--secondary-color);
+}
+
+h1 {
+    color: var(--secondary-color);
+}
+h5{
+    text-align: center;
+}
+
+/* ************* */
+/* SECCIÓN FICHAS */
+#intro{
+    margin: 1em;;
+}
+
+.contenedor_fichas {
+    padding: 4em 2em;
+/*     border: 5px solid yellow;
+ */    display: flex;
+    justify-content: space-evenly;
+}
+.ficha{
+    max-width: 20em;
+    margin:1em;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    box-shadow:0 6px 16px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+}
+details{
+    cursor: pointer;
+}
+summary{
+    border-bottom: 1px solid var(--secondary-color);
+    margin: 1em;
+}
+.ficha h3{
+    /* BORRAR si añado huellitas blancas */
+}
+.ficha a{
+    max-height: 20em;
+    overflow: hidden;
+    background:var(--main-gradient);
+
+}
+.ficha img{
+    object-fit: cover;
+    display: block;
+    clip-path: circle(50% at 50% 50%);
+    opacity: 0.5;
+}
+.ficha img:hover{
+    object-fit: cover;
+    display: block;
+    opacity: 0.8;
+}
+.ficha p{
+    font-size: 1em;
+    flex-grow: 1;
+    margin: 1em;
+}
+
+hr {
+    border: none; 
+    border-top: 3px solid var(--secondary-color); 
+    margin: 2rem 0; 
+}
+
+/* IMAGENES */
+.contenedor_imagenes{
+    padding: 4em 2em;
+/*     border: 5px solid rgb(255, 64, 0);
+ */    display: flex;
+    justify-content: space-around;
+
+}
+ .contenedor_imagenes a{
+    position:relative;
+    max-width: 20em;
+    margin: 1em;
+    clip-path: circle(50% at 50% 50%);
+    background:  linear-gradient(38deg, #f1a05a,var(--main-color));
+    
+} 
+/* Hacer ciruclo que se mueva un poco  */
+
+
+.contenedor_imagenes img{
+    opacity: 0.5;
+}
+.contenedor_imagenes img:hover{
+    opacity: 0.8;
+}
+
+
