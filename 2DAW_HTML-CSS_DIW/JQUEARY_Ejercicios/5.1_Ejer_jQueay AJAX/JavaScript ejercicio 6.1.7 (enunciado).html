@@ -1,4 +1,3 @@
-
 <!--
 	Edita el archivo para que al pulsar sobre cada una de las imágenes, éstas desaparezcan.
 	La imagen pulsada debe desaparecer mediante un efecto tipo "slide".
@@ -6,10 +5,11 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Ejercicio 6.1.7</title>
-		<style>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 6.1.7</title>
+	<style>
 		a img {
 			float: left;
 			margin: 1px;
@@ -22,21 +22,48 @@
 			margin-top: -207px;
 			margin-left: -290px;
 		}
-		</style>
-		<script src="jquery-3.6.1.min.js"></script>
-		<script>
-			$(document).ready(function() {
+	</style>
+	<script src="jquery-3.6.1.min.js"></script>
+	<script>
+
+		$(document).ready(function () {
+			$("#imagenes img").click(function () {
+				$(this).slideUp("slow");
 
 			});
-		</script>
-	</head>
-	<body>
-		<div id="imagenes">
-			<a href="index.php"> <img src="imagenes/inicio.gif" /></a> <a
-				href="pisos.html"> <img src="imagenes/pisos.gif" />
-			</a> <a href="cocinas.html"> <img src="imagenes/cocinas.gif" />
-			</a> <a href="banos.html"> <img src="imagenes/baños.gif" />
-			</a> <a href="contactar.html"> <img src="imagenes/contactar.gif" /></a>
-		</div>
-	</body>
+		});
+
+
+		//PRUEBAS MAL
+
+		//Para usar slideDown el elemento primero a de estar oculto. 
+		/* 		$(document).ready(function () {
+					$("#imagenes img").click(function () {
+						if ($(this).is(":hidden")) {
+							$(this).slideDown("slow");
+						} else {
+							$(this).hide();
+						}
+					});
+				}); */
+
+
+		/* 		$(document).ready(function () {
+					$("#imagenes a").click(function () {
+						$(this).find("img").slideUp("slow");
+					});
+				}); */
+	</script>
+</head>
+
+<body>
+	<div id="imagenes">
+		<a href="#"> <img src="imagenes/inicio.gif" /></a>
+		<a href="#"> <img src="imagenes/pisos.gif" /></a>
+		<a href="#"> <img src="imagenes/cocinas.gif" /></a>
+		<a href="#"> <img src="imagenes/baños.gif" /></a>
+		<a href="#"> <img src="imagenes/contactar.gif" /></a>
+	</div>
+</body>
+
 </html>

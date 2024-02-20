@@ -1,4 +1,3 @@
-
 <!--
 	Edita el archivo para que al dar a cada uno de los dos botones, la caja debe desplazarse a la izquierda
 	o a la derecha de forma rápida.
@@ -6,24 +5,50 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Ejercicio 6.1.6</title>
-		<style>
-			div {
-				position: absolute;
-				background-color: #abc;
-				left: 50px;
-				width: 90px;
-				height: 90px;
-				margin: 5px;
-			}
-		</style>
-		<script src="jquery-3.6.1.min.js"></script>
-	</head>
-	<body>
-		<button id="left">&laquo;</button>
-		<button id="right">&raquo;</button>
-		<div class="block"></div>
-	</body>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 6.1.6</title>
+	<style>
+		div {
+			position: absolute;
+			background-color: #abc;
+			left: 50px;
+			width: 90px;
+			height: 90px;
+			margin: 5px;
+		}
+	</style>
+	<script src="jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+	<button id="left">&laquo;</button>
+	<button id="right">&raquo;</button>
+	<div class="block"></div>
+
+	<!-- SCRIPT MOVIMIENTO -->
+	<script>
+		// Regogemos el ancho de pantalla y div para calcular movimiento
+		var anchoPantalla = $(window).width();
+		var anchoDiv = $(".block").width();
+
+		$(document).ready(function () {
+			$("#left").click(function () {
+				$(".block").animate({
+					"left": "0"
+				}, "fast");
+			})
+
+			$("#right").click(function () {
+				$(".block").animate({
+					//El extremo sera el ancho pantalla menos el del div
+					"left": anchoPantalla - anchoDiv
+				}, "fast");
+			})
+		});
+
+	</script>
+</body>
+
 </html>

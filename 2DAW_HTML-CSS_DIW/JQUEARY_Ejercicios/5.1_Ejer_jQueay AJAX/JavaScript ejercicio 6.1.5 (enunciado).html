@@ -21,14 +21,13 @@
 	<script>
 		$(document).ready(function () {
 			$("button").click(function () {
-				$("img").fadeOut(2000).mover.fadeIn(2000);
+				$("img").animate({
+					"left":"+100%",
+					"width": "200%"
+				},"slow");
 			})
 		});
-		function mover (){
-
-		}
-
-		//APUNTES
+			//APUNTES
 		//$(".block").animate({"left": "-=50px"}, "slow");
 	</script>
 </head>
