@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6.1 - Enlace Ajax</title>
+    <script src="jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Crea un enlace en una página Web que al pulsarlo cargue en la misma página el contenido
+del archivo “contenido_ajax.html” mediante una petición de tipo XHR. -->
+    <a href="#" id="enlaceAjax">Cargar contenido</a>
+    <section id="contenido">
+
+    </section>
+    <script>
+        $(document).ready(function () {
+            $("#enlaceAjax").click(function (evento) {
+                //elimino el comportamiento por defecto del enlace
+                evento.preventDefault();
+                //Aquí pondría el código de la llamada a Ajax
+                $("#contenido").load("contenido-ajax.html");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

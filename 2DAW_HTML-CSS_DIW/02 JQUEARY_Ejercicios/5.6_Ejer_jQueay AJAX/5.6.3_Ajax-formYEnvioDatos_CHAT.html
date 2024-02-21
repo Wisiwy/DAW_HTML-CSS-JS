@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6.2 - Ajax - CargaLenta</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Utilizamos jQuery -->
+</head>
+
+<body>
+    <!-- Formulario -->
+    <form id="formulario" action="#" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="edad">Edad:</label><br>
+        <input type="number" id="edad" name="edad"><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Contenido recibido del servidor -->
+    <section id="contenido"></section>
+
+    <!-- Imagen de carga -->
+    <img id="cargando" style="display:none;" src="./imagenes/load.gif" alt="cargando">
+
+    <script>
+        $(document).ready(function () {
+            $("#formulario").submit(function (evento) {
+                // Evitar el envío normal del formulario
+                evento.preventDefault();
+
+                // Obtener los datos del formulario
+                var datosFormulario = $(this).serialize();
+
+                // Mostrar la imagen de carga
+                $("#cargando").show();
+
+                // Realizar la petición AJAX
+
+                //PRUEBA2
+                $.ajax( {
+                    url: "recibe-parametros-post.php",
+                    type: "POST",
+                    data: datosFormulario,
+                    success: function (data) {
+                            $("#cargando").hide();
+                            alert('AJAX call was successful!');
+                            alert('Data from the server' + data);
+                            $("#contenido").html(data);
+                        },
+                        error: function () {
+                            $("#cargando").hide();
+                            alert('There was some error performing the AJAX call!');
+
+                        }
+
+                    }
+
+                );
+
+
+                //PRUEBA1
+               /*  $.post("recibe-parametros-post.php", datosFormulario, function (data) {
+                    // Ocultar la imagen de carga
+                    $("#cargando").hide();
+
+                    // Mostrar los datos recibidos del servidor en el contenedor #contenido
+                    $("#contenido").html(data);
+                }); */
+            });
+        });
+    </script>
+</body>
+
+</html>

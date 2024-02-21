@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6.2 - Ajax - CargaLenta</title>
+    <script src="jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Crea un formulario en una página Web que recoja un nombre y edad. Los campos se deben
+enviar a un servidor Web (script PHP) el cual devolverá los datos enviados. El script PHP es el
+archivo “recibe-parametros-post.php”.
+Utiliza el método “load” de jQuery mediante una petición de tipo POST.-->
+  
+<!-- FORMULAIO -->
+    <form action="#" id="formulario" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="edad">Edad:</label><br>
+        <input type="number" id="edad" name="edad"><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <section id="contenido">
+
+    </section>
+    <img id="cargando" style="display:none;" src="./imagenes/load.gif" alt="cargando">
+    <script>
+        //Recoger valores
+        var nombre = document.getElementById("nombre").value;
+        var edad = document.getElementById("edad").value;
+
+        $(document).ready(function () {
+            $("#formulario").onsubmit(function (evento) {
+                //elimino el comportamiento por defecto del enlace
+                evento.preventDefault();
+
+                //cargamos el contenido, cuando acabe ocultmos ggif
+                $("#contenido").load("recibe-parametros.php", function () {
+                    
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
