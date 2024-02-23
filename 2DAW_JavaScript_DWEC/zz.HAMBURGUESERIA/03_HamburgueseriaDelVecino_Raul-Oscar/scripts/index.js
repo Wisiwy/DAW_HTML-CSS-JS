@@ -3,7 +3,7 @@ var btnPedido = document.getElementById('btn_hacerPedido');
 //btnPedido.addEventListener('click', redireccionMenu());
 
 function redireccionMenu(){
-    window.location.href = '../views/hamburgueseria.html'
+    window.location.href = './views/hamburgueseria.html';
 }
 
 

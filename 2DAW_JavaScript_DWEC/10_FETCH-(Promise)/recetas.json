@@ -1,0 +1,99 @@
+[
+    {
+      "userId": "Peter",
+      "id": 1,
+      "title": "Tortilla de Patatas",
+      "body": "La clásica tortilla española hecha con huevos, patatas y cebolla. Sofríe las patatas y la cebolla, bátelas con huevos y cocina a fuego lento hasta que esté dorada por ambos lados."
+    },
+    {
+      "userId": "Paul",
+      "id": 2,
+      "title": "Ensalada César",
+      "body": "Una ensalada fresca y deliciosa con lechuga romana, croutones, queso parmesano y aderezo César. Sirve con pollo a la parrilla para una comida completa."
+    },
+    {
+      "userId": "Mary",
+      "id": 3,
+      "title": "Pasta Aglio e Olio",
+      "body": "Una receta italiana simple con pasta, ajo, aceite de oliva, guindilla y perejil. Cocina la pasta al dente, mezcla con el ajo dorado y el aceite de oliva, y espolvorea con perejil."
+    },
+    {
+      "userId": "Nina",
+      "id": 4,
+      "title": "Sándwich de Jamón y Queso",
+      "body": "Un clásico sándwich caliente con jamón, queso y mantequilla. Tuesta en una sartén hasta que el queso se derrita y el pan esté crujiente."
+    },
+    {
+      "userId": "admin",
+      "id": 5,
+      "title": "Gazpacho",
+      "body": "Una sopa fría española hecha con tomates, pepino, pimiento, cebolla, ajo, aceite de oliva y vinagre. Refrescante y perfecta para los días calurosos."
+    },
+    {
+      "userId": "Peter",
+      "id": 6,
+      "title": "Arroz con Pollo",
+      "body": "Un plato tradicional latinoamericano que combina arroz, pollo, verduras y especias. Cocina el arroz con caldo de pollo y mezcla con el pollo desmenuzado y las verduras."
+    },
+    {
+      "userId": "Paul",
+      "id": 7,
+      "title": "Tostadas Francesas",
+      "body": "Rebanadas de pan sumergidas en una mezcla de huevo batido, leche y canela, luego doradas en una sartén. Sirve con jarabe de arce y frutas frescas."
+    },
+    {
+      "userId": "Mary",
+      "id": 8,
+      "title": "Guacamole",
+      "body": "Un dip mexicano hecho con aguacate, cebolla, tomate, cilantro, limón y sal. Tritura los ingredientes juntos y sirve con nachos o tacos."
+    },
+    {
+      "userId": "Nina",
+      "id": 9,
+      "title": "Spaghetti Aglio e Peperoncino",
+      "body": "Una versión picante de la receta italiana de pasta Aglio e Olio. Cocina los espaguetis al dente, mezcla con ajo, aceite de oliva y guindilla roja."
+    },
+    {
+      "userId": "admin",
+      "id": 10,
+      "title": "Ensalada Caprese",
+      "body": "Una ensalada italiana con tomates, mozzarella fresca, albahaca y aceite de oliva. Sazona con sal y pimienta, y disfruta como aperitivo o acompañamiento."
+    },
+    {
+      "userId": "Peter",
+      "id": 11,
+      "title": "Hummus",
+      "body": "Un dip mediterráneo hecho con puré de garbanzos, tahini, ajo, limón y aceite de oliva. Sirve con pan pita o verduras crudas."
+    },
+    {
+      "userId": "Paul",
+      "id": 12,
+      "title": "Pollo al Curry",
+      "body": "Un plato de pollo cocido en una salsa de curry con cebolla, ajo, jengibre y especias. Sirve con arroz o pan naan."
+    },
+    {
+        "userId": "Peter",
+        "id": 13,
+        "title": "Ratatouille",
+        "body": "Un plato de verduras asadas que incluye berenjena, calabacín, pimiento, cebolla y tomate. Condimenta con hierbas provenzales y sirve caliente."
+    },
+    {
+        "userId": "Paul",
+        "id": 14,
+        "title": "Sopa de Lentejas",
+        "body": "Una sopa reconfortante hecha con lentejas, cebolla, zanahorias y caldo de verduras. Cocina a fuego lento hasta que las lentejas estén tiernas."
+    },
+    {
+        "userId": "Mary",
+        "id": 15,
+        "title": "Pollo al Limón",
+        "body": "Pechugas de pollo cocidas en una salsa de limón con ajo y hierbas. Sirve con arroz o ensalada fresca."
+    },
+    {
+        "userId": "Nina",
+        "id": 16,
+        "title": "Tiramisú",
+        "body": "Un postre italiano clásico hecho con capas de bizcochos de soletilla empapados en café y crema de mascarpone. Espolvorea con cacao en polvo."
+    }
+]
+  

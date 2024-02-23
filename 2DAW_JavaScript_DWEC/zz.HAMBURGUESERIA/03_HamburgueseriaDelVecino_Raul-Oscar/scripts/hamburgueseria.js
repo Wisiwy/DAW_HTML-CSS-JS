@@ -5,6 +5,7 @@ import {Hamburguesa} from "./clases/Hamburguesa.js";
 import {Pedido} from "./clases/Pedido.js";
 import {Postre} from "./clases/Postre.js"; */
 
+import { FichaAlimento } from "./componentes/FichaAlimento";
 //Instanciación Pedido
 var pedido = new Pedido();
 
@@ -71,17 +72,40 @@ function mostrarMenu(tipoProducto) {
 function mostrarProductos(arrays) {
     //cojo el texto de una unorder list que por defecto esta vacío
     var contenidoMenu = document.getElementById("contenidoMenu");
-    //Borro el texto anterior
-    contenidoMenu.innerHTML = "";
-    //Creo la cabecera
-    contenidoMenu.innerHTML += `<ul>${arrays[0].mostrarCabecera()}<br/><br/>`;
 
     //Recorrer los Arrays y escribirlo
-
+    
     arrays.forEach((alimento) => {
-        let cadena = "";
-        //muestro los parametros
-        cadena += alimento.mostrarParametros();
+        console.log(alimento);
+        let rutaImg = "";
+
+        rutaImg = "./../img/burger1.webp";
+
+        var ficha_alimento = document.createElement("ficha-alimento");
+
+        ficha_alimento.setAttribute('id', alimento.id);
+        ficha_alimento.setAttribute('nombre', alimento.nombre);
+        ficha_alimento.setAttribute('precio', alimento.precio);
+        ficha_alimento.setAttribute('cantidad', alimento.cantidad);
+        //quiero coger el tipo de alimetno que es clase padre alimento clase hijo son hamburguesa bebida complemento postra
+        let clase = alimento.constructor.name;
+        switch (clase)  {
+            case 'Hamburguesa':
+                rutaImg = "./../img/burger1.webp";
+                break;
+            case 'Bebida':
+                rutaImg = "./../img/drink1.webp";
+                break;
+            case 'Complemento':
+                rutaImg = "./../img/nugget1.webp";
+                break;
+            case 'Postre':
+                rutaImg = "./../img/dessert1.webp";
+                break;
+            default:
+                break;
+        }
+        ficha_alimento.setAttribute('imagen', rutaImg);
 
         /*BOTONES (+) y (-)
         *añado dos botones (+) y (-) además de un texto entre medias que dirá la cantidad de ítems de ese tipo se han solicitado.(defecto será c)
@@ -92,12 +116,12 @@ function mostrarProductos(arrays) {
         * IMPORTANTE: El texto dentro que se genera en azul clarito, tiene id en función del alimeto,
         * ya que la forma de declarar su id es la siguiente: {id="count'+Alimento.id+'"}
         */
-        cadena += `<button  onclick="suprimirProducto(${alimento.id})"> - </button>
+      /*   cadena += `<button  onclick="suprimirProducto(${alimento.id})"> - </button>
                     <a id="count${alimento.id}" style="color:DodgerBlue;">${alimento.cantidad}</a>
                     <button  onclick="anadirProducto(${alimento.id})"> + </button> `;
-        contenidoMenu.innerHTML += `<li>${cadena}</li>`;
+        contenidoMenu.innerHTML += `<li>${cadena}</li>`; */
     });
-    contenidoMenu.innerHTML += "</ul>";
+    contenidoMenu.appendChild(ficha_alimento);
 }
 
 /**
@@ -151,7 +175,7 @@ function suprimirProducto(producto) {
 function generaTicket() {
     let cestaAux = pedido.getCesta();
     let totalPagar = pedido.calcularTotal();
-    
+
     //creo una variable local para el texto del ticket/factura llamada "elementoTotal"
     let elementoTotal = document.getElementById("precioTotal");
     elementoTotal.innerHTML = "";
@@ -170,22 +194,22 @@ function generaTicket() {
 /**
  * SETEAR INFO en PEDIDO con textarea
  */
-function setearInfo(){
+function setearInfo() {
     let infoAux = pedido.getInfoExtra();
     //infoAux+=document.getElementById('infoextra').value;
-    infoAux=document.getElementById('infoextra').value;
+    infoAux = document.getElementById('infoextra').value;
     pedido.setInfoExtra(infoAux);
 }
 
-function tramitarPedido(){
+function tramitarPedido() {
     alert("Mi id " + pedido.getId());
     //Guardamos pedido en la sesion navegador.
     sessionStorage.setItem("pedido", JSON.stringify(pedido));
     alert("Tramitando pedido...");
     //Cambiamos de panatalla. 
-    setTimeout(function() {
+    setTimeout(function () {
         window.location.href = '../views/recibo.html';
-    }, 1000);    
+    }, 1000);
 }
 
 /**

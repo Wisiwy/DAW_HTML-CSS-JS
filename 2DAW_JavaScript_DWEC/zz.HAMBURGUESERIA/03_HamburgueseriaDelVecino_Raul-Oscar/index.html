@@ -7,12 +7,14 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="./style/index.css">
     <!-- Script JS -->
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer ></script>
+    <script src="./scripts/componentes/FichaAlimento.js" defer ></script>
+    
     <title>Hamburgueseria de Oscar</title>
 </head>
 
 <body>
-    <h1>Burguer Oscar</h1>
+<h1>Burguer Oscar</h1>
     <section id="instrucciones">
         <h2>Instrucciones</h2>
         <!-- Instrucciónes hambrguesería.  -->
@@ -67,7 +69,7 @@
 
         <section id="botones">
             <!-- Boton hacer pedido  -->
-            <button id="btn_hacerPedido" onclick="redireccionMenu()">Hacer pedido</button>
+            <button href = "./views/hamburgueseria.html" id="btn_hacerPedido" onclick="redireccionMenu()">Hacer pedido</button>
             <!-- Pedidos antiguos -->
             <button id="btn_antiguos">Pedidos antiguos</button>
         </section>
