@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto"></p>
+    <script>
+        var texto = document.getElementById('texto');
+        // Función asincrónica simple
+        async function miFuncionAsincrona() {
+            // Simulamos una espera de 2 segundos antes de devolver un mensaje
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            return '¡Hola, soy una función asíncrona!';
+        }
+
+        // Llamamos a la función asíncrona
+        miFuncionAsincrona().then(resultado => {
+            texto.innerHTML = resultado;
+        }).catch(error => {
+            console.error('Hubo un error:', error); 
+        });
+    </script>
+</body>
+</html>

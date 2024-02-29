@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text">
+        <input type="button" value="Añadir más cajas" onclick="moarCajas()">
+        <input type="button" value="Reiniciar" onclick="limpiar()">
+        <br/>
+    </form>
+    <script>
+        function moarCajas() {
+            var form = document.getElementById("form");
+            console.log(form);
+            var nuevaCaja = document.createElement("input");
+            nuevaCaja.setAttribute("type", "text");
+            console.log(nuevaCaja);
+            nuevaCaja.setAttribute("class", "nuevo");
+            console.log(nuevaCaja);
+            form.appendChild(nuevaCaja);
+            console.log(form);
+        }
+
+        function limpiar() {
+            var form = document.getElementById("form");
+            var nuevos = document.getElementsByClassName("nuevo");
+            while (nuevos.length > 0) {
+                form.removeChild(nuevos[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

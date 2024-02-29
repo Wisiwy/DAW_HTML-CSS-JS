@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 5.3.1</title>
+    <script>
+        function anade() {
+            var lista = document.getElementById('lista');
+            
+            lista.innerHTML += '<li>Nuevo elemento 1</li><li>Nuevo elemento 2</li>';
+        }
+
+        function anadeUnaVez() {
+            var lista = document.getElementById('lista');
+            var nuevoElemento1 = document.createElement('li');
+            nuevoElemento1.textContent = 'Nuevo elemento 1';
+            var nuevoElemento2 = document.createElement('li');
+            nuevoElemento2.textContent = 'Nuevo elemento 2';
+
+            lista.appendChild(nuevoElemento1);
+            lista.appendChild(nuevoElemento2);
+            
+            document.getElementById('btnAnadeUnaVez').disabled = true;
+        }
+    </script>
+</head>
+<body>
+    <ul id="lista">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetuer adipiscing elit</li>
+        <li>Sed mattis enim vitae orci</li>
+        <li>Phasellus libero</li>
+        <li>Maecenas nisl arcu</li>
+    </ul>
+    <input type="button" value="Añadir elementos" onclick="anade();">
+    <input type="button" value="Añadir una vez" id="btnAnadeUnaVez" onclick="anadeUnaVez();">
+</body>
+</html>

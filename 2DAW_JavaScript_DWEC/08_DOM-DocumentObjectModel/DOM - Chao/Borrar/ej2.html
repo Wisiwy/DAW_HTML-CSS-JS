@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Añadir Cajas de Texto</title>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var contador = 1;
+        var contenedor = document.getElementById('contenedor');
+
+        document.getElementById('btnAgregar').addEventListener('click', function() {
+            var nuevaCaja = document.createElement('input');
+            nuevaCaja.type = 'text';
+            nuevaCaja.name = 'caja' + contador;
+            nuevaCaja.placeholder = 'Caja de Texto ' + contador;
+            contenedor.appendChild(nuevaCaja);
+            contador++;
+        });
+
+        document.getElementById('btnReiniciar').addEventListener('click', function() {
+            contenedor.innerHTML = ''; // Vacía el contenido del contenedor
+            contador = 1; // Reinicia el contador
+        });
+    });
+</script>
+</head>
+<body>
+<form>
+    <div id="contenedor">
+        <!-- Las cajas de texto se añadirán aquí -->
+    </div>
+    <button type="button" id="btnAgregar">Añadir más cajas</button>
+    <button type="button" id="btnReiniciar">Reiniciar</button>
+</form>
+</body>
+</html>

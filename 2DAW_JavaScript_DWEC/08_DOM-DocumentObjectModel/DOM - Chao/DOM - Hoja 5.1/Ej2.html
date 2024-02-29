@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ejercicio JavaScript DOM con manejadores semánticos</title>
+    </head>
+    <body>
+        <a href="#" id="id_link" title="Enlace de prueba" onclick="mostrarAtributos()">Pulsa aquí</a>
+        <script>
+            var obj_body = document.body;
+            var link = obj_body.firstElementChild;
+
+            function mostrarAtributos(){
+                alert("Segundo atributo: " + link.attributes[1].nodeName);
+                alert("Segundo valor: " + link.attributes[1].nodeValue);
+            }
+        </script>
+    </body>
+</html>

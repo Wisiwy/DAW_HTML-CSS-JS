@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 5.3.1</title>
+    <script>
+        function anade() {
+            var lista = document.getElementById("lista");
+            for (let i = 0; i < 2; i++) {
+                var nuevo = document.createElement("li");
+                nuevo.textContent = "Algo nuevo";
+                lista.append(nuevo);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetuer adipiscing elit</li>
+        <li>Sed mattis enim vitae orci</li>
+        <li>Phasellus libero</li>
+        <li>Maecenas nisl arcu</li>
+    </ul>
+    <input type="button" value="Añadir elementos" onclick="anade();">
+    <input type="button" value="Añadir una vez" id="unaVez">
+
+    <script>
+       
+       function anadeUnaVez() {
+            var btn = document.getElementById("unaVez");
+            var lista = document.getElementById("lista");
+            for (let i = 0; i < 2; i++) {
+                var nuevo = document.createElement("li");
+                nuevo.textContent = "Algo nuevo hehe";
+                lista.append(nuevo);
+            }
+            btn.removeEventListener("click", anadeUnaVez);
+        }
+
+        var btn = document.getElementById("unaVez");
+
+        btn.addEventListener("click", anadeUnaVez);
+    </script>
+</body>
+
+</html>

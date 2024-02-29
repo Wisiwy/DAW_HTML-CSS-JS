@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ejercicio JavaScript DOM con manejadores de eventos semánticos</title>
+<style>
+    #additionalText {
+        display: none;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+<a href="#" id="id_link" title="Enlace de prueba">Pulsa aquí</a>
+<span id="additionalText">Has pasado el ratón por el enlace</span>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var link = document.getElementById('id_link');
+        var additionalText = document.getElementById('additionalText');
+
+        link.addEventListener('mouseover', function(event) {
+            additionalText.style.display = 'inline';
+        });
+
+        link.addEventListener('mouseout', function(event) {
+            additionalText.style.display = 'none';
+        });
+
+        link.addEventListener('click', function(event) {
+            var param = 2; // Puedes cambiar el valor de este parámetro
+
+            if (param === 1) {
+                additionalText.style.color = '#0101ff';
+            } else if (param === 2) {
+                additionalText.style.fontWeight = 'bold';
+            } else if (param === 3) {
+                additionalText.style.color = '#0101ff';
+                additionalText.style.fontWeight = 'bold';
+            }
+        });
+    });
+</script>
+</body>
+</html>

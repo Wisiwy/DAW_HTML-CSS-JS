@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto"></p>
+    <script>
+        var texto = document.getElementById('texto');
+
+        // Función asincrónica que simula una solicitud HTTP
+        async function obtenerDatos() {
+            try {
+                // Simulamos una solicitud HTTP utilizando fetch
+                const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+                
+                // Verificamos si la respuesta fue exitosa (código de estado HTTP 200)
+                if (!respuesta.ok) {
+                    throw new Error('La solicitud no fue exitosa');
+                }
+                
+                // Convertimos la respuesta en formato JSON
+                const datos = await respuesta.json();
+                
+                return datos;
+            } catch (error) {
+                // Capturamos y manejamos cualquier error que pueda ocurrir
+                console.error('Error al obtener datos:', error);
+                throw error; // Volvemos a lanzar el error para que pueda ser manejado externamente
+            }
+        }
+
+        // Llamamos a la función asíncrona y manejamos el resultado
+        obtenerDatos().then(datos => {
+            // Mostramos los datos obtenidos en el elemento HTML
+            texto.innerHTML = '<h1>Datos obtenidos</h1>' +
+                              '<h3>Id: ' + datos.id + '</h3>' +
+                              '<h3>Título: ' + datos.title + '</h3>' +
+                              '<h3>Cuerpo: ' + datos.body+'</h3>';
+            console.log('Datos obtenidos:', datos);
+        }).catch(error => {
+            console.error('Hubo un error al obtener datos:', error);
+        });
+    </script>
+</body>
+</html>

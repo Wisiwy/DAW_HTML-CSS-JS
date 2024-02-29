@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ejercicio 3</title>
+        <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        .capa {
+            width: 50%;
+            height: 50vh;
+            float: left;
+        }
+
+        #rojo {
+            background-color: red;
+        }
+
+        #amarillo {
+            background-color: yellow;
+        }
+
+        #azul {
+            background-color: blue;
+        }
+
+        #verde {
+            background-color: green;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="rojo" class="capa"></div>
+        <div id="amarillo" class="capa"></div>
+        <div id="azul" class="capa"></div>
+        <div id="verde" class="capa"></div>
+
+        <script>
+        var obj_body = document.body;
+        var nodos = obj_body.childNodes;
+
+        for (let index = 0; index < nodos.length; index++) {
+            nodos[index].addEventListener("click", function (event) {
+                var color = nodos[index].getAttribute("id");
+                alert(color);
+            });
+        }
+        </script>
+    </body>
+
+</html>

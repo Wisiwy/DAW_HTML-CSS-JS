@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueseria</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./misClases.js" type="module"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="intro">
+        <p class="logo-header">
+            <span class="logo">Bien</span><span class="logo">venido</span>
+        </p>
+    </div>
+
+    <header>
+        <h1>Rēdawulfaz Ñam Ñam</h1>
+        <div id="cesta"><i class="fas fa-shopping-cart"></i>&nbsp;Cesta
+    </header>
+    <div id="popup" class="popup">
+        <span class="close" id="close">&times;</span>
+        <div id="recibo"></div>
+        <div id="botones">
+            <button id="mostrarTicket">Recibo</button>
+            <button id="reiniciar">Reiniciar</button>
+        </div>
+
+    </div>
+    <img src="media/banner.jpg">
+    <main>
+        <section>
+            <h2>Hamburguesas</h2>
+            <div id="hamburguesas-lista"></div>
+        </section>
+        <hr>
+        <section>
+            <h2>Bebidas</h2>
+            <div id="bebidas-lista"></div>
+        </section>
+        <hr>
+        <section>
+            <h2>Patatas</h2>
+            <div id="patatas-lista"></div>
+        </section>
+        <hr>
+        <section>
+            <h2>Nuggets</h2>
+            <div id="nuggets-lista"></div>
+        </section>
+        <hr>
+        <section>
+            <h2>Postres</h2>
+            <div id="postres-lista"></div>
+        </section>
+    </main>
+    <br />
+    <footer>
+        <p>© 2024 Rēdawulfaz Inc. | Design by <span onmouseover="cssHehe()" onmouseout="htmlHehe()" id="autor">Raúl Castro</span></p>
+        <p>Powered By: Midjourney</p>
+        <p>Legal Warning</p>
+        <p>Privacy Policy</p>
+        <p>Cookies Policy</p>
+        <p>Quality Policy</p>
+    </footer>
+    <span id="precio-total" hidden></span>
+</body>
+<script>
+    function cssHehe() {
+        var autor = document.getElementById("autor");
+        autor.innerText = "Chao Yi Qiu";
+    }
+
+    function htmlHehe() {
+        var autor = document.getElementById("autor");
+        autor.innerText = "Raúl Castro";
+    }
+</script>
+
+</html>

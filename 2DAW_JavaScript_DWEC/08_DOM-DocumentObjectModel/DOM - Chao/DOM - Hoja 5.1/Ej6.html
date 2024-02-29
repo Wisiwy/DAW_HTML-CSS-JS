@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Enlace de prueba</title>
+    </head>
+    <body>
+        <a href="#" id="id_link" title="Enlace de prueba" onmouseover="crearTexto()" onclick="cambiarPropiedades()">Pulsa aquí</a>
+        <script>
+            var obj_body = document.body;
+            var link = obj_body.firstElementChild;
+
+            function crearTexto(){
+                const span = document.createElement("span");
+                span.innerText = "Has pasado el ratón por el enlace";
+                obj_body.append(span);
+            }
+
+            function cambiarPropiedades(){
+                var span = obj_body.lastElementChild;
+                const style = document.createAttribute("style");
+                style.value = "color: #0101ff; font-weight: bold;";
+                span.setAttributeNode(style);
+            }
+        </script>
+    </body>
+</html>
